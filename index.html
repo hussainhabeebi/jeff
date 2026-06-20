@@ -4,91 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Jeff Zacharia | Oral & Maxillofacial Surgeon – Sahara Medical Centre</title>
-  <meta name="description" content="Dr. Jeff Zacharia – Oral and Maxillofacial Surgeon at Sahara Medical Centre, Sharjah UAE. 5+ years experience in wisdom tooth removal, TMJ disorders, and oral surgery." />
+  <meta name="description" content="Dr. Jeff Zacharia – Oral and Maxillofacial Surgeon at Sahara Medical Centre, Sharjah UAE." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ── NAVBAR ── -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="navbar__inner">
       <a href="https://saharamedicalcentre.ae/" class="navbar__logo">
         <img src="logos.png" alt="Sahara Medical Centre" class="navbar__logo-img" />
       </a>
       <nav class="navbar__links">
-        <a href="https://saharamedicalcentre.ae/#book" class="navbar__link">
-          <span class="nav-icon">📅</span> Book Appointment
-        </a>
-        <a href="https://saharamedicalcentre.ae/#doctors" class="navbar__link">
-          <span class="nav-icon">💡</span> Our Doctors
-        </a>
-        <a href="https://saharamedicalcentre.ae/#location" class="navbar__link">
-          <span class="nav-icon">📍</span> Location
-        </a>
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#procedures" class="navbar__link">Services</a>
+        <a href="#book" class="navbar__link navbar__link--cta">Book Now</a>
       </nav>
-      <button class="navbar__hamburger" aria-label="Toggle menu" onclick="toggleMenu()">&#9776;</button>
+      <button class="hamburger" aria-label="Menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="navbar__mobile" id="mobileMenu">
-      <a href="https://saharamedicalcentre.ae/#book" class="navbar__link">📅 Book Appointment</a>
-      <a href="https://saharamedicalcentre.ae/#doctors" class="navbar__link">💡 Our Doctors</a>
-      <a href="https://saharamedicalcentre.ae/#location" class="navbar__link">📍 Location</a>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#procedures" onclick="closeMenu()">Services</a>
+      <a href="#book" onclick="closeMenu()" class="mobile-menu__cta">Book Appointment</a>
     </div>
   </header>
 
   <!-- ── HERO ── -->
   <section class="hero">
-    <div class="hero__bg"></div>
-    <div class="container hero__inner">
-      <div class="hero__photo-wrap">
-        <div class="hero__photo-ring">
-          <img src="Doctor.jpeg" alt="Dr. Jeff Zacharia" class="hero__photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="hero__photo-placeholder">
-            <span>Dr. Jeff</span>
-          </div>
+    <!-- Animated bg blobs -->
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+
+    <div class="hero__container">
+      <!-- Left: text -->
+      <div class="hero__text" data-animate="fade-up">
+        <div class="hero__pill">
+          <span class="pulse-dot"></span>
+          Available Today · 8AM – 11PM
         </div>
-        <div class="hero__badge">
-          <span class="badge-dot"></span> Available Today
-        </div>
-      </div>
-      <div class="hero__info">
-        <span class="hero__tag">Oral &amp; Maxillofacial Surgery</span>
-        <h1 class="hero__name">Dr. Jeff Zacharia</h1>
-        <p class="hero__title">BDS, MDS – Oral &amp; Maxillofacial Surgeon</p>
-        <p class="hero__sub">Sahara Medical Centre · Al Nahda, Sharjah, UAE</p>
+        <h1 class="hero__name">
+          Dr. Jeff<br/>
+          <span class="hero__name-accent">Zacharia</span>
+        </h1>
+        <p class="hero__spec">BDS, MDS · Oral &amp; Maxillofacial Surgeon</p>
+        <p class="hero__loc">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Sahara Medical Centre, Al Nahda, Sharjah
+        </p>
+
         <div class="hero__langs">
-          <span class="lang-tag">English</span>
-          <span class="lang-tag">Malayalam</span>
-          <span class="lang-tag">Hindi</span>
-          <span class="lang-tag">Kannada</span>
+          <span>English</span><span>Malayalam</span><span>Hindi</span><span>Kannada</span>
         </div>
-        <div class="hero__stats">
-          <div class="stat">
-            <strong>5+</strong>
-            <span>Years Experience</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <strong>BDS, MDS</strong>
-            <span>Qualifications</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <strong>4.8 ★</strong>
-            <span>Google Rating</span>
-          </div>
-        </div>
-        <div class="hero__ctas">
-          <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--whatsapp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+
+        <div class="hero__actions">
+          <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Book via WhatsApp
           </a>
-          <a href="tel:+971508821590" class="btn btn--outline">
-            📞 Call Now
+          <a href="tel:+971508821590" class="btn btn--ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Now
           </a>
         </div>
+      </div>
+
+      <!-- Right: photo card -->
+      <div class="hero__card" data-animate="fade-left">
+        <div class="hero__photo-wrap">
+          <img src="Doctor.jpeg" alt="Dr. Jeff Zacharia" class="hero__photo" onerror="this.style.display='none';document.querySelector('.hero__photo-fallback').style.display='flex'" />
+          <div class="hero__photo-fallback">Dr. Jeff</div>
+        </div>
+
+        <!-- Floating stat chips -->
+        <div class="stat-chip stat-chip--exp">
+          <strong>5+</strong>
+          <span>Years Exp.</span>
+        </div>
+        <div class="stat-chip stat-chip--rating">
+          <strong>4.8 ★</strong>
+          <span>Google</span>
+        </div>
+        <div class="stat-chip stat-chip--patients">
+          <strong>1000+</strong>
+          <span>Patients</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero__statsbar" data-animate="fade-up" data-delay="200">
+      <div class="statsbar__item">
+        <strong>5+</strong><span>Years of Experience</span>
+      </div>
+      <div class="statsbar__div"></div>
+      <div class="statsbar__item">
+        <strong>1000+</strong><span>Patients Cared For</span>
+      </div>
+      <div class="statsbar__div"></div>
+      <div class="statsbar__item">
+        <strong>4.8 ★</strong><span>Google Rating</span>
+      </div>
+      <div class="statsbar__div"></div>
+      <div class="statsbar__item">
+        <strong>18+</strong><span>Years Centre Experience</span>
       </div>
     </div>
   </section>
@@ -96,72 +120,85 @@
   <!-- ── ABOUT ── -->
   <section class="section" id="about">
     <div class="container">
-      <div class="section-grid">
-        <div class="section-grid__main">
-          <h2 class="section-title">About Dr. Jeff Zacharia</h2>
-          <p class="section-body">
-            Dr. Jeff Zacharia is an Oral and Maxillofacial Surgeon with over 5 years of clinical experience in managing a wide range of surgical conditions affecting the oral and facial region. He is known for his precise technique, patient-focused approach, and emphasis on minimizing discomfort and recovery time. His clinical interests include wisdom tooth removal, TMJ disorders, and oral pathology.
-          </p>
-          <p class="section-body">
-            Dr. Jeff is committed to delivering safe, effective, and comfortable surgical care with clear communication and individualized treatment planning.
-          </p>
+      <div class="section-label" data-animate="fade-up">About the Doctor</div>
+      <h2 class="section-title" data-animate="fade-up" data-delay="80">Specialist in Oral &amp;<br/>Maxillofacial Surgery</h2>
 
-          <!-- Education -->
-          <div class="card card--education">
-            <h3 class="card__heading">
-              <span class="card__icon">🎓</span> Education &amp; Training
-            </h3>
-            <ul class="edu-list">
-              <li>
-                <span class="edu-dot"></span>
-                <div>
-                  <strong>Bachelor of Dental Surgery (BDS)</strong>
-                </div>
-              </li>
-              <li>
-                <span class="edu-dot"></span>
-                <div>
-                  <strong>Master of Dental Surgery (MDS)</strong>
-                  <span class="edu-sub">Oral &amp; Maxillofacial Surgery</span>
-                </div>
-              </li>
-              <li>
-                <span class="edu-dot"></span>
-                <div>
-                  <strong>Certified in Basic Life Support (BLS)</strong>
-                </div>
-              </li>
-              <li>
-                <span class="edu-dot"></span>
-                <div>
-                  <strong>Continuing Education</strong>
-                  <span class="edu-sub">Oral Surgery and Advanced Dental Implantology</span>
-                </div>
-              </li>
-            </ul>
+      <div class="about-grid">
+        <div class="about-bio" data-animate="fade-up" data-delay="120">
+          <p>Dr. Jeff Zacharia is an Oral and Maxillofacial Surgeon with over 5 years of clinical experience managing a wide range of surgical conditions affecting the oral and facial region. He is known for his precise technique, patient-focused approach, and emphasis on minimising discomfort and recovery time.</p>
+          <p>Dr. Jeff is committed to delivering safe, effective, and comfortable surgical care with clear communication and individualised treatment planning.</p>
+
+          <div class="edu-cards">
+            <div class="edu-card" data-animate="fade-up" data-delay="160">
+              <div class="edu-card__icon">🎓</div>
+              <div>
+                <strong>BDS</strong>
+                <span>Bachelor of Dental Surgery</span>
+              </div>
+            </div>
+            <div class="edu-card" data-animate="fade-up" data-delay="200">
+              <div class="edu-card__icon">🏅</div>
+              <div>
+                <strong>MDS – Oral &amp; Maxillofacial Surgery</strong>
+                <span>Master of Dental Surgery</span>
+              </div>
+            </div>
+            <div class="edu-card" data-animate="fade-up" data-delay="240">
+              <div class="edu-card__icon">❤️</div>
+              <div>
+                <strong>BLS Certified</strong>
+                <span>Basic Life Support</span>
+              </div>
+            </div>
+            <div class="edu-card" data-animate="fade-up" data-delay="280">
+              <div class="edu-card__icon">🔬</div>
+              <div>
+                <strong>Continuing Education</strong>
+                <span>Oral Surgery &amp; Advanced Implantology</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Sidebar stats -->
-        <div class="section-grid__side">
-          <div class="side-card">
-            <div class="side-stat">
-              <strong>5+</strong>
-              <span>Years of Clinical Experience</span>
+        <div class="about-side" data-animate="fade-left" data-delay="160">
+          <div class="info-card">
+            <div class="info-card__row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Open Today</strong>
+                <span>8:00 AM – 11:00 PM</span>
+              </div>
             </div>
-          </div>
-          <div class="side-card">
-            <div class="side-stat">
-              <strong>4</strong>
-              <span>Languages Spoken</span>
+            <div class="info-card__row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Location</strong>
+                <span>Ganda Tower, Al Nahda, Sharjah</span>
+              </div>
             </div>
-          </div>
-          <div class="side-card side-card--highlight">
-            <p class="side-card__label">Walk-ins Welcome</p>
-            <p class="side-card__hours">Open Today · 8AM – 11PM</p>
-            <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener">
+            <div class="info-card__row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <div>
+                <strong>Phone</strong>
+                <span>+971 50 882 1590</span>
+              </div>
+            </div>
+            <div class="info-card__row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong>Email</strong>
+                <span>info@saharamedicalcentre.ae</span>
+              </div>
+            </div>
+            <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--wa btn--full" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
               Book Appointment
             </a>
+          </div>
+
+          <div class="walkin-badge">
+            <span class="pulse-dot pulse-dot--green"></span>
+            Walk-ins Welcome
           </div>
         </div>
       </div>
@@ -171,56 +208,57 @@
   <!-- ── PROCEDURES ── -->
   <section class="section section--alt" id="procedures">
     <div class="container">
-      <h2 class="section-title section-title--center">Clinical Expertise &amp; Procedures</h2>
-      <p class="section-subtitle">Specialized surgical care for oral and facial conditions</p>
-      <div class="procedures-grid">
+      <div class="section-label" data-animate="fade-up">What We Treat</div>
+      <h2 class="section-title" data-animate="fade-up" data-delay="80">Clinical Expertise &amp;<br/>Procedures Offered</h2>
 
-        <div class="proc-card">
-          <div class="proc-icon">🦷</div>
+      <div class="proc-grid">
+
+        <div class="proc-card" data-animate="fade-up" data-delay="0">
+          <div class="proc-card__icon">🦷</div>
           <h3>Wisdom Tooth Extraction</h3>
-          <p>Safe and precise removal of impacted or problematic wisdom teeth with minimal recovery time.</p>
+          <p>Safe removal of impacted or problematic wisdom teeth with minimal recovery time.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">⚙️</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="60">
+          <div class="proc-card__icon">⚙️</div>
           <h3>Complex Tooth Extraction</h3>
           <p>Surgical extraction of severely broken, ankylosed, or structurally complex teeth.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">🔬</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="120">
+          <div class="proc-card__icon">🔬</div>
           <h3>TMJ Disorder Management</h3>
-          <p>Diagnosis and treatment of temporomandibular joint disorders causing jaw pain and dysfunction.</p>
+          <p>Diagnosis and treatment of temporomandibular joint disorders causing jaw pain.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">🩺</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="180">
+          <div class="proc-card__icon">🩺</div>
           <h3>Oral Cysts &amp; Pathologies</h3>
-          <p>Diagnosis and surgical treatment of oral cysts, lesions, and soft tissue pathologies.</p>
+          <p>Surgical treatment of oral cysts, lesions, and soft tissue pathologies.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">✂️</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="240">
+          <div class="proc-card__icon">✂️</div>
           <h3>Minor Oral Surgery</h3>
-          <p>A range of minor intraoral surgical procedures performed under local anaesthesia.</p>
+          <p>Intraoral surgical procedures performed under local anaesthesia.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">🦴</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="300">
+          <div class="proc-card__icon">🦴</div>
           <h3>Pre-prosthetic Surgery</h3>
-          <p>Surgical preparation of oral tissues to optimise fit and function of dentures or implants.</p>
+          <p>Surgical preparation of oral tissues for dentures or implants.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">💊</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="360">
+          <div class="proc-card__icon">💊</div>
           <h3>Oral Infection Management</h3>
-          <p>Surgical drainage and management of oral abscesses and spreading odontogenic infections.</p>
+          <p>Surgical drainage and management of oral abscesses and odontogenic infections.</p>
         </div>
 
-        <div class="proc-card">
-          <div class="proc-icon">📐</div>
+        <div class="proc-card" data-animate="fade-up" data-delay="420">
+          <div class="proc-card__icon">📐</div>
           <h3>Alveoloplasty &amp; Bone Contouring</h3>
-          <p>Reshaping and smoothing of alveolar bone for better prosthetic outcomes and healing.</p>
+          <p>Reshaping of alveolar bone for better prosthetic outcomes and healing.</p>
         </div>
 
       </div>
@@ -230,18 +268,20 @@
   <!-- ── BOOK CTA ── -->
   <section class="section section--cta" id="book">
     <div class="container">
-      <div class="cta-box">
-        <div class="cta-box__text">
-          <h2>Ready to Book Your Appointment?</h2>
-          <p>Reach out via WhatsApp or call us directly. Walk-ins are always welcome.</p>
-          <p class="cta-hours"><span class="badge-dot badge-dot--green"></span> Open Today · 8AM – 11PM</p>
+      <div class="cta-inner" data-animate="fade-up">
+        <div class="cta-inner__blob"></div>
+        <div class="cta-text">
+          <div class="section-label section-label--light">Get In Touch</div>
+          <h2>Ready to Book Your<br/>Appointment?</h2>
+          <p>Reach out via WhatsApp or call us directly.<br/>Walk-ins are always welcome.</p>
+          <p class="cta-hours"><span class="pulse-dot pulse-dot--green"></span> Open Today · 8AM – 11PM</p>
         </div>
-        <div class="cta-box__actions">
-          <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--whatsapp" target="_blank" rel="noopener">
+        <div class="cta-actions">
+          <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--wa btn--lg" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Book via WhatsApp
           </a>
-          <a href="tel:+971508821590" class="btn btn--white-outline">📞 +971 50 882 1590</a>
+          <a href="tel:+971508821590" class="btn btn--white-ghost btn--lg">📞 +971 50 882 1590</a>
         </div>
       </div>
     </div>
@@ -251,34 +291,71 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <div class="footer__logo-row">
-          <img src="logos.png" alt="Sahara Medical Centre" class="footer__logo-img" />
-        </div>
-        <p class="footer__desc">Providing premium medical and dental services with state-of-the-art facilities and compassionate care.</p>
+        <img src="logos.png" alt="Sahara Medical Centre" class="footer__logo" />
+        <p>Your trusted healthcare partner in UAE. Providing premium medical and dental services with state-of-the-art facilities and compassionate care.</p>
       </div>
-      <div class="footer__contact">
-        <h4>Contact Us</h4>
-        <p>📍 Ganda Tower, Al Nahda, Sharjah, UAE</p>
-        <p>📞 <a href="tel:+971508821590">+971 50 882 1590</a></p>
-        <p>✉️ <a href="mailto:info@saharamedicalcentre.ae">info@saharamedicalcentre.ae</a></p>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="https://maps.google.com/?q=Ganda+Tower,Al+Nahda,Sharjah" target="_blank" rel="noopener">📍 Ganda Tower, Al Nahda, Sharjah, UAE</a>
+        <a href="tel:+971508821590">📞 +971 50 882 1590</a>
+        <a href="mailto:info@saharamedicalcentre.ae">✉️ info@saharamedicalcentre.ae</a>
       </div>
-      <div class="footer__hours">
-        <h4>Opening Hours</h4>
-        <p><span class="badge-dot badge-dot--green"></span> Open Today</p>
+      <div class="footer__col">
+        <h4>Hours</h4>
+        <p><span class="pulse-dot pulse-dot--green" style="display:inline-block"></span> Open Every Day</p>
         <p>8:00 AM – 11:00 PM</p>
-        <p class="footer__walkin">Walk-ins Welcome</p>
+        <span class="walkin-pill">Walk-ins Welcome</span>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© 2025 Sahara Medical Centre LLC · All rights reserved · <a href="https://saharamedicalcentre.ae/">saharamedicalcentre.ae</a></p>
+      <p>© 2025 Sahara Medical Centre LLC · <a href="https://saharamedicalcentre.ae/">saharamedicalcentre.ae</a></p>
     </div>
   </footer>
 
+  <!-- ── Floating WhatsApp ── -->
+  <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20with%20Dr.%20Jeff%20Zacharia" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('open');
+    /* ── Hamburger ── */
+    function toggleMenu(btn) {
+      btn.classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
     }
+    function closeMenu() {
+      document.querySelector('.hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    /* ── Navbar scroll shrink ── */
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ── Scroll-triggered animations ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const delay = e.target.dataset.delay || 0;
+          setTimeout(() => e.target.classList.add('visible'), Number(delay));
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    /* ── Smooth anchor scroll ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   </script>
 </body>
 </html>

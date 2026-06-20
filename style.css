@@ -138,6 +138,17 @@ img { display: block; max-width: 100%; }
 }
 .navbar__link:hover { background: rgba(255,255,255,.15); color: var(--white); }
 .nav-icon { font-size: .9rem; }
+.navbar__logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+.footer__logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
 .navbar__hamburger {
   display: none;
   background: none;

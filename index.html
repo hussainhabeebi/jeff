@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Jeff Zacharia | Oral & Maxillofacial Surgeon – Sahara Medical Centre</title>
+  <meta name="description" content="Dr. Jeff Zacharia – Oral and Maxillofacial Surgeon at Sahara Medical Centre, Sharjah UAE. 5+ years experience in wisdom tooth removal, TMJ disorders, and oral surgery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="https://saharamedicalcentre.ae/" class="navbar__logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+            <circle cx="20" cy="20" r="19" stroke="white" stroke-width="2"/>
+            <path d="M20 8 C13 8 8 13 8 20 C8 27 13 32 20 32" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M20 8 C27 8 32 13 32 20 C32 27 27 32 20 32" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="5" fill="#25D366"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-arabic">مركز ساهارا الطبي ذمم</span>
+          <span class="logo-en">Sahara Medical Centre LLC</span>
+        </div>
+      </a>
+      <nav class="navbar__links">
+        <a href="https://saharamedicalcentre.ae/#book" class="navbar__link">
+          <span class="nav-icon">📅</span> Book Appointment
+        </a>
+        <a href="https://saharamedicalcentre.ae/#doctors" class="navbar__link">
+          <span class="nav-icon">💡</span> Our Doctors
+        </a>
+        <a href="https://saharamedicalcentre.ae/#location" class="navbar__link">
+          <span class="nav-icon">📍</span> Location
+        </a>
+      </nav>
+      <button class="navbar__hamburger" aria-label="Toggle menu" onclick="toggleMenu()">&#9776;</button>
+    </div>
+    <div class="navbar__mobile" id="mobileMenu">
+      <a href="https://saharamedicalcentre.ae/#book" class="navbar__link">📅 Book Appointment</a>
+      <a href="https://saharamedicalcentre.ae/#doctors" class="navbar__link">💡 Our Doctors</a>
+      <a href="https://saharamedicalcentre.ae/#location" class="navbar__link">📍 Location</a>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__photo-wrap">
+        <div class="hero__photo-ring">
+          <img src="doctor.jpg" alt="Dr. Jeff Zacharia" class="hero__photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="hero__photo-placeholder">
+            <span>Dr. Jeff</span>
+          </div>
+        </div>
+        <div class="hero__badge">
+          <span class="badge-dot"></span> Available Today
+        </div>
+      </div>
+      <div class="hero__info">
+        <span class="hero__tag">Oral &amp; Maxillofacial Surgery</span>
+        <h1 class="hero__name">Dr. Jeff Zacharia</h1>
+        <p class="hero__title">BDS, MDS – Oral &amp; Maxillofacial Surgeon</p>
+        <p class="hero__sub">Sahara Medical Centre · Al Nahda, Sharjah, UAE</p>
+        <div class="hero__langs">
+          <span class="lang-tag">English</span>
+          <span class="lang-tag">Malayalam</span>
+          <span class="lang-tag">Hindi</span>
+          <span class="lang-tag">Kannada</span>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <strong>5+</strong>
+            <span>Years Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <strong>BDS, MDS</strong>
+            <span>Qualifications</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <strong>4.8 ★</strong>
+            <span>Google Rating</span>
+          </div>
+        </div>
+        <div class="hero__ctas">
+          <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Book via WhatsApp
+          </a>
+          <a href="tel:+971508821590" class="btn btn--outline">
+            📞 Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-grid">
+        <div class="section-grid__main">
+          <h2 class="section-title">About Dr. Jeff Zacharia</h2>
+          <p class="section-body">
+            Dr. Jeff Zacharia is an Oral and Maxillofacial Surgeon with over 5 years of clinical experience in managing a wide range of surgical conditions affecting the oral and facial region. He is known for his precise technique, patient-focused approach, and emphasis on minimizing discomfort and recovery time. His clinical interests include wisdom tooth removal, TMJ disorders, and oral pathology.
+          </p>
+          <p class="section-body">
+            Dr. Jeff is committed to delivering safe, effective, and comfortable surgical care with clear communication and individualized treatment planning.
+          </p>
+
+          <!-- Education -->
+          <div class="card card--education">
+            <h3 class="card__heading">
+              <span class="card__icon">🎓</span> Education &amp; Training
+            </h3>
+            <ul class="edu-list">
+              <li>
+                <span class="edu-dot"></span>
+                <div>
+                  <strong>Bachelor of Dental Surgery (BDS)</strong>
+                </div>
+              </li>
+              <li>
+                <span class="edu-dot"></span>
+                <div>
+                  <strong>Master of Dental Surgery (MDS)</strong>
+                  <span class="edu-sub">Oral &amp; Maxillofacial Surgery</span>
+                </div>
+              </li>
+              <li>
+                <span class="edu-dot"></span>
+                <div>
+                  <strong>Certified in Basic Life Support (BLS)</strong>
+                </div>
+              </li>
+              <li>
+                <span class="edu-dot"></span>
+                <div>
+                  <strong>Continuing Education</strong>
+                  <span class="edu-sub">Oral Surgery and Advanced Dental Implantology</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar stats -->
+        <div class="section-grid__side">
+          <div class="side-card">
+            <div class="side-stat">
+              <strong>5+</strong>
+              <span>Years of Clinical Experience</span>
+            </div>
+          </div>
+          <div class="side-card">
+            <div class="side-stat">
+              <strong>4</strong>
+              <span>Languages Spoken</span>
+            </div>
+          </div>
+          <div class="side-card side-card--highlight">
+            <p class="side-card__label">Walk-ins Welcome</p>
+            <p class="side-card__hours">Open Today · 8AM – 11PM</p>
+            <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCEDURES ── -->
+  <section class="section section--alt" id="procedures">
+    <div class="container">
+      <h2 class="section-title section-title--center">Clinical Expertise &amp; Procedures</h2>
+      <p class="section-subtitle">Specialized surgical care for oral and facial conditions</p>
+      <div class="procedures-grid">
+
+        <div class="proc-card">
+          <div class="proc-icon">🦷</div>
+          <h3>Wisdom Tooth Extraction</h3>
+          <p>Safe and precise removal of impacted or problematic wisdom teeth with minimal recovery time.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">⚙️</div>
+          <h3>Complex Tooth Extraction</h3>
+          <p>Surgical extraction of severely broken, ankylosed, or structurally complex teeth.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">🔬</div>
+          <h3>TMJ Disorder Management</h3>
+          <p>Diagnosis and treatment of temporomandibular joint disorders causing jaw pain and dysfunction.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">🩺</div>
+          <h3>Oral Cysts &amp; Pathologies</h3>
+          <p>Diagnosis and surgical treatment of oral cysts, lesions, and soft tissue pathologies.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">✂️</div>
+          <h3>Minor Oral Surgery</h3>
+          <p>A range of minor intraoral surgical procedures performed under local anaesthesia.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">🦴</div>
+          <h3>Pre-prosthetic Surgery</h3>
+          <p>Surgical preparation of oral tissues to optimise fit and function of dentures or implants.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">💊</div>
+          <h3>Oral Infection Management</h3>
+          <p>Surgical drainage and management of oral abscesses and spreading odontogenic infections.</p>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-icon">📐</div>
+          <h3>Alveoloplasty &amp; Bone Contouring</h3>
+          <p>Reshaping and smoothing of alveolar bone for better prosthetic outcomes and healing.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOK CTA ── -->
+  <section class="section section--cta" id="book">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-box__text">
+          <h2>Ready to Book Your Appointment?</h2>
+          <p>Reach out via WhatsApp or call us directly. Walk-ins are always welcome.</p>
+          <p class="cta-hours"><span class="badge-dot badge-dot--green"></span> Open Today · 8AM – 11PM</p>
+        </div>
+        <div class="cta-box__actions">
+          <a href="https://wa.me/971508821590?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jeff%20Zacharia" class="btn btn--whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Book via WhatsApp
+          </a>
+          <a href="tel:+971508821590" class="btn btn--white-outline">📞 +971 50 882 1590</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo-row">
+          <div class="logo-icon logo-icon--sm">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+              <circle cx="20" cy="20" r="19" stroke="white" stroke-width="2"/>
+              <path d="M20 8 C13 8 8 13 8 20 C8 27 13 32 20 32" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M20 8 C27 8 32 13 32 20 C32 27 27 32 20 32" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="20" cy="20" r="5" fill="#25D366"/>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__name">Sahara Medical Centre LLC</p>
+            <p class="footer__tagline">Your trusted healthcare partner in UAE</p>
+          </div>
+        </div>
+        <p class="footer__desc">Providing premium medical and dental services with state-of-the-art facilities and compassionate care.</p>
+      </div>
+      <div class="footer__contact">
+        <h4>Contact Us</h4>
+        <p>📍 Ganda Tower, Al Nahda, Sharjah, UAE</p>
+        <p>📞 <a href="tel:+971508821590">+971 50 882 1590</a></p>
+        <p>✉️ <a href="mailto:info@saharamedicalcentre.ae">info@saharamedicalcentre.ae</a></p>
+      </div>
+      <div class="footer__hours">
+        <h4>Opening Hours</h4>
+        <p><span class="badge-dot badge-dot--green"></span> Open Today</p>
+        <p>8:00 AM – 11:00 PM</p>
+        <p class="footer__walkin">Walk-ins Welcome</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 Sahara Medical Centre LLC · All rights reserved · <a href="https://saharamedicalcentre.ae/">saharamedicalcentre.ae</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

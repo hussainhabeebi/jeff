@@ -1,413 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book an Appointment | Sahara Medical Centre</title>
-  <meta name="description" content="Book a same-day appointment at Sahara Medical Centre, Al Nahda, Sharjah. GP, dental, orthodontic and specialist consultations available 8AM–11PM." />
-  <link rel="canonical" href="https://saharamedicalcentre.ae/book-appointment/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-/* ═══════════════════════════════════════
-   DESIGN TOKENS — LIGHT THEME
-═══════════════════════════════════════ */
-:root {
-  --bg:        #ffffff;
-  --bg-2:      #f8fafc;
-  --bg-card:   #ffffff;
-  --border:    rgba(0,0,0,0.08);
-  --border-h:  rgba(139,92,246,0.4);
-  --purple:    #7c3aed;
-  --purple-l:  #8b5cf6;
-  --pink:      #db2777;
-  --teal:      #0891b2;
-  --green:     #16a34a;
-  --amber:     #d97706;
-  --red:       #dc2626;
-  --text:      #0f172a;
-  --text-2:    #475569;
-  --text-3:    #94a3b8;
-  --wa:        #25d366;
-  --radius-sm: 10px;
-  --radius:    16px;
-  --radius-lg: 24px;
-  --glow-p:    0 0 40px rgba(124,58,237,0.12);
-  --glow-t:    0 0 40px rgba(8,145,178,0.1);
-  --shadow:    0 4px 24px rgba(0,0,0,0.08);
-  --grad:      linear-gradient(135deg,#7c3aed,#db2777);
-  --grad-text: linear-gradient(135deg,#7c3aed,#db2777);
-}
-
-/* ── RESET ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Inter',system-ui,sans-serif;
-  background:var(--bg);color:var(--text);
-  line-height:1.6;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%;height:auto}
-button{cursor:pointer;border:none;background:none;font-family:inherit}
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:#f1f5f9}
-::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
-
-/* ── BACKGROUND MESH ── */
-body::before{
-  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),
-    var(--bg);
-}
-
-/* ══════════════════════════════════════
-   NAV
-══════════════════════════════════════ */
-.nav{
-  position:fixed;top:10px;left:10px;right:10px;z-index:999;
-  background:rgba(255,255,255,.85);
-  border:1px solid rgba(0,0,0,.07);
-  border-radius:var(--radius);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  padding:0 20px;height:62px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:all .3s;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-}
-.nav.scrolled{
-  background:rgba(255,255,255,.97);
-  box-shadow:0 4px 24px rgba(0,0,0,.1);
-}
-.nav-logo img{height:42px;width:auto;transition:height .3s}
-.nav.scrolled .nav-logo img{height:36px}
-.nav-links{display:flex;gap:4px;align-items:center}
-.nav-links a{
-  color:var(--text-2);font-size:.875rem;font-weight:500;
-  padding:8px 14px;border-radius:var(--radius-sm);
-  transition:all .2s;white-space:nowrap;
-}
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Book an Appointment | Sahara Medical Centre Sharjah</title>
+<meta name="description" content="Book an appointment at Sahara Medical Centre Al Nahda, Sharjah. Same-day bookings via WhatsApp, call or walk-in. Open 8AM–11PM daily."/>
+<link rel="canonical" href="https://saharamedicalcentre.ae/book-appointment/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#fff;--bg-2:#f8fafc;--border:rgba(0,0,0,.08);--purple:#7c3aed;--purple-l:#8b5cf6;--pink:#db2777;--teal:#0891b2;--green:#16a34a;--amber:#d97706;--text:#0f172a;--text-2:#475569;--text-3:#94a3b8;--wa:#25d366;--radius-sm:10px;--radius:16px;--grad:linear-gradient(135deg,#7c3aed,#db2777);--grad-text:linear-gradient(135deg,#7c3aed,#db2777)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%;height:auto}button{cursor:pointer;border:none;background:none;font-family:inherit}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),var(--bg)}
+.nav{position:fixed;top:10px;left:10px;right:10px;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:16px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 24px rgba(0,0,0,.1)}
+.nav-logo img{height:42px;width:auto}.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{color:var(--text-2);font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:10px;transition:all .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--text);background:rgba(0,0,0,.05)}
-.nav-links .nav-cta{
-  background:var(--grad);color:white;
-  padding:9px 18px;font-weight:600;
-  box-shadow:0 0 20px rgba(139,92,246,.35);
-}
+.nav-links .nav-cta{background:var(--grad);color:white;padding:9px 18px;font-weight:600}
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
-.nav-toggle{
-  display:none;color:var(--text);font-size:20px;
-  padding:8px;border-radius:8px;
-  transition:background .2s;
-}
-.nav-toggle:hover{background:rgba(0,0,0,.06)}
-.nav-drawer{
-  display:none;flex-direction:column;gap:4px;
-  position:fixed;top:82px;left:10px;right:10px;z-index:998;
-  background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);
-  border-radius:var(--radius);backdrop-filter:blur(20px);
-  padding:16px;
-  transform:translateY(-16px);opacity:0;pointer-events:none;
-  transition:all .25s ease;
-}
+.nav-toggle{display:none;color:var(--text);font-size:20px;padding:8px;border-radius:8px}
+.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:82px;left:10px;right:10px;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:16px;backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
 .nav-drawer.open{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
-.nav-drawer a{
-  color:var(--text-2);font-weight:500;font-size:.95rem;
-  padding:13px 16px;border-radius:var(--radius-sm);
-  transition:all .2s;display:flex;align-items:center;gap:10px;
-}
+.nav-drawer a{color:var(--text-2);font-weight:500;font-size:.95rem;padding:13px 16px;border-radius:10px;transition:all .2s;display:flex;align-items:center;gap:10px}
 .nav-drawer a:hover{color:var(--text);background:rgba(0,0,0,.05)}
-.nav-drawer .nav-drawer-cta{
-  background:var(--grad);color:white;margin-top:4px;
-  justify-content:center;font-weight:700;
-}
-
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
+.nav-drawer .nav-drawer-cta{background:var(--grad);color:white;margin-top:4px;justify-content:center;font-weight:700}
+.page-hero{min-height:50vh;display:flex;align-items:center;padding:120px 20px 60px}
+.page-hero-inner{max-width:800px;margin:0 auto;text-align:center}
+.page-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:16px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);padding:5px 16px;border-radius:50px}
+.page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-sub{font-size:1.05rem;color:var(--text-2);margin-bottom:0;line-height:1.7;max-width:580px;margin-left:auto;margin-right:auto}
+.section{padding:80px 20px}.section-alt{background:var(--bg-2)}.section-inner{max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:12px}
+.section-title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-bottom:14px}
+.section-sub{color:var(--text-2);font-size:1rem;max-width:600px;line-height:1.7}.section-head{margin-bottom:48px}
+.book-form-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:24px;padding:40px;max-width:600px;margin:0 auto;box-shadow:0 8px 40px rgba(124,58,237,.1)}
+.book-form-card h2{font-size:1.5rem;font-weight:800;margin-bottom:8px}
+.book-form-card p{color:var(--text-2);font-size:.9rem;margin-bottom:28px}
+.form-field{width:100%;background:#f8fafc;border:1px solid rgba(0,0,0,.1);color:var(--text);padding:13px 16px;border-radius:10px;font-family:inherit;font-size:.9rem;margin-bottom:14px;transition:border-color .2s;appearance:none}
+.form-field:focus{outline:none;border-color:var(--purple);background:#fff}
+.form-field option{background:#fff}
+.btn-wa-submit{width:100%;background:var(--wa);color:white;padding:15px;border-radius:10px;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .25s;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+.btn-wa-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.contact-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.contact-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(124,58,237,.1)}
+.contact-card-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+.cc-wa{background:rgba(37,211,102,.1);color:var(--wa)}
+.cc-phone{background:rgba(124,58,237,.1);color:var(--purple)}
+.cc-walk{background:rgba(8,145,178,.1);color:var(--teal)}
+.contact-card h3{font-size:1.1rem;font-weight:700}
+.contact-card p{font-size:.875rem;color:var(--text-2);line-height:1.6}
+.contact-card a.cc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.875rem;transition:all .25s;margin-top:4px}
+.cc-btn-wa{background:var(--wa);color:white}
+.cc-btn-phone{background:var(--purple);color:white}
+.cc-btn-map{background:var(--teal);color:white}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.step-num{font-size:2.5rem;font-weight:900;color:rgba(124,58,237,.15);line-height:1;margin-bottom:12px}
+.step-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.step-desc{font-size:.875rem;color:var(--text-2);line-height:1.65}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;transition:all .3s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.faq-item.open{border-color:rgba(124,58,237,.3);box-shadow:0 4px 16px rgba(124,58,237,.08)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;font-weight:600;font-size:.9rem;gap:12px}
+.faq-item.open .faq-q{color:var(--purple)}
+.faq-toggle{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(124,58,237,.08);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s}
+.faq-item.open .faq-toggle{background:var(--purple);color:white;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:all .35s ease;font-size:.875rem;color:var(--text-2);line-height:1.7;padding:0 20px}
+.faq-item.open .faq-a{max-height:300px;padding:0 20px 20px}
 .footer{background:#f8fafc;border-top:1px solid rgba(0,0,0,.08)}
-.ticker-bar{
-  border-bottom:1px solid rgba(0,0,0,.07);
-  height:44px;overflow:hidden;display:flex;align-items:center;
-}
+.ticker-bar{border-bottom:1px solid rgba(0,0,0,.07);height:44px;overflow:hidden;display:flex;align-items:center}
 .ticker-inner{display:flex;animation:ticker 35s linear infinite;white-space:nowrap}
 .ticker-inner:hover{animation-play-state:paused}
-.ticker-item{
-  padding:0 28px;display:inline-flex;align-items:center;gap:8px;
-  color:var(--text-2);font-size:.8rem;font-weight:500;
-  transition:color .2s;
-}
-.ticker-item i{color:var(--purple)}
-.ticker-item:hover{color:var(--text)}
+.ticker-item{padding:0 28px;display:inline-flex;align-items:center;gap:8px;color:var(--text-2);font-size:.8rem;font-weight:500}
+.ticker-item i{color:var(--purple)}.ticker-item:hover{color:var(--text)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.footer-main{
-  max-width:1200px;margin:0 auto;padding:56px 20px;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
-}
-.ft-brand-name{
-  font-size:1.3rem;font-weight:800;margin-bottom:14px;
-  display:flex;align-items:center;gap:10px;
-}
-.ft-brand-name i{color:var(--purple-l)}
-.ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
+.footer-main{max-width:1200px;margin:0 auto;padding:56px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.ft-brand-name{font-size:1.3rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ft-brand-name i{color:var(--purple-l)}.ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
 .ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.83rem;color:var(--text-2)}
-.ft-contact i{color:var(--purple);margin-top:3px;flex-shrink:0}
-.ft-contact a{color:var(--text);font-weight:600;transition:color .2s}
-.ft-contact a:hover{color:var(--purple-l)}
+.ft-contact i{color:var(--purple);margin-top:3px;flex-shrink:0}.ft-contact a{color:var(--text);font-weight:600}
 .ft-socials{display:flex;gap:8px;margin-top:18px}
-.ft-social{
-  width:34px;height:34px;border-radius:50%;
-  background:#fff;border:1px solid rgba(0,0,0,.1);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--text-2);font-size:.8rem;transition:all .25s;
-}
+.ft-social{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;color:var(--text-2);font-size:.8rem;transition:all .25s}
 .ft-social:hover{background:var(--purple);border-color:var(--purple);color:white;transform:translateY(-2px)}
-.ft-col h4{
-  font-size:.78rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:1px;color:var(--text-2);margin-bottom:16px;
-  padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08);
-}
-.ft-links{list-style:none}
-.ft-links li{margin-bottom:8px}
+.ft-col h4{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-2);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08)}
+.ft-links{list-style:none}.ft-links li{margin-bottom:8px}
 .ft-links a{color:var(--text-3);font-size:.83rem;display:flex;align-items:center;gap:6px;transition:all .2s}
-.ft-links a i{font-size:.6rem;color:var(--purple);opacity:.6}
-.ft-links a:hover{color:var(--text);transform:translateX(4px)}
-.footer-bottom{
-  border-top:1px solid rgba(0,0,0,.07);
-  padding:20px;text-align:center;font-size:.8rem;color:var(--text-3);
-}
-.footer-bottom a{color:var(--text-3);transition:color .2s}
-.footer-bottom a:hover{color:var(--purple-l)}
-.ft-sep{margin:0 10px;opacity:.4}
-
-/* ══════════════════════════════════════
-   FAB WHATSAPP
-══════════════════════════════════════ */
-.fab-wa{
-  position:fixed;bottom:24px;right:20px;z-index:900;
-  width:56px;height:56px;border-radius:50%;background:var(--wa);
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-size:26px;
-  box-shadow:0 6px 24px rgba(37,211,102,.45);
-  transition:all .3s;
-}
-.fab-wa:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.6)}
-
-/* ══════════════════════════════════════
-   PAGE HERO
-══════════════════════════════════════ */
-.page-hero{
-  min-height:55vh;display:flex;align-items:center;
-  padding:120px 20px 80px;
-}
-.page-hero-inner{max-width:800px;margin:0 auto;text-align:center}
-.page-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:12px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);padding:5px 14px;border-radius:50px}
-.page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;color:var(--text)}
-.page-sub{font-size:1.05rem;color:var(--text-2);margin-bottom:36px;line-height:1.7}
-.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--grad);color:white;padding:14px 28px;border-radius:var(--radius-sm);font-weight:700;font-size:.95rem;box-shadow:0 4px 20px rgba(124,58,237,.25);transition:all .25s;text-decoration:none}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.35)}
-.btn-ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(0,0,0,.12);color:var(--text-2);padding:14px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s;text-decoration:none;margin-left:10px}
-.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
-
-/* ══════════════════════════════════════
-   MOBILE — ≤ 768px
-══════════════════════════════════════ */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .nav-toggle{display:flex;align-items:center;justify-content:center}
-  .footer-main{grid-template-columns:1fr;gap:28px}
-  .mobile-cta-bar{
-    position:fixed;bottom:0;left:0;right:0;z-index:890;
-    background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);
-    padding:12px 16px;display:flex;gap:10px;
-    backdrop-filter:blur(16px);
-  }
-  .mobile-cta-bar a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
-    padding:12px;border-radius:var(--radius-sm);font-weight:700;font-size:.85rem;
-    transition:all .2s;
-  }
-  .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:var(--text)}
-  .mcta-wa{background:var(--wa);color:white;box-shadow:0 4px 16px rgba(37,211,102,.3)}
-  .fab-wa{display:none}
-  .page-hero{padding-bottom:100px}
-  .btn-ghost{margin-left:0;margin-top:10px}
-}
-@media(min-width:769px) .mobile-cta-bar{display:none!important}
+.ft-links a i{font-size:.6rem;color:var(--purple);opacity:.6}.ft-links a:hover{color:var(--text);transform:translateX(4px)}
+.footer-bottom{border-top:1px solid rgba(0,0,0,.07);padding:20px;text-align:center;font-size:.8rem;color:var(--text-3)}
+.footer-bottom a{color:var(--text-3)}.ft-sep{margin:0 10px;opacity:.4}
+.fab-wa{position:fixed;bottom:24px;right:20px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;color:white;font-size:26px;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s}
+.fab-wa:hover{transform:scale(1.1)}
 .mobile-cta-bar{display:none}
-@media(max-width:768px){.mobile-cta-bar{display:flex}}
-  </style>
+@media(max-width:768px){
+  .nav-links{display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}
+  .grid-3,.steps-grid{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr;gap:28px;padding:36px 16px}
+  .page-hero{padding:100px 16px 60px}.section{padding:60px 16px}
+  .mobile-cta-bar{position:fixed;bottom:0;left:0;right:0;z-index:890;background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);padding:12px 16px;display:flex;gap:10px;backdrop-filter:blur(16px)}
+  .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:10px;font-weight:700;font-size:.85rem;text-decoration:none}
+  .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:#0f172a}.mcta-wa{background:#25d366;color:white}
+  .fab-wa{display:none}
+}
+</style>
 </head>
 <body>
-
-<!-- NAV -->
 <header>
   <nav class="nav" id="nav">
-    <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
-      <img src="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp"
-           alt="Sahara Medical Centre Al Nahda Sharjah" width="120" height="42" loading="eager" />
-    </a>
+    <a class="nav-logo" href="/"><img src="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp" alt="Sahara Medical Centre" width="120" height="42" loading="eager"/></a>
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/book-appointment/">Appointments</a>
-      <a href="/doctors-in-sharjah/">Doctors</a>
-      <a href="/general-medicine/">Services</a>
-      <a href="/jeff/">Dr. Jeff ↗</a>
-      <a href="https://wa.me/971508821590" class="nav-cta" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> Book Now
-      </a>
+      <a href="/">Home</a><a href="/doctors-in-sharjah/">Doctors</a><a href="/best-dental-clinic-sahara-medical-centre/">Dental</a><a href="/general-medicine/">Medical</a><a href="/jeff/">Dr. Jeff ↗</a>
+      <a href="https://wa.me/971508821590" class="nav-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Now</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-      <i class="fas fa-bars" id="navIcon"></i>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars" id="navIcon"></i></button>
   </nav>
-  <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
+  <nav class="nav-drawer" id="navDrawer">
     <a href="/" onclick="closeNav()"><i class="fas fa-home"></i> Home</a>
-    <a href="/book-appointment/" onclick="closeNav()"><i class="fas fa-calendar-check"></i> Book Appointment</a>
     <a href="/doctors-in-sharjah/" onclick="closeNav()"><i class="fas fa-user-md"></i> Our Doctors</a>
-    <a href="/general-medicine/" onclick="closeNav()"><i class="fas fa-stethoscope"></i> Services</a>
+    <a href="/best-dental-clinic-sahara-medical-centre/" onclick="closeNav()"><i class="fas fa-tooth"></i> Dental</a>
+    <a href="/general-medicine/" onclick="closeNav()"><i class="fas fa-stethoscope"></i> Medical</a>
     <a href="/jeff/" onclick="closeNav()"><i class="fas fa-tooth"></i> Dr. Jeff Zacharia</a>
-    <a href="https://wa.me/971508821590" class="nav-drawer-cta" target="_blank" rel="noopener">
-      <i class="fab fa-whatsapp"></i> Book via WhatsApp
-    </a>
+    <a href="https://wa.me/971508821590" class="nav-drawer-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
   </nav>
 </header>
-
-<!-- MAIN -->
 <main>
-  <section class="page-hero" aria-label="Book an Appointment">
-    <div class="page-hero-inner">
-      <span class="page-label">Sahara Medical Centre</span>
-      <h1 class="page-title">Book an Appointment</h1>
-      <p class="page-sub">Same-day bookings via WhatsApp, call or walk-in</p>
-      <a href="https://wa.me/971508821590?text=I+want+to+book+an+Appointment" class="btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
-      <a href="/" class="btn-ghost">&#8592; Back to Home</a>
-    </div>
-  </section>
-</main>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-label">Appointments</div>
+    <h1 class="page-title">Book Your <span class="grad-text">Appointment</span></h1>
+    <p class="page-sub">Same-day bookings available. Choose WhatsApp, call, or simply walk in — we're open every day 8AM to 11PM.</p>
+  </div>
+</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="ticker-bar" aria-hidden="true">
-    <div class="ticker-inner">
-      <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-      <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
-      <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
-      <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
-      <a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
-      <!-- duplicate for seamless scroll -->
-      <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-      <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
-      <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
-      <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
-      <a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
+<section class="section">
+  <div class="section-inner">
+    <div class="book-form-card">
+      <h2>Quick Booking Form</h2>
+      <p>Fill in your details and we'll send a WhatsApp message to confirm your slot instantly.</p>
+      <form id="bookForm">
+        <input class="form-field" type="text" id="bName" placeholder="Your Full Name" required autocomplete="name"/>
+        <input class="form-field" type="tel" id="bPhone" placeholder="Your Phone Number" autocomplete="tel"/>
+        <select class="form-field" id="bService" required>
+          <option value="" disabled selected>Select Service</option>
+          <option>GP / Medical Consultation</option>
+          <option>Dental Care &amp; Cleaning</option>
+          <option>Orthodontics / Braces</option>
+          <option>Root Canal Treatment</option>
+          <option>Teeth Whitening</option>
+          <option>Wisdom Tooth Extraction</option>
+          <option>Dental Implants</option>
+          <option>Blood Test / Health Checkup</option>
+          <option>Vitamin D &amp; B12 Test</option>
+          <option>Chronic Disease Management</option>
+          <option>Other</option>
+        </select>
+        <select class="form-field" id="bTime">
+          <option value="" disabled selected>Preferred Time (Optional)</option>
+          <option>Morning (8AM – 12PM)</option>
+          <option>Afternoon (12PM – 5PM)</option>
+          <option>Evening (5PM – 11PM)</option>
+        </select>
+        <button type="submit" class="btn-wa-submit"><i class="fab fa-whatsapp"></i> Book via WhatsApp</button>
+      </form>
     </div>
   </div>
+</section>
 
-  <div class="footer-main">
-    <div class="ft-col">
-      <div class="ft-brand-name"><i class="fas fa-hospital-alt"></i> Sahara Medical Centre</div>
-      <p class="ft-desc">Your trusted healthcare partner in Al Nahda, Sharjah UAE. Premium medical and dental care with compassionate experts.</p>
-      <div class="ft-contact"><i class="fas fa-map-marker-alt"></i><span>Ganda Tower, Al Nahda, Sharjah, UAE</span></div>
-      <div class="ft-contact"><i class="fas fa-phone-alt"></i><a href="tel:+971508821590">+971 50 882 1590</a></div>
-      <div class="ft-contact"><i class="fas fa-envelope"></i><a href="mailto:info@saharamedicalcentre.ae">info@saharamedicalcentre.ae</a></div>
-      <div class="ft-socials">
-        <a href="https://www.facebook.com/p/sahara-medical-centre-100095606677272/" class="ft-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/saharamedicalcentre.ae/" class="ft-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/971508821590" class="ft-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://in.linkedin.com/company/saharamedicalcentrellc" class="ft-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head" style="text-align:center">
+      <div class="section-label">3 Ways to Book</div>
+      <h2 class="section-title">Choose What Works <span class="grad-text">for You</span></h2>
+    </div>
+    <div class="grid-3">
+      <div class="contact-card">
+        <div class="contact-card-icon cc-wa"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Send us a message anytime. We typically reply within minutes and confirm your slot instantly.</p>
+        <a href="https://wa.me/971508821590?text=I%20would%20like%20to%20book%20an%20appointment" class="cc-btn cc-btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat Now</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon cc-phone"><i class="fas fa-phone"></i></div>
+        <h3>Call Us</h3>
+        <p>Speak directly with our reception team to book or ask about services, waiting times, or insurance.</p>
+        <a href="tel:+97165318887" class="cc-btn cc-btn-phone"><i class="fas fa-phone"></i> 06 531 8887</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon cc-walk"><i class="fas fa-walking"></i></div>
+        <h3>Walk In</h3>
+        <p>No appointment needed. Walk into Ganda Tower, Al Nahda any day from 8AM to 11PM.</p>
+        <a href="https://maps.google.com/?q=Sahara+Medical+Centre+Al+Nahda+Sharjah" class="cc-btn cc-btn-map" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> Get Directions</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="ft-col">
-      <h4>Medical</h4>
-      <ul class="ft-links">
-        <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
-        <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li>
-        <li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li>
-        <li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff – Oral Surgeon</a></li>
-      </ul>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head" style="text-align:center">
+      <div class="section-label">What to Expect</div>
+      <h2 class="section-title">Your Visit, <span class="grad-text">Step by Step</span></h2>
     </div>
-
-    <div class="ft-col">
-      <h4>Dental</h4>
-      <ul class="ft-links">
-        <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Best Dental Clinic</a></li>
-        <li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li>
-        <li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li>
-        <li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Implants</a></li>
-        <li><a href="/orthodontic-doctor-in-sharjah/"><i class="fas fa-chevron-right"></i> Orthodontist</a></li>
-      </ul>
-    </div>
-
-    <div class="ft-col">
-      <h4>Quick Links</h4>
-      <ul class="ft-links">
-        <li><a href="/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li>
-        <li><a href="/doctors-in-sharjah/"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
-        <li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
-        <li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
-        <li><a href="/dental-clinic-in-al-nahda/"><i class="fas fa-chevron-right"></i> Dentist Al Nahda</a></li>
-      </ul>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">01</div><h3 class="step-title">Choose a Service</h3><p class="step-desc">Select what you need — GP, dental, orthodontics, blood test or any other service we offer.</p></div>
+      <div class="step"><div class="step-num">02</div><h3 class="step-title">Book Your Slot</h3><p class="step-desc">WhatsApp, call, or walk in. We confirm your slot immediately and keep waiting times minimal.</p></div>
+      <div class="step"><div class="step-num">03</div><h3 class="step-title">Arrive &amp; Register</h3><p class="step-desc">Check in at reception at Ganda Tower, Al Nahda. Bring your Emirates ID and insurance card if applicable.</p></div>
+      <div class="step"><div class="step-num">04</div><h3 class="step-title">See Your Doctor</h3><p class="step-desc">Meet your specialist, receive diagnosis, treatment plan, and prescription — all in one visit.</p></div>
     </div>
   </div>
+</section>
 
-  <div class="footer-bottom">
-    &copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE
-    <span class="ft-sep">|</span>
-    <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a>
-    <span class="ft-sep">|</span>
-    <a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a>
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head" style="text-align:center">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Booking Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open"><div class="faq-q"><span>Do I need an appointment or can I walk in?</span><div class="faq-toggle">+</div></div><div class="faq-a"><p>Walk-ins are always welcome at Sahara Medical Centre. However, booking ahead via WhatsApp or phone ensures minimal waiting time.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>How quickly can I get an appointment?</span><div class="faq-toggle">+</div></div><div class="faq-a"><p>Same-day appointments are usually available. WhatsApp us at +971 50 882 1590 and we'll confirm your slot within minutes.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>What should I bring to my appointment?</span><div class="faq-toggle">+</div></div><div class="faq-a"><p>Please bring your <strong>Emirates ID</strong> and any relevant <strong>insurance card</strong>. For dental appointments, bring previous X-rays if available. For follow-up visits, bring your previous prescription or medical reports.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Can I book for a family member?</span><div class="faq-toggle">+</div></div><div class="faq-a"><p>Yes. You can book for yourself or any family member. Just mention the patient's name and service when you WhatsApp or call us.</p></div></div>
+    </div>
   </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="ticker-bar" aria-hidden="true"><div class="ticker-inner"><a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a><a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care</a><a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP AED 49</a><a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal</a><a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Teeth Whitening</a><a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Orthodontist Sharjah</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff</a><a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a><a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care</a><a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP AED 49</a><a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal</a><a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Teeth Whitening</a><a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Orthodontist Sharjah</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff</a></div></div>
+  <div class="footer-main">
+    <div class="ft-col"><div class="ft-brand-name"><i class="fas fa-hospital-alt"></i> Sahara Medical Centre</div><p class="ft-desc">Your trusted healthcare partner in Al Nahda, Sharjah UAE.</p><div class="ft-contact"><i class="fas fa-map-marker-alt"></i><span>Ganda Tower, Al Nahda, Sharjah</span></div><div class="ft-contact"><i class="fas fa-phone-alt"></i><a href="tel:+971508821590">+971 50 882 1590</a></div><div class="ft-contact"><i class="fas fa-envelope"></i><a href="mailto:info@saharamedicalcentre.ae">info@saharamedicalcentre.ae</a></div><div class="ft-socials"><a href="https://www.facebook.com/p/sahara-medical-centre-100095606677272/" class="ft-social"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/saharamedicalcentre.ae/" class="ft-social"><i class="fab fa-instagram"></i></a><a href="https://wa.me/971508821590" class="ft-social"><i class="fab fa-whatsapp"></i></a><a href="https://in.linkedin.com/company/saharamedicalcentrellc" class="ft-social"><i class="fab fa-linkedin-in"></i></a></div></div>
+    <div class="ft-col"><h4>Medical</h4><ul class="ft-links"><li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li><li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li><li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li><li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff – Oral Surgeon</a></li></ul></div>
+    <div class="ft-col"><h4>Dental</h4><ul class="ft-links"><li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Best Dental Clinic</a></li><li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li><li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li><li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Implants</a></li><li><a href="/orthodontic-doctor-in-sharjah/"><i class="fas fa-chevron-right"></i> Orthodontist</a></li></ul></div>
+    <div class="ft-col"><h4>Quick Links</h4><ul class="ft-links"><li><a href="/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="/doctors-in-sharjah/"><i class="fas fa-chevron-right"></i> Our Doctors</a></li><li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li><li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li><li><a href="/dental-clinic-in-al-nahda/"><i class="fas fa-chevron-right"></i> Dentist Al Nahda</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE <span class="ft-sep">|</span><a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a><span class="ft-sep">|</span><a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a></div>
 </footer>
-
-<!-- Floating WhatsApp (desktop) -->
-<a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment"
-   class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Mobile sticky bar -->
-<div class="mobile-cta-bar">
-  <a href="tel:+97165318887" class="mcta-call"><i class="fas fa-phone"></i> Call</a>
-  <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment"
-     class="mcta-wa" target="_blank" rel="noopener">
-    <i class="fab fa-whatsapp"></i> Book via WhatsApp
-  </a>
-</div>
-
+<a href="https://wa.me/971508821590" class="fab-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<div class="mobile-cta-bar"><a href="tel:+97165318887" class="mcta-call"><i class="fas fa-phone"></i> Call</a><a href="https://wa.me/971508821590" class="mcta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a></div>
 <script>
-const navToggle = document.getElementById('navToggle');
-const navDrawer = document.getElementById('navDrawer');
-const navIcon   = document.getElementById('navIcon');
-
-function closeNav(){
-  navDrawer.classList.remove('open');
-  navIcon.className='fas fa-bars';
-  navToggle.setAttribute('aria-expanded','false');
-}
-navToggle.addEventListener('click',()=>{
-  const open = navDrawer.classList.toggle('open');
-  navIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
-  navToggle.setAttribute('aria-expanded', open);
+const navToggle=document.getElementById("navToggle"),navDrawer=document.getElementById("navDrawer"),navIcon=document.getElementById("navIcon");
+function closeNav(){navDrawer.classList.remove("open");navIcon.className="fas fa-bars";navToggle.setAttribute("aria-expanded","false")}
+navToggle.addEventListener("click",()=>{const o=navDrawer.classList.toggle("open");navIcon.className=o?"fas fa-times":"fas fa-bars";navToggle.setAttribute("aria-expanded",o)});
+document.addEventListener("click",e=>{if(!e.target.closest("header"))closeNav()});
+window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",scrollY>50)},{passive:true});
+document.getElementById("bookForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("bName").value.trim();
+  const service=document.getElementById("bService").value;
+  const time=document.getElementById("bTime").value;
+  if(!name||!service)return;
+  const msg=`Hi Sahara Medical Centre! My name is ${name}. I'd like to book: ${service}${time?". Preferred time: "+time:""}. Please confirm my appointment.`;
+  window.open(`https://wa.me/971508821590?text=${encodeURIComponent(msg)}`,"_blank");
 });
-document.addEventListener('click',e=>{
-  if(!e.target.closest('header')) closeNav();
-});
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>50);
-},{passive:true});
+document.querySelectorAll(".faq-item").forEach(item=>{item.querySelector(".faq-q").addEventListener("click",()=>{const w=item.classList.contains("open");document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));if(!w)item.classList.add("open")})});
 </script>
 </body>
 </html>

@@ -3,158 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Sahara Medical Centre</title>
-  <meta name="description" content="Sahara Medical Centre — trusted medical and dental clinic in Al Nahda, Sharjah since 2006. Expert GP, dentist, and orthodontist open 8AM–11PM." />
+  <title>About Us &#8211; Trusted Medical &amp; Dental Clinic in Al Nahda Sharjah | Sahara Medical Centre</title>
+  <meta name="description" content="Learn about Sahara Medical Centre &#8212; 18+ years of trusted healthcare in Al Nahda, Sharjah. Expert doctors, 4.8&#9733; Google rating, 98% patient satisfaction." />
   <link rel="canonical" href="https://saharamedicalcentre.ae/about-us/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us &#8211; Trusted Medical &amp; Dental Clinic in Al Nahda Sharjah | Sahara Medical Centre" />
+  <meta property="og:description" content="Learn about Sahara Medical Centre &#8212; 18+ years of trusted healthcare in Al Nahda, Sharjah. Expert doctors, 4.8&#9733; Google rating, 98% patient satisfaction." />
+  <meta property="og:url" content="https://saharamedicalcentre.ae/about-us/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-/* ═══════════════════════════════════════
-   DESIGN TOKENS — LIGHT THEME
-═══════════════════════════════════════ */
-:root {
-  --bg:        #ffffff;
-  --bg-2:      #f8fafc;
-  --bg-card:   #ffffff;
-  --border:    rgba(0,0,0,0.08);
-  --border-h:  rgba(139,92,246,0.4);
-  --purple:    #7c3aed;
-  --purple-l:  #8b5cf6;
-  --pink:      #db2777;
-  --teal:      #0891b2;
-  --green:     #16a34a;
-  --amber:     #d97706;
-  --red:       #dc2626;
-  --text:      #0f172a;
-  --text-2:    #475569;
-  --text-3:    #94a3b8;
-  --wa:        #25d366;
-  --radius-sm: 10px;
-  --radius:    16px;
-  --radius-lg: 24px;
-  --glow-p:    0 0 40px rgba(124,58,237,0.12);
-  --glow-t:    0 0 40px rgba(8,145,178,0.1);
-  --shadow:    0 4px 24px rgba(0,0,0,0.08);
-  --grad:      linear-gradient(135deg,#7c3aed,#db2777);
-  --grad-text: linear-gradient(135deg,#7c3aed,#db2777);
-}
-
-/* ── RESET ── */
+:root{--bg:#ffffff;--bg-2:#f8fafc;--bg-card:#ffffff;--border:rgba(0,0,0,0.08);--border-h:rgba(139,92,246,0.4);--purple:#7c3aed;--purple-l:#8b5cf6;--pink:#db2777;--teal:#0891b2;--green:#16a34a;--amber:#d97706;--red:#dc2626;--text:#0f172a;--text-2:#475569;--text-3:#94a3b8;--wa:#25d366;--radius-sm:10px;--radius:16px;--radius-lg:24px;--glow-p:0 0 40px rgba(124,58,237,0.12);--shadow:0 4px 24px rgba(0,0,0,0.08);--grad:linear-gradient(135deg,#7c3aed,#db2777);--grad-text:linear-gradient(135deg,#7c3aed,#db2777)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Inter',system-ui,sans-serif;
-  background:var(--bg);color:var(--text);
-  line-height:1.6;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%;height:auto}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:#f1f5f9}
-::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
-
-/* ── BACKGROUND MESH ── */
-body::before{
-  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),
-    var(--bg);
-}
-
-/* ══════════════════════════════════════
-   NAV
-══════════════════════════════════════ */
-.nav{
-  position:fixed;top:10px;left:10px;right:10px;z-index:999;
-  background:rgba(255,255,255,.85);
-  border:1px solid rgba(0,0,0,.07);
-  border-radius:var(--radius);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  padding:0 20px;height:62px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:all .3s;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-}
-.nav.scrolled{
-  background:rgba(255,255,255,.97);
-  box-shadow:0 4px 24px rgba(0,0,0,.1);
-}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),var(--bg)}
+.nav{position:fixed;top:10px;left:10px;right:10px;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 24px rgba(0,0,0,.1)}
 .nav-logo img{height:42px;width:auto;transition:height .3s}
 .nav.scrolled .nav-logo img{height:36px}
 .nav-links{display:flex;gap:4px;align-items:center}
-.nav-links a{
-  color:var(--text-2);font-size:.875rem;font-weight:500;
-  padding:8px 14px;border-radius:var(--radius-sm);
-  transition:all .2s;white-space:nowrap;
-}
+.nav-links a{color:var(--text-2);font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:var(--radius-sm);transition:all .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--text);background:rgba(0,0,0,.05)}
-.nav-links .nav-cta{
-  background:var(--grad);color:white;
-  padding:9px 18px;font-weight:600;
-  box-shadow:0 0 20px rgba(139,92,246,.35);
-}
+.nav-links .nav-cta{background:var(--grad);color:white;padding:9px 18px;font-weight:600;box-shadow:0 0 20px rgba(139,92,246,.35)}
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
-.nav-toggle{
-  display:none;color:var(--text);font-size:20px;
-  padding:8px;border-radius:8px;
-  transition:background .2s;
-}
+.nav-toggle{display:none;color:var(--text);font-size:20px;padding:8px;border-radius:8px;transition:background .2s}
 .nav-toggle:hover{background:rgba(0,0,0,.06)}
-.nav-drawer{
-  display:none;flex-direction:column;gap:4px;
-  position:fixed;top:82px;left:10px;right:10px;z-index:998;
-  background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);
-  border-radius:var(--radius);backdrop-filter:blur(20px);
-  padding:16px;
-  transform:translateY(-16px);opacity:0;pointer-events:none;
-  transition:all .25s ease;
-}
+.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:82px;left:10px;right:10px;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
 .nav-drawer.open{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
-.nav-drawer a{
-  color:var(--text-2);font-weight:500;font-size:.95rem;
-  padding:13px 16px;border-radius:var(--radius-sm);
-  transition:all .2s;display:flex;align-items:center;gap:10px;
-}
+.nav-drawer a{color:var(--text-2);font-weight:500;font-size:.95rem;padding:13px 16px;border-radius:var(--radius-sm);transition:all .2s;display:flex;align-items:center;gap:10px}
 .nav-drawer a:hover{color:var(--text);background:rgba(0,0,0,.05)}
-.nav-drawer .nav-drawer-cta{
-  background:var(--grad);color:white;margin-top:4px;
-  justify-content:center;font-weight:700;
-}
-
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
+.nav-drawer .nav-drawer-cta{background:var(--grad);color:white;margin-top:4px;justify-content:center;font-weight:700}
+.page-hero{min-height:55vh;display:flex;align-items:center;padding:120px 20px 80px;position:relative;overflow:hidden}
+.page-hero-inner{max-width:800px;margin:0 auto;text-align:center}
+.page-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:16px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);padding:5px 16px;border-radius:50px}
+.page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.page-sub{font-size:1.05rem;color:var(--text-2);margin-bottom:36px;line-height:1.7;max-width:620px;margin-left:auto;margin-right:auto}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--grad);color:white;padding:14px 28px;border-radius:var(--radius-sm);font-weight:700;font-size:.95rem;box-shadow:0 4px 20px rgba(124,58,237,.25);transition:all .25s;text-decoration:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.35)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(0,0,0,.12);color:var(--text-2);padding:14px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s;text-decoration:none}
+.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
+.section{padding:80px 20px}
+.section-alt{background:var(--bg-2)}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:12px}
+.section-title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-bottom:14px}
+.section-sub{color:var(--text-2);font-size:1rem;max-width:600px;line-height:1.7}
+.section-head{margin-bottom:48px}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feat-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.feat-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(124,58,237,.1)}
+.feat-icon{font-size:1.6rem;width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.fi-purple{background:rgba(124,58,237,.1);color:var(--purple)}
+.fi-teal{background:rgba(8,145,178,.1);color:var(--teal)}
+.fi-pink{background:rgba(219,39,119,.1);color:var(--pink)}
+.fi-green{background:rgba(22,163,74,.1);color:var(--green)}
+.fi-amber{background:rgba(217,119,6,.1);color:var(--amber)}
+.fi-blue{background:rgba(59,130,246,.1);color:#60a5fa}
+.feat-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.feat-desc{font-size:.875rem;color:var(--text-2);line-height:1.65}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.step{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:28px;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.step-num{font-size:2.5rem;font-weight:900;color:rgba(124,58,237,.12);line-height:1;margin-bottom:12px}
+.step-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.step-desc{font-size:.875rem;color:var(--text-2);line-height:1.65}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;transition:all .3s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.faq-item.open{border-color:rgba(124,58,237,.3);box-shadow:0 4px 16px rgba(124,58,237,.08)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;font-weight:600;font-size:.9rem;gap:12px}
+.faq-item.open .faq-q{color:var(--purple)}
+.faq-toggle{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(124,58,237,.08);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s}
+.faq-item.open .faq-toggle{background:var(--purple);color:white;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:all .35s ease;font-size:.875rem;color:var(--text-2);line-height:1.7;padding:0 20px}
+.faq-item.open .faq-a{max-height:400px;padding:0 20px 20px}
+.cta-banner{background:var(--grad);border-radius:24px;padding:56px 40px;text-align:center;color:white;margin:0 auto;max-width:900px}
+.cta-banner h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;margin-bottom:12px}
+.cta-banner p{opacity:.85;margin-bottom:28px;font-size:1rem}
+.btn-white{display:inline-flex;align-items:center;gap:9px;background:white;color:var(--purple);padding:14px 28px;border-radius:10px;font-weight:700;font-size:.95rem;transition:all .25s;text-decoration:none;margin:6px}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-outline-white{display:inline-flex;align-items:center;gap:9px;border:2px solid rgba(255,255,255,.5);color:white;padding:13px 24px;border-radius:10px;font-weight:600;font-size:.95rem;transition:all .25s;text-decoration:none;margin:6px}
+.btn-outline-white:hover{border-color:white;background:rgba(255,255,255,.1)}
 .footer{background:#f8fafc;border-top:1px solid rgba(0,0,0,.08)}
-.ticker-bar{
-  border-bottom:1px solid rgba(0,0,0,.07);
-  height:44px;overflow:hidden;display:flex;align-items:center;
-}
+.ticker-bar{border-bottom:1px solid rgba(0,0,0,.07);height:44px;overflow:hidden;display:flex;align-items:center}
 .ticker-inner{display:flex;animation:ticker 35s linear infinite;white-space:nowrap}
 .ticker-inner:hover{animation-play-state:paused}
-.ticker-item{
-  padding:0 28px;display:inline-flex;align-items:center;gap:8px;
-  color:var(--text-2);font-size:.8rem;font-weight:500;
-  transition:color .2s;
-}
+.ticker-item{padding:0 28px;display:inline-flex;align-items:center;gap:8px;color:var(--text-2);font-size:.8rem;font-weight:500;transition:color .2s}
 .ticker-item i{color:var(--purple)}
 .ticker-item:hover{color:var(--text)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.footer-main{
-  max-width:1200px;margin:0 auto;padding:56px 20px;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
-}
-.ft-brand-name{
-  font-size:1.3rem;font-weight:800;margin-bottom:14px;
-  display:flex;align-items:center;gap:10px;
-}
+.footer-main{max-width:1200px;margin:0 auto;padding:56px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.ft-brand-name{font-size:1.3rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .ft-brand-name i{color:var(--purple-l)}
 .ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
 .ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.83rem;color:var(--text-2)}
@@ -162,159 +108,149 @@ body::before{
 .ft-contact a{color:var(--text);font-weight:600;transition:color .2s}
 .ft-contact a:hover{color:var(--purple-l)}
 .ft-socials{display:flex;gap:8px;margin-top:18px}
-.ft-social{
-  width:34px;height:34px;border-radius:50%;
-  background:#fff;border:1px solid rgba(0,0,0,.1);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--text-2);font-size:.8rem;transition:all .25s;
-}
+.ft-social{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;color:var(--text-2);font-size:.8rem;transition:all .25s}
 .ft-social:hover{background:var(--purple);border-color:var(--purple);color:white;transform:translateY(-2px)}
-.ft-col h4{
-  font-size:.78rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:1px;color:var(--text-2);margin-bottom:16px;
-  padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08);
-}
+.ft-col h4{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-2);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08)}
 .ft-links{list-style:none}
 .ft-links li{margin-bottom:8px}
 .ft-links a{color:var(--text-3);font-size:.83rem;display:flex;align-items:center;gap:6px;transition:all .2s}
 .ft-links a i{font-size:.6rem;color:var(--purple);opacity:.6}
 .ft-links a:hover{color:var(--text);transform:translateX(4px)}
-.footer-bottom{
-  border-top:1px solid rgba(0,0,0,.07);
-  padding:20px;text-align:center;font-size:.8rem;color:var(--text-3);
-}
+.footer-bottom{border-top:1px solid rgba(0,0,0,.07);padding:20px;text-align:center;font-size:.8rem;color:var(--text-3)}
 .footer-bottom a{color:var(--text-3);transition:color .2s}
 .footer-bottom a:hover{color:var(--purple-l)}
 .ft-sep{margin:0 10px;opacity:.4}
-
-/* ══════════════════════════════════════
-   FAB WHATSAPP
-══════════════════════════════════════ */
-.fab-wa{
-  position:fixed;bottom:24px;right:20px;z-index:900;
-  width:56px;height:56px;border-radius:50%;background:var(--wa);
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-size:26px;
-  box-shadow:0 6px 24px rgba(37,211,102,.45);
-  transition:all .3s;
-}
+.fab-wa{position:fixed;bottom:24px;right:20px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;color:white;font-size:26px;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s}
 .fab-wa:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.6)}
-
-/* ══════════════════════════════════════
-   PAGE HERO
-══════════════════════════════════════ */
-.page-hero{
-  min-height:55vh;display:flex;align-items:center;
-  padding:120px 20px 80px;
-}
-.page-hero-inner{max-width:800px;margin:0 auto;text-align:center}
-.page-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:12px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);padding:5px 14px;border-radius:50px}
-.page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;color:var(--text)}
-.page-sub{font-size:1.05rem;color:var(--text-2);margin-bottom:36px;line-height:1.7}
-.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--grad);color:white;padding:14px 28px;border-radius:var(--radius-sm);font-weight:700;font-size:.95rem;box-shadow:0 4px 20px rgba(124,58,237,.25);transition:all .25s;text-decoration:none}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.35)}
-.btn-ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(0,0,0,.12);color:var(--text-2);padding:14px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s;text-decoration:none;margin-left:10px}
-.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
-
-/* ══════════════════════════════════════
-   MOBILE — ≤ 768px
-══════════════════════════════════════ */
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-toggle{display:flex;align-items:center;justify-content:center}
+  .feat-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
   .footer-main{grid-template-columns:1fr;gap:28px}
-  .mobile-cta-bar{
-    position:fixed;bottom:0;left:0;right:0;z-index:890;
-    background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);
-    padding:12px 16px;display:flex;gap:10px;
-    backdrop-filter:blur(16px);
-  }
-  .mobile-cta-bar a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
-    padding:12px;border-radius:var(--radius-sm);font-weight:700;font-size:.85rem;
-    transition:all .2s;
-  }
-  .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:var(--text)}
-  .mcta-wa{background:var(--wa);color:white;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+  .page-hero{padding:100px 16px 70px;padding-bottom:100px}
+  .cta-banner{padding:40px 24px;border-radius:16px}
+  .mobile-cta-bar{position:fixed;bottom:0;left:0;right:0;z-index:890;background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);padding:12px 16px;display:flex;gap:10px;backdrop-filter:blur(16px)}
+  .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:10px;font-weight:700;font-size:.85rem}
+  .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:#0f172a;text-decoration:none}
+  .mcta-wa{background:#25d366;color:white;text-decoration:none}
   .fab-wa{display:none}
-  .page-hero{padding-bottom:100px}
-  .btn-ghost{margin-left:0;margin-top:10px}
 }
-@media(min-width:769px) .mobile-cta-bar{display:none!important}
-.mobile-cta-bar{display:none}
-@media(max-width:768px){.mobile-cta-bar{display:flex}}
-  </style>
+@media(min-width:769px){.mobile-cta-bar{display:none}}
+.stat-row{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:32px}
+.stat-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:28px 36px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stat-num{font-size:2rem;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-label{font-size:.85rem;color:var(--text-2);margin-top:4px}
+</style>
 </head>
 <body>
-
-<!-- NAV -->
 <header>
   <nav class="nav" id="nav">
     <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
-      <img src="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp"
-           alt="Sahara Medical Centre Al Nahda Sharjah" width="120" height="42" loading="eager" />
+      <img src="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp" alt="Sahara Medical Centre Al Nahda Sharjah" width="120" height="42" loading="eager" />
     </a>
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="/book-appointment/">Appointments</a>
       <a href="/doctors-in-sharjah/">Doctors</a>
-      <a href="/general-medicine/">Services</a>
-      <a href="/jeff/">Dr. Jeff ↗</a>
-      <a href="https://wa.me/971508821590" class="nav-cta" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> Book Now
-      </a>
+      <a href="/best-dental-clinic-sahara-medical-centre/">Dental</a>
+      <a href="/general-medicine/">Medical</a>
+      <a href="/jeff/">Dr. Jeff &#8599;</a>
+      <a href="https://wa.me/971508821590" class="nav-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Now</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-      <i class="fas fa-bars" id="navIcon"></i>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars" id="navIcon"></i></button>
   </nav>
   <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
     <a href="/" onclick="closeNav()"><i class="fas fa-home"></i> Home</a>
-    <a href="/book-appointment/" onclick="closeNav()"><i class="fas fa-calendar-check"></i> Book Appointment</a>
     <a href="/doctors-in-sharjah/" onclick="closeNav()"><i class="fas fa-user-md"></i> Our Doctors</a>
-    <a href="/general-medicine/" onclick="closeNav()"><i class="fas fa-stethoscope"></i> Services</a>
+    <a href="/best-dental-clinic-sahara-medical-centre/" onclick="closeNav()"><i class="fas fa-tooth"></i> Dental Clinic</a>
+    <a href="/general-medicine/" onclick="closeNav()"><i class="fas fa-stethoscope"></i> General Medicine</a>
+    <a href="/book-appointment/" onclick="closeNav()"><i class="fas fa-calendar-check"></i> Book Appointment</a>
     <a href="/jeff/" onclick="closeNav()"><i class="fas fa-tooth"></i> Dr. Jeff Zacharia</a>
-    <a href="https://wa.me/971508821590" class="nav-drawer-cta" target="_blank" rel="noopener">
-      <i class="fab fa-whatsapp"></i> Book via WhatsApp
-    </a>
+    <a href="https://wa.me/971508821590" class="nav-drawer-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
   </nav>
 </header>
-
-<!-- MAIN -->
 <main>
-  <section class="page-hero" aria-label="About Us">
+  <section class="page-hero">
     <div class="page-hero-inner">
-      <span class="page-label">Sahara Medical Centre</span>
-      <h1 class="page-title">About Us</h1>
-      <p class="page-sub">Your trusted healthcare partner in Al Nahda, Sharjah since 2006</p>
-      <a href="https://wa.me/971508821590?text=I+want+to+know+more+about+Sahara+Medical+Centre" class="btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
-      <a href="/" class="btn-ghost">&#8592; Back to Home</a>
+      <span class="page-label">About Us</span>
+      <h1 class="page-title">About Sahara Medical Centre</h1>
+      <p class="page-sub">18+ years of trusted healthcare in Al Nahda, Sharjah</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment" class="btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+        <a href="tel:+97165318887" class="btn-ghost"><i class="fas fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-head"><span class="section-label">Why Choose Us</span><h2 class="section-title">Trusted by Thousands</h2></div>
+      <div class="feat-grid">
+        <div class="feat-card"><div class="feat-icon fi-purple">&#127942;</div><div class="feat-title">18+ Years of Excellence</div><p class="feat-desc">Established in Al Nahda, Sharjah, we have been delivering exceptional medical and dental care for over 18 years. Our track record speaks for itself.</p></div>
+        <div class="feat-card"><div class="feat-icon fi-teal">&#128104;&#8205;&#9877;&#65039;</div><div class="feat-title">Specialist Doctors</div><p class="feat-desc">Our team includes GPs, dentists, orthodontists and oral surgeons &#8212; all highly qualified and committed to your wellbeing.</p></div>
+        <div class="feat-card"><div class="feat-icon fi-pink">&#10084;&#65039;</div><div class="feat-title">Patient-First Care</div><p class="feat-desc">We listen, we care, and we treat every patient like family. From your first visit to long-term health management, we are with you every step.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head"><span class="section-label">Our Story</span><h2 class="section-title">A Legacy of <span class="grad-text">Healthcare Excellence</span></h2></div>
+      <p style="max-width:720px;margin:0 auto 0;color:var(--text-2);line-height:1.8;font-size:.95rem">Sahara Medical Centre was founded with a simple mission: to provide affordable, high-quality healthcare to the community of Al Nahda, Sharjah. Over the past 18 years, we have grown from a small clinic to a full-service medical and dental centre &#8212; but our core values have never changed. We believe every patient deserves compassionate care, transparent pricing, and access to specialist expertise without long waits or high costs. Today, we serve over 1,000 patients every month and are proud to be one of the most trusted names in healthcare in Sharjah.</p>
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-num">1,000+</div><div class="stat-label">Monthly Patients</div></div>
+        <div class="stat-card"><div class="stat-num">4.8&#9733;</div><div class="stat-label">Google Rating</div></div>
+        <div class="stat-card"><div class="stat-num">98%</div><div class="stat-label">Satisfaction Rate</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-head"><span class="section-label">Our Values</span><h2 class="section-title">What We Stand For</h2></div>
+      <div class="feat-grid">
+        <div class="feat-card"><div class="feat-icon fi-pink">&#128150;</div><div class="feat-title">Compassion</div><p class="feat-desc">We treat every patient with empathy, kindness and respect &#8212; because healthcare is not just about medicine, it is about people.</p></div>
+        <div class="feat-card"><div class="feat-icon fi-purple">&#128269;</div><div class="feat-title">Transparency</div><p class="feat-desc">No hidden costs, no surprises. We explain every treatment plan clearly and ensure you always know what to expect.</p></div>
+        <div class="feat-card"><div class="feat-icon fi-green">&#9989;</div><div class="feat-title">Excellence</div><p class="feat-desc">We invest in the latest technology and the best doctors to deliver outcomes that exceed expectations, every single visit.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head" style="text-align:center"><span class="section-label">FAQ</span><h2 class="section-title">Frequently Asked Questions</h2></div>
+      <div class="faq-list">
+        <div class="faq-item open"><div class="faq-q">How long has Sahara Medical Centre been operating? <span class="faq-toggle">+</span></div><div class="faq-a">Sahara Medical Centre has been serving the Al Nahda, Sharjah community for over 18 years. We opened our doors with a commitment to affordable, specialist-level healthcare and have grown steadily since.</div></div>
+        <div class="faq-item"><div class="faq-q">Where is Sahara Medical Centre located? <span class="faq-toggle">+</span></div><div class="faq-a">We are located in Ganda Tower, Al Nahda, Sharjah, UAE. Easily accessible from Al Nahda Road and nearby Dubai border areas.</div></div>
+        <div class="faq-item"><div class="faq-q">What types of doctors are at Sahara Medical Centre? <span class="faq-toggle">+</span></div><div class="faq-a">Our team includes General Practitioners (GPs), General Dentists, a Specialist Orthodontist, and an Oral &amp; Maxillofacial Surgeon. We also have doctors who speak Arabic, English, Hindi, Malayalam and more.</div></div>
+        <div class="faq-item"><div class="faq-q">What are your clinic hours? <span class="faq-toggle">+</span></div><div class="faq-a">We are open every day of the week from 8:00 AM to 11:00 PM. Walk-ins are always welcome, though booking via WhatsApp is recommended for faster service.</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="cta-banner">
+        <h2>Ready to Experience the Sahara Difference?</h2>
+        <p>Book your appointment today and join thousands of satisfied patients.</p>
+        <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment" class="btn-white" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Book</a>
+        <a href="tel:+97165318887" class="btn-outline-white"><i class="fas fa-phone"></i> Call 06 531 8887</a>
+      </div>
     </div>
   </section>
 </main>
-
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="ticker-bar" aria-hidden="true">
-    <div class="ticker-inner">
-      <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-      <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
-      <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
-      <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
-      <a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
-      <!-- duplicate for seamless scroll -->
-      <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-      <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
-      <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
-      <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
-      <a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
-    </div>
-  </div>
-
+  <div class="ticker-bar" aria-hidden="true"><div class="ticker-inner">
+    <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
+    <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+    <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
+    <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
+    <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
+    <a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff &#8211; Oral Surgeon</a>
+    <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
+    <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+    <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
+    <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
+    <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
+    <a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff &#8211; Oral Surgeon</a>
+  </div></div>
   <div class="footer-main">
     <div class="ft-col">
       <div class="ft-brand-name"><i class="fas fa-hospital-alt"></i> Sahara Medical Centre</div>
@@ -329,85 +265,43 @@ body::before{
         <a href="https://in.linkedin.com/company/saharamedicalcentrellc" class="ft-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
-
-    <div class="ft-col">
-      <h4>Medical</h4>
-      <ul class="ft-links">
-        <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
-        <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li>
-        <li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li>
-        <li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff – Oral Surgeon</a></li>
-      </ul>
-    </div>
-
-    <div class="ft-col">
-      <h4>Dental</h4>
-      <ul class="ft-links">
-        <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Best Dental Clinic</a></li>
-        <li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li>
-        <li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li>
-        <li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Implants</a></li>
-        <li><a href="/orthodontic-doctor-in-sharjah/"><i class="fas fa-chevron-right"></i> Orthodontist</a></li>
-      </ul>
-    </div>
-
-    <div class="ft-col">
-      <h4>Quick Links</h4>
-      <ul class="ft-links">
-        <li><a href="/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li>
-        <li><a href="/doctors-in-sharjah/"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
-        <li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
-        <li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
-        <li><a href="/dental-clinic-in-al-nahda/"><i class="fas fa-chevron-right"></i> Dentist Al Nahda</a></li>
-      </ul>
-    </div>
+    <div class="ft-col"><h4>Medical</h4><ul class="ft-links">
+      <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
+      <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li>
+      <li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li>
+      <li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff &#8211; Oral Surgeon</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Dental</h4><ul class="ft-links">
+      <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Best Dental Clinic</a></li>
+      <li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li>
+      <li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li>
+      <li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Implants</a></li>
+      <li><a href="/orthodontic-doctor-in-sharjah/"><i class="fas fa-chevron-right"></i> Orthodontist</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Quick Links</h4><ul class="ft-links">
+      <li><a href="/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li>
+      <li><a href="/doctors-in-sharjah/"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
+      <li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+      <li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+      <li><a href="/dental-clinic-in-al-nahda/"><i class="fas fa-chevron-right"></i> Dentist Al Nahda</a></li>
+    </ul></div>
   </div>
-
-  <div class="footer-bottom">
-    &copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE
-    <span class="ft-sep">|</span>
-    <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a>
-    <span class="ft-sep">|</span>
-    <a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a>
-  </div>
+  <div class="footer-bottom">&copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE <span class="ft-sep">|</span> <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a> <span class="ft-sep">|</span> <a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a></div>
 </footer>
-
-<!-- Floating WhatsApp (desktop) -->
-<a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment"
-   class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Mobile sticky bar -->
+<a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <div class="mobile-cta-bar">
   <a href="tel:+97165318887" class="mcta-call"><i class="fas fa-phone"></i> Call</a>
-  <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment"
-     class="mcta-wa" target="_blank" rel="noopener">
-    <i class="fab fa-whatsapp"></i> Book via WhatsApp
-  </a>
+  <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment" class="mcta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
 </div>
-
 <script>
-const navToggle = document.getElementById('navToggle');
-const navDrawer = document.getElementById('navDrawer');
-const navIcon   = document.getElementById('navIcon');
-
-function closeNav(){
-  navDrawer.classList.remove('open');
-  navIcon.className='fas fa-bars';
-  navToggle.setAttribute('aria-expanded','false');
-}
-navToggle.addEventListener('click',()=>{
-  const open = navDrawer.classList.toggle('open');
-  navIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
-  navToggle.setAttribute('aria-expanded', open);
-});
-document.addEventListener('click',e=>{
-  if(!e.target.closest('header')) closeNav();
-});
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>50);
-},{passive:true});
+const navToggle=document.getElementById('navToggle');
+const navDrawer=document.getElementById('navDrawer');
+const navIcon=document.getElementById('navIcon');
+function closeNav(){navDrawer.classList.remove('open');navIcon.className='fas fa-bars';navToggle.setAttribute('aria-expanded','false')}
+navToggle.addEventListener('click',()=>{const open=navDrawer.classList.toggle('open');navIcon.className=open?'fas fa-times':'fas fa-bars';navToggle.setAttribute('aria-expanded',open)});
+document.addEventListener('click',e=>{if(!e.target.closest('header'))closeNav()});
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>50)},{passive:true});
+document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open')})});
 </script>
 </body>
 </html>

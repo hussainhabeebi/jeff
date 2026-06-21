@@ -74,187 +74,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .slot-appt{background:rgba(124,58,237,.08);color:var(--purple);border:1px solid rgba(124,58,237,.2);cursor:pointer}
 .slot-appt:hover{background:rgba(124,58,237,.15);transform:scale(1.05)}
 .slot-appt.selected{background:var(--purple);color:white;border-color:var(--purple)}
-.slot-busy{background:rgba(0,0,0,.04);color:var(--text-3);border:1px solid transparent;cursor:default}
-.slot-off{background:transparent;color:var(--text-3);cursor:default;font-size:.68rem}
-.avail-legend{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
-.avail-leg-item{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--text-2)}
-.avail-leg-dot{width:10px;height:10px;border-radius:3px}
-.leg-green{background:rgba(22,163,74,.3)}
-.leg-grey{background:rgba(0,0,0,.1)}
-
-/* ── Booking Form ── */
-.book-layout{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-.book-form-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:24px;padding:36px;box-shadow:0 8px 40px rgba(124,58,237,.1)}
-.book-form-card h2{font-size:1.4rem;font-weight:800;margin-bottom:6px}
-.book-form-card p{color:var(--text-2);font-size:.875rem;margin-bottom:24px}
-.form-field{width:100%;background:#f8fafc;border:1px solid rgba(0,0,0,.1);color:var(--text);padding:13px 16px;border-radius:10px;font-family:inherit;font-size:.875rem;margin-bottom:12px;transition:border-color .2s;appearance:none}
-.form-field:focus{outline:none;border-color:var(--purple);background:#fff}
-.form-field option{background:#fff}
-.form-field[readonly]{background:#f1f5f9;color:var(--purple);font-weight:600}
-.field-label{font-size:.78rem;font-weight:600;color:var(--text-2);margin-bottom:5px;display:block}
-.btn-wa-submit{width:100%;background:var(--wa);color:white;padding:15px;border-radius:10px;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .25s;box-shadow:0 4px 16px rgba(37,211,102,.3);margin-top:4px}
-.btn-wa-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
-.selected-slot-pill{display:none;align-items:center;gap:8px;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);color:#15803d;padding:10px 14px;border-radius:10px;font-size:.82rem;font-weight:600;margin-bottom:12px}
-.selected-slot-pill.visible{display:flex}
-.book-info-box{background:var(--bg-2);border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:28px}
-.book-info-box h3{font-size:1rem;font-weight:700;margin-bottom:16px}
-.info-row{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.info-icon{width:36px;height:36px;border-radius:10px;background:rgba(124,58,237,.1);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.info-text h4{font-size:.85rem;font-weight:700;margin-bottom:2px}
-.info-text p{font-size:.8rem;color:var(--text-2);line-height:1.5}
-
-/* ── Contact Cards ── */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.contact-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.contact-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(124,58,237,.1)}
-.contact-card-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
-.cc-wa{background:rgba(37,211,102,.1);color:var(--wa)}
-.cc-phone{background:rgba(124,58,237,.1);color:var(--purple)}
-.cc-walk{background:rgba(8,145,178,.1);color:var(--teal)}
-.contact-card h3{font-size:1.1rem;font-weight:700}
-.contact-card p{font-size:.875rem;color:var(--text-2);line-height:1.6}
-.contact-card a.cc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.875rem;transition:all .25s;margin-top:4px}
-.cc-btn-wa{background:var(--wa);color:white}
-.cc-btn-phone{background:var(--purple);color:white}
-.cc-btn-map{background:var(--teal);color:white}
-
-/* ── Steps ── */
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.step{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.step-num{font-size:2.5rem;font-weight:900;color:rgba(124,58,237,.15);line-height:1;margin-bottom:12px}
-.step-title{font-size:1rem;font-weight:700;margin-bottom:8px}
-.step-desc{font-size:.875rem;color:var(--text-2);line-height:1.65}
-
-/* ── FAQ ── */
-.faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
-.faq-item{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;transition:all .3s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-.faq-item.open{border-color:rgba(124,58,237,.3);box-shadow:0 4px 16px rgba(124,58,237,.08)}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;font-weight:600;font-size:.9rem;gap:12px}
-.faq-item.open .faq-q{color:var(--purple)}
-.faq-toggle{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(124,58,237,.08);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s}
-.faq-item.open .faq-toggle{background:var(--purple);color:white;transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:all .35s ease;font-size:.875rem;color:var(--text-2);line-height:1.7;padding:0 20px}
-.faq-item.open .faq-a{max-height:300px;padding:0 20px 20px}
-
-/* ── Footer ── */
-.footer{background:#f8fafc;border-top:1px solid rgba(0,0,0,.08)}
-.ticker-bar{border-bottom:1px solid rgba(0,0,0,.07);height:44px;overflow:hidden;display:flex;align-items:center}
-.ticker-inner{display:flex;animation:ticker 35s linear infinite;white-space:nowrap}
-.ticker-inner:hover{animation-play-state:paused}
-.ticker-item{padding:0 28px;display:inline-flex;align-items:center;gap:8px;color:var(--text-2);font-size:.8rem;font-weight:500}
-.ticker-item i{color:var(--purple)}.ticker-item:hover{color:var(--text)}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.footer-main{max-width:1200px;margin:0 auto;padding:56px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
-.ft-brand-name{font-size:1.3rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.ft-brand-name i{color:var(--purple-l)}.ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
-.ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.83rem;color:var(--text-2)}
-.ft-contact i{color:var(--purple);margin-top:3px;flex-shrink:0}.ft-contact a{color:var(--text);font-weight:600}
-.ft-socials{display:flex;gap:8px;margin-top:18px}
-.ft-social{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;color:var(--text-2);font-size:.8rem;transition:all .25s}
-.ft-social:hover{background:var(--purple);border-color:var(--purple);color:white;transform:translateY(-2px)}
-.ft-col h4{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-2);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08)}
-.ft-links{list-style:none}.ft-links li{margin-bottom:8px}
-.ft-links a{color:var(--text-3);font-size:.83rem;display:flex;align-items:center;gap:6px;transition:all .2s}
-.ft-links a i{font-size:.6rem;color:var(--purple);opacity:.6}.ft-links a:hover{color:var(--text);transform:translateX(4px)}
-.footer-bottom{border-top:1px solid rgba(0,0,0,.07);padding:20px;text-align:center;font-size:.8rem;color:var(--text-3)}
-.footer-bottom a{color:var(--text-3)}.ft-sep{margin:0 10px;opacity:.4}
-.fab-wa{position:fixed;bottom:24px;right:20px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;color:white;font-size:26px;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s}
-.fab-wa:hover{transform:scale(1.1)}
-.mobile-cta-bar{display:none}
-
-@media(max-width:900px){
-  .book-layout{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  .nav-links{display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}
-  .grid-3,.steps-grid{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr;gap:28px;padding:36px 16px}
-  .page-hero{padding:100px 16px 60px}.section{padding:60px 16px}
-  .doctors-grid{grid-template-columns:repeat(2,1fr)}
-  .cal-table{font-size:.7rem}
-  .cal-table th,.cal-table td{padding:6px 3px}
-  .slot{padding:5px 2px;font-size:.65rem}
-  .mobile-cta-bar{position:fixed;bottom:0;left:0;right:0;z-index:890;background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);padding:12px 16px;display:flex;gap:10px;backdrop-filter:blur(16px)}
-  .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:10px;font-weight:700;font-size:.85rem;text-decoration:none}
-  .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:#0f172a}.mcta-wa{background:#25d366;color:white}
-  .fab-wa{display:none}
-}
-</style>
-</head>
-<body>
-<header>
-  <nav class="nav" id="nav">
-    <a class="nav-logo" href="/"><img src="/Uploads/logo%20(1).webp" alt="Sahara Medical Centre" width="120" height="42" loading="eager"/></a>
-    <div class="nav-links">
-      <a href="/">Home</a><a href="/#doctors">Doctors</a><a href="/best-dental-clinic-sahara-medical-centre/">Dental</a><a href="/general-medicine/">Medical</a><a href="/jeff/">Dr. Jeff ↗</a>
-      <a href="https://wa.me/971508821590" class="nav-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Now</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars" id="navIcon"></i></button>
-  </nav>
-  <nav class="nav-drawer" id="navDrawer">
-    <a href="/" onclick="closeNav()"><i class="fas fa-home"></i> Home</a>
-    <a href="/#doctors" onclick="closeNav()"><i class="fas fa-user-md"></i> Our Doctors</a>
-    <a href="/best-dental-clinic-sahara-medical-centre/" onclick="closeNav()"><i class="fas fa-tooth"></i> Dental</a>
-    <a href="/general-medicine/" onclick="closeNav()"><i class="fas fa-stethoscope"></i> Medical</a>
-    <a href="/jeff/" onclick="closeNav()"><i class="fas fa-tooth"></i> Dr. Jeff Zacharia</a>
-    <a href="https://wa.me/971508821590" class="nav-drawer-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
-  </nav>
-</header>
-<main>
-
-<!-- ── Hero ── -->
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-label">Appointments</div>
-    <h1 class="page-title">Book Your <span class="grad-text">Appointment</span></h1>
-    <p class="page-sub">Choose your doctor, pick an available slot, and confirm instantly via WhatsApp. Open every day 8AM–11PM.</p>
-    <div class="hero-badges">
-      <span class="hero-badge"><i class="fas fa-calendar-check"></i> Same-Day Available</span>
-      <span class="hero-badge"><i class="fas fa-clock"></i> 8AM – 11PM Daily</span>
-      <span class="hero-badge"><i class="fas fa-walking"></i> Walk-ins Welcome</span>
-      <span class="hero-badge"><i class="fas fa-shield-alt"></i> Insurance Accepted</span>
-    </div>
-  </div>
-</section>
-
-<!-- ── Doctor Selector + Availability ── -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="section-label">Step 1 — Choose Your Doctor</div>
-      <h2 class="section-title">Select a <span class="grad-text">Specialist</span></h2>
-      <p class="section-sub">Click on your preferred doctor to view their weekly availability and book a slot.</p>
-    </div>
-
-    <div class="doctors-grid" id="doctorGrid">
-      <div class="dr-sel-card" data-doc="anwar" onclick="selectDoctor('anwar',this)">
-        <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg" alt="Dr. Anwar MK" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=160&h=160&fit=crop&auto=format'"/>
-        <div class="dr-sel-name">Dr. Anwar MK</div>
-        <div class="dr-sel-spec">General Practitioner</div>
-        <div style="margin-top:6px"><span class="dr-avail-dot"></span><span class="dr-avail-label">Available Today</span></div>
-      </div>
-      <div class="dr-sel-card" data-doc="jeff" onclick="selectDoctor('jeff',this)">
-        <img class="dr-sel-img" src="/Doctor.jpeg" alt="Dr. Jeff Zacharia" onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=160&h=160&fit=crop&auto=format'"/>
-        <div class="dr-sel-name">Dr. Jeff Zacharia</div>
-        <div class="dr-sel-spec">Oral &amp; Maxillofacial Surgeon</div>
-        <div style="margin-top:6px"><span class="dr-avail-dot"></span><span class="dr-avail-label">Available Today</span></div>
-      </div>
-      <div class="dr-sel-card" data-doc="dynamol" onclick="selectDoctor('dynamol',this)">
-        <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2026/01/NH8A9682-copy-scaled.jpg" alt="Dr. Dynamol" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=160&h=160&fit=crop&auto=format'"/>
-        <div class="dr-sel-name">Dr. Dynamol</div>
-        <div class="dr-sel-spec">Specialist Orthodontist</div>
-        <div style="margin-top:6px"><span class="dr-avail-dot"></span><span class="dr-avail-label">Available Today</span></div>
-      </div>
-      <div class="dr-sel-card" data-doc="jubila" onclick="selectDoctor('jubila',this)">
-        <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg" alt="Dr. Jubila Fasly" onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=160&h=160&fit=crop&auto=format'"/>
-        <div class="dr-sel-name">Dr. Jubila Fasly</div>
-        <div class="dr-sel-spec">General Practitioner</div>
-        <div style="margin-top:6px"><span class="dr-avail-dot"></span><span class="dr-avail-label">Available Today</span></div>
-      </div>
-      <div class="dr-sel-card" data-doc="baisiya" onclick="selectDoctor('baisiya',this)">
-        <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg" alt="Dr. Baisiya Sharin" onerror="this.src='https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=160&h=160&fit=crop&auto=format'"/>
-        <div class="dr-sel-name">Dr. Baisiya Sharin</div>
-        <div class="dr-sel-spec">General Dentist</div>
-        <div style="margin-top:6px"><span class="dr-avail-dot" style="background:var(--purple-l)"></span><span class="dr-avail-label" style="color:var(--purple)">By Appt Only</span></div>
       </div>
       <div class="dr-sel-card" data-doc="aysha" onclick="selectDoctor('aysha',this)">
         <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png" alt="Dr. Aysha Suha" onerror="this.src='https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=160&h=160&fit=crop&auto=format'"/>
@@ -288,7 +107,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 
       <div class="avail-legend">
         <div class="avail-leg-item"><div class="avail-leg-dot leg-green"></div> Available — click to select</div>
-        <div class="avail-leg-item"><div class="avail-leg-dot" style="background:rgba(124,58,237,.3)"></div> By Appointment Only</div>
+<div class="avail-leg-item"><div class="avail-leg-dot" style="background:rgba(124,58,237,.3)"></div> By Appointment Only</div>
         <div class="avail-leg-item"><div class="avail-leg-dot leg-grey"></div> Day Off</div>
       </div>
     </div>
@@ -467,20 +286,19 @@ window.addEventListener("scroll",()=>{document.getElementById("nav").classList.t
 
 /* ── Doctor Availability Data ──
    Schedule: for each time block (Morning/Afternoon/Evening) and each day (0=Mon…6=Sun)
-   Values: 'avail' | 'appt' (by appointment only) | 'off'
+Values: 'avail' | 'appt' (by appointment only) | 'off'
    type: 'gp' | 'dental'
 */
 const SERVICES = {
   gp: ["GP / Medical Consultation","Blood Test / Health Checkup","Vitamin D &amp; B12 Test","Chronic Disease Management","Other"],
   dental: ["Dental Care &amp; Cleaning","Orthodontics / Braces","Root Canal Treatment","Teeth Whitening","Wisdom Tooth Extraction","Dental Implants"]
 };
-
 const DOCS = {
   anwar: {
     name: "Dr. Anwar MK",
     spec: "General Practitioner · 15 Years Experience",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg",
-    type: "gp",
+type: "gp",
     schedule: {
       Morning:   ["avail","avail","avail","avail","off","avail","avail"],
       Afternoon: ["avail","avail","avail","avail","off","avail","avail"],
@@ -491,7 +309,7 @@ const DOCS = {
     name: "Dr. Jeff Zacharia",
     spec: "Oral & Maxillofacial Surgeon · BDS, MDS",
     img: "/Doctor.jpeg",
-    type: "dental",
+type: "dental",
     schedule: {
       Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
       Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
@@ -500,7 +318,7 @@ const DOCS = {
   },
   dynamol: {
     name: "Dr. Dynamol",
-    spec: "Specialist Orthodontist · By Appointment Only",
+spec: "Specialist Orthodontist · By Appointment Only",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/01/NH8A9682-copy-scaled.jpg",
     type: "dental",
     schedule: {
@@ -513,7 +331,7 @@ const DOCS = {
     name: "Dr. Jubila Fasly",
     spec: "General Practitioner",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg",
-    type: "gp",
+type: "gp",
     schedule: {
       Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
       Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
@@ -524,7 +342,7 @@ const DOCS = {
     name: "Dr. Baisiya Sharin",
     spec: "General Dentist · BDS",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg",
-    type: "dental",
+type: "dental",
     schedule: {
       Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
       Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
@@ -535,7 +353,7 @@ const DOCS = {
     name: "Dr. Aysha Suha",
     spec: "General Dentist · BDS",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png",
-    type: "dental",
+type: "dental",
     schedule: {
       Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
       Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
@@ -596,41 +414,8 @@ function buildCalendar(docKey){
       const dayLabel = DAYS[i];
       if(status==="avail"){
         html += `<td><div class="slot slot-avail" onclick="pickSlot('${block}','${dayLabel}',this)" title="${dayLabel} ${TIME_LABELS[block]}"><i class="fas fa-check" style="font-size:.6rem;margin-right:2px"></i>Open</div></td>`;
-      } else if(status==="appt"){
+} else if(status==="appt"){
         html += `<td><div class="slot slot-appt" onclick="pickSlot('${block}','${dayLabel}',this)" title="${dayLabel} ${TIME_LABELS[block]}"><i class="fas fa-calendar-alt" style="font-size:.6rem;margin-right:2px"></i>Appt</div></td>`;
-      } else if(status==="busy"){
-        html += `<td><div class="slot slot-busy">Busy</div></td>`;
-      } else {
-        html += `<td><div class="slot slot-off">—</div></td>`;
-      }
-    });
-    tr.innerHTML = html;
-    body.appendChild(tr);
-  });
-
-  // Update panel header
-  document.getElementById("availAvatar").src = doc.img;
-  document.getElementById("availAvatar").onerror = function(){this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop'};
-  document.getElementById("availDocName").textContent = doc.name;
-  document.getElementById("availDocSpec").textContent = doc.spec;
-  const today = new Date();
-  document.getElementById("availWeekLabel").textContent = "Week of "+today.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
-}
-
-function filterServices(type){
-  const sel = document.getElementById("bService");
-  const current = sel.value;
-  sel.innerHTML = '<option value="" disabled>Select Service</option>';
-  SERVICES[type].forEach(s=>{
-    const opt = document.createElement("option");
-    opt.value = s; opt.textContent = s.replace(/&amp;/g,"&");
-    sel.appendChild(opt);
-  });
-  // Restore selection if still valid
-  if([...sel.options].some(o=>o.value===current)) sel.value = current;
-  else sel.selectedIndex = 0;
-}
-
 function selectDoctor(key, el){
   activeDocKey = key;
   // Update active card
@@ -638,19 +423,8 @@ function selectDoctor(key, el){
   el.classList.add("active");
   // Update form
   document.getElementById("bDoctor").value = DOCS[key].name;
-  // Filter services by specialty
+// Filter services by specialty
   filterServices(DOCS[key].type);
-  // Clear any selected slot
-  clearSlot();
-  // Build calendar
-  buildCalendar(key);
-  // Scroll to calendar
-  document.getElementById("availPanel").scrollIntoView({behavior:"smooth",block:"nearest"});
-}
-
-function pickSlot(block, day, el){
-  // Deselect previously selected slot
-  document.querySelectorAll(".slot-avail.selected,.slot-appt.selected").forEach(s=>s.classList.remove("selected"));
   el.classList.add("selected");
   selectedSlot = {block, day};
   const pill = document.getElementById("selectedSlotPill");

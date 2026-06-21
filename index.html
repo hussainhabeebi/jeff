@@ -296,49 +296,72 @@ body::before{
    PACKAGES
 ══════════════════════════════════════ */
 .pkg-track{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
 }
 .pkg-card{
-  background:#fff;border:1px solid rgba(0,0,0,.08);
-  border-radius:var(--radius);overflow:hidden;
+  background:#fff;border:1px solid rgba(0,0,0,.07);
+  border-radius:20px;overflow:hidden;
   display:flex;flex-direction:column;
-  transition:border-color .3s,transform .3s,box-shadow .3s;
-  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  transition:transform .35s cubic-bezier(.22,.68,0,1.2),box-shadow .35s;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+  cursor:pointer;
 }
 .pkg-card:hover{
-  border-color:rgba(124,58,237,.3);transform:translateY(-6px);
-  box-shadow:0 12px 40px rgba(124,58,237,.12);
+  transform:translateY(-8px);
+  box-shadow:0 24px 56px rgba(124,58,237,.15);
 }
 .pkg-img{
-  position:relative;aspect-ratio:16/9;overflow:hidden;background:#111;
+  position:relative;height:220px;overflow:hidden;background:#0f0a1e;flex-shrink:0;
 }
-.pkg-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.pkg-card:hover .pkg-img img{transform:scale(1.05)}
+.pkg-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease,filter .6s ease;
+  filter:brightness(.82) saturate(1.1);
+}
+.pkg-card:hover .pkg-img img{transform:scale(1.08);filter:brightness(.7) saturate(1.2)}
+.pkg-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.15) 55%,transparent 100%);
+  z-index:1;
+}
+.pkg-img-title{
+  position:absolute;bottom:14px;left:16px;right:16px;z-index:2;
+  color:white;font-size:1.1rem;font-weight:800;letter-spacing:-.02em;
+  line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.4);
+}
 .pkg-chip{
-  position:absolute;top:12px;left:12px;z-index:2;
-  font-size:.7rem;font-weight:700;padding:4px 10px;
-  border-radius:6px;
+  position:absolute;top:12px;left:12px;z-index:3;
+  font-size:.68rem;font-weight:800;padding:5px 11px;
+  border-radius:50px;letter-spacing:.3px;text-transform:uppercase;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
-.chip-teal{background:rgba(8,145,178,.1);border:1px solid rgba(8,145,178,.25);color:var(--teal)}
-.chip-amber{background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:var(--amber)}
-.chip-dark{background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.12);color:var(--text-2)}
-.pkg-body{padding:20px;display:flex;flex-direction:column;flex:1}
-.pkg-title{font-size:1.05rem;font-weight:700;margin-bottom:6px}
-.pkg-desc{font-size:.85rem;color:var(--text-2);flex:1;margin-bottom:16px;line-height:1.6}
-.pkg-features{display:flex;flex-direction:column;gap:5px;margin-bottom:18px}
-.pkg-feat{font-size:.78rem;color:var(--purple);font-weight:600;display:flex;align-items:center;gap:6px}
-.pkg-feat i{font-size:.65rem;background:rgba(124,58,237,.1);padding:3px;border-radius:50%}
+.chip-teal{background:rgba(8,145,178,.85);color:white;border:1px solid rgba(255,255,255,.2)}
+.chip-amber{background:rgba(217,119,6,.9);color:white;border:1px solid rgba(255,255,255,.2)}
+.chip-dark{background:rgba(15,10,30,.75);color:white;border:1px solid rgba(255,255,255,.15)}
+.chip-green{background:rgba(22,163,74,.9);color:white;border:1px solid rgba(255,255,255,.2)}
+.pkg-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.pkg-desc{font-size:.855rem;color:var(--text-2);flex:1;margin-bottom:14px;line-height:1.65}
+.pkg-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.pkg-feat{
+  font-size:.73rem;color:var(--purple);font-weight:700;
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.15);
+  padding:4px 10px;border-radius:50px;
+}
+.pkg-feat i{font-size:.6rem}
 .btn-pkg{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);
-  color:var(--purple);padding:11px;border-radius:var(--radius-sm);
-  font-weight:600;font-size:.85rem;transition:all .25s;
+  background:var(--grad);color:white;
+  padding:12px;border-radius:12px;
+  font-weight:700;font-size:.875rem;transition:all .25s;
+  box-shadow:0 4px 16px rgba(124,58,237,.25);
+  border:none;
 }
-.btn-pkg:hover{background:var(--purple);color:white;border-color:var(--purple);box-shadow:0 4px 16px rgba(124,58,237,.3)}
+.btn-pkg:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 28px rgba(124,58,237,.35)}
 .pkg-more summary{
   font-size:.78rem;color:var(--text-3);cursor:pointer;text-align:center;
-  margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);
-  transition:color .2s;
+  margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);
+  transition:color .2s;list-style:none;
 }
 .pkg-more summary:hover{color:var(--purple-l)}
 .pkg-more p{font-size:.8rem;color:var(--text-2);margin-top:10px;line-height:1.6}
@@ -588,60 +611,100 @@ body::before{
 .fab-wa:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.6)}
 
 /* ══════════════════════════════════════
+   TABLET — ≤ 1024px
+══════════════════════════════════════ */
+@media(max-width:1024px){
+  .pkg-track{grid-template-columns:repeat(2,1fr);gap:20px}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ══════════════════════════════════════
    MOBILE — ≤ 768px
 ══════════════════════════════════════ */
 @media(max-width:768px){
+  /* Nav */
   .nav-links{display:none}
   .nav-toggle{display:flex;align-items:center;justify-content:center}
+  .nav{top:8px;left:8px;right:8px;height:56px;padding:0 16px}
+  .nav-drawer{top:74px;left:8px;right:8px}
+  .nav-logo img{height:36px}
 
-  .hero{padding:86px 16px 80px}
-  .hero-grid{grid-template-columns:1fr;gap:28px}
+  /* Hero */
+  .hero{padding:80px 16px 100px}
+  .hero-grid{grid-template-columns:1fr;gap:24px}
   .book-card{order:2}
-  .hero h1{font-size:2.4rem}
-  .hero-sub{font-size:.95rem}
-  .hero-stats{gap:16px}
-  .hero-stat strong{font-size:1.2rem}
+  .hero h1{font-size:2.2rem;letter-spacing:-.04em}
+  .hero-sub{font-size:.92rem;line-height:1.65}
+  .hero-stats{gap:12px;flex-wrap:wrap}
+  .hero-stat strong{font-size:1.15rem}
+  .hero-stat{flex:1;min-width:80px;text-align:center}
+  .hero-btns{flex-direction:column;gap:10px}
+  .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center;padding:14px 20px}
 
-  .section{padding:60px 16px}
-  .section-head{margin-bottom:36px}
+  /* Sections */
+  .section{padding:56px 16px}
+  .section-head{margin-bottom:32px}
+  .section-title{font-size:1.7rem}
 
-  .pkg-track{grid-template-columns:1fr;gap:16px}
-  .feat-grid{grid-template-columns:1fr;gap:14px}
+  /* Packages — 2 col on tablet-mobile, 1 col only on smallest */
+  .pkg-track{grid-template-columns:repeat(2,1fr);gap:14px}
+  .pkg-img{height:160px}
+  .pkg-img-title{font-size:.9rem;bottom:10px;left:12px;right:12px}
+  .pkg-body{padding:14px 14px 16px}
+  .pkg-desc{font-size:.8rem;margin-bottom:10px}
+  .pkg-features{gap:5px;margin-bottom:12px}
+  .pkg-feat{font-size:.68rem;padding:3px 8px}
+  .btn-pkg{padding:10px;font-size:.82rem}
+
+  /* Features */
+  .feat-grid{grid-template-columns:1fr;gap:12px}
+
+  /* Services */
   .srv-grid{grid-template-columns:1fr}
+  .tabs-row{width:100%;overflow-x:auto;padding-bottom:4px}
+  .tab-btn{flex-shrink:0}
+
+  /* FAQ */
   .faq-layout{grid-template-columns:1fr}
   .faq-img{display:none}
-  .footer-main{grid-template-columns:1fr;gap:28px}
-  .tabs-row{width:100%;justify-content:center}
-  .tab-btn{flex:1;text-align:center}
 
-  /* Mobile sticky book bar */
+  /* Doctors scroll */
+  .doctors-scroll{gap:14px;padding-bottom:16px}
+  .doc-card{min-width:200px}
+
+  /* Footer */
+  .footer-main{grid-template-columns:1fr;gap:24px;padding:40px 16px}
+
+  /* Mobile sticky CTA bar */
   .mobile-cta-bar{
     position:fixed;bottom:0;left:0;right:0;z-index:890;
-    background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);
-    padding:12px 16px;display:flex;gap:10px;
-    backdrop-filter:blur(16px);
+    background:rgba(255,255,255,.97);
+    border-top:1px solid rgba(0,0,0,.09);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    display:flex;gap:10px;
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    box-shadow:0 -4px 24px rgba(0,0,0,.08);
   }
   .mobile-cta-bar a{
     flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
-    padding:12px;border-radius:var(--radius-sm);font-weight:700;font-size:.85rem;
+    padding:13px;border-radius:12px;font-weight:700;font-size:.875rem;
     transition:all .2s;
   }
   .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:var(--text)}
-  .mcta-wa{background:var(--wa);color:white;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+  .mcta-wa{background:var(--wa);color:white;box-shadow:0 4px 16px rgba(37,211,102,.35)}
   .fab-wa{display:none}
-  .hero{padding-bottom:100px}
 }
 
-@media(min-width:769px) .mobile-cta-bar{display:none!important}
 .mobile-cta-bar{display:none}
 @media(max-width:768px){.mobile-cta-bar{display:flex}}
 
 @media(max-width:480px){
-  .hero h1{font-size:2rem}
-  .rotator{flex-direction:column;align-items:flex-start;gap:6px}
-  .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center}
-  .pkg-track{padding:0}
-  .footer-main{padding:36px 16px}
+  .hero h1{font-size:1.85rem}
+  .pkg-track{grid-template-columns:1fr;gap:14px}
+  .pkg-img{height:200px}
+  .pkg-img-title{font-size:1rem}
+  .footer-main{padding:32px 14px}
+  .section{padding:48px 14px}
 }
   </style>
 </head>
@@ -783,28 +846,34 @@ body::before{
 
       <article class="pkg-card">
         <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600&auto=format&fit=crop" alt="Orthodontic Braces Consultation Sharjah" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1560472355-536de3962603?q=90&w=700&auto=format&fit=crop" alt="Orthodontic Braces Consultation Sharjah" />
+          <div class="pkg-img-overlay"></div>
           <span class="pkg-chip chip-amber">⭐ Best Seller</span>
+          <div class="pkg-img-title">Orthodontic Special</div>
         </div>
         <div class="pkg-body">
-          <h3 class="pkg-title">Orthodontic Special</h3>
-          <p class="pkg-desc">Assessment for Metal, Ceramic &amp; Invisible Braces. Your dream smile starts here.</p>
-          <div class="pkg-features"><span class="pkg-feat"><i class="fas fa-check"></i> 0% Installments Available</span></div>
+          <p class="pkg-desc">Expert assessment for Metal, Ceramic &amp; Invisible Braces — your dream smile, crafted by a specialist.</p>
+          <div class="pkg-features">
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Free Consultation</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> X-Ray Review</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> 0% Installments</span>
+          </div>
           <a href="https://wa.me/971508821590?text=I%20want%20to%20book%20Orthodontic%20Consultation" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
-          <details class="pkg-more"><summary>View Details</summary><p>Full assessment by Specialist Orthodontist, X-ray review, and personalised treatment planning.</p></details>
         </div>
       </article>
 
       <article class="pkg-card">
         <div class="pkg-img">
-<img loading="lazy" src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop" alt="Complete Blood Count Sharjah" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=90&w=700&auto=format&fit=crop" alt="Complete Blood Count Sharjah" />
+          <div class="pkg-img-overlay"></div>
+          <div class="pkg-img-title">Complete Blood Count</div>
         </div>
         <div class="pkg-body">
-          <h3 class="pkg-title">Complete Blood Count</h3>
-          <p class="pkg-desc">Detect infections, anemia &amp; immunity levels. Full body health status report.</p>
+          <p class="pkg-desc">Comprehensive CBC panel to detect infections, anaemia &amp; immunity levels. Fast, accurate, affordable.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Infection Screen</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Hemoglobin Test</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Infection Screen</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Hemoglobin Test</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Same-Day Results</span>
           </div>
           <a href="https://wa.me/971508821590?text=I%20want%20to%20book%20Complete%20Blood%20Checkup" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
@@ -812,14 +881,16 @@ body::before{
 
       <article class="pkg-card">
         <div class="pkg-img">
-<img loading="lazy" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?q=80&w=600&auto=format&fit=crop" alt="Dental Scaling Polishing Al Nahda Sharjah" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=90&w=700&auto=format&fit=crop" alt="Dental Scaling Polishing Al Nahda Sharjah" />
+          <div class="pkg-img-overlay"></div>
+          <div class="pkg-img-title">Scaling &amp; Polishing</div>
         </div>
         <div class="pkg-body">
-          <h3 class="pkg-title">Scaling &amp; Polishing</h3>
-          <p class="pkg-desc">Deep clean for stain removal and fresh breath at our Al Nahda dental clinic.</p>
+          <p class="pkg-desc">Deep professional clean for a brighter smile, healthier gums and lasting fresh breath.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Stain Removal</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Gum Care</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Stain Removal</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Gum Care</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Plaque Control</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20Scaling%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
@@ -827,14 +898,16 @@ body::before{
 
       <article class="pkg-card">
         <div class="pkg-img">
-<img loading="lazy" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=600&auto=format&fit=crop" alt="Vitamin D B12 Test Sharjah" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=90&w=700&auto=format&fit=crop" alt="Vitamin D B12 Test Sharjah" />
+          <div class="pkg-img-overlay"></div>
+          <div class="pkg-img-title">Vitamin D &amp; B12</div>
         </div>
         <div class="pkg-body">
-          <h3 class="pkg-title">Vitamin D &amp; B12</h3>
-          <p class="pkg-desc">Boost your energy. Check your essential vitamin levels today.</p>
+          <p class="pkg-desc">Find out why you feel tired. Check your essential vitamin levels and get back to full energy.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Fatigue Check</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Energy Boost</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Fatigue Screen</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Energy Boost Plan</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Quick Turnaround</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20Vitamin%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
@@ -842,14 +915,17 @@ body::before{
 
       <article class="pkg-card">
         <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=600&auto=format&fit=crop" alt="GP Doctor Consultation Al Nahda Sharjah" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=90&w=700&auto=format&fit=crop" alt="GP Doctor Consultation Al Nahda Sharjah" />
+          <div class="pkg-img-overlay"></div>
+          <span class="pkg-chip chip-green"><i class="fas fa-user-md"></i> Walk-ins OK</span>
+          <div class="pkg-img-title">GP Consultation</div>
         </div>
         <div class="pkg-body">
-          <h3 class="pkg-title">GP Consultation</h3>
-          <p class="pkg-desc">Expert medical advice for flu, fever and general health concerns. From AED 49.</p>
+          <p class="pkg-desc">Expert medical advice for flu, fever, chronic conditions and general health concerns — same day, every day.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Diagnosis</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Prescription</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Accurate Diagnosis</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Prescription</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Insurance Accepted</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20GP%20Consultation" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
@@ -857,18 +933,19 @@ body::before{
 
       <article class="pkg-card">
         <div class="pkg-img">
-<img loading="lazy" src="https://images.unsplash.com/photo-1576091160550-2187580018f7?q=80&w=600&auto=format&fit=crop" alt="STD Screening Confidential Sharjah" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1582560475093-ba66accbc424?q=90&w=700&auto=format&fit=crop" alt="STD Screening Confidential Sharjah" />
+          <div class="pkg-img-overlay"></div>
           <span class="pkg-chip chip-dark"><i class="fas fa-lock"></i> Confidential</span>
+          <div class="pkg-img-title">STD Screening</div>
         </div>
         <div class="pkg-body">
-          <h3 class="pkg-title">STD Screening</h3>
-          <p class="pkg-desc">Confidential, discreet, and accurate testing with fast results.</p>
+          <p class="pkg-desc">Discreet, accurate and fully confidential STD testing with fast results. Your privacy is guaranteed.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Privacy Assured</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Fast Results</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> 100% Private</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Fast Results</span>
+            <span class="pkg-feat"><i class="fas fa-check-circle"></i> No Judgement</span>
           </div>
-          <a href="https://wa.me/971508821590?text=I%20would%20like%20to%20inquire%20about%20the%20STD%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Inquire Now</a>
-          <details class="pkg-more"><summary>View Details</summary><p>Screening for common sexually transmitted diseases with full privacy guaranteed.</p></details>
+          <a href="https://wa.me/971508821590?text=I%20would%20like%20to%20inquire%20about%20the%20STD%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Inquire Privately</a>
         </div>
       </article>
 

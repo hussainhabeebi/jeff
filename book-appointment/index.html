@@ -71,6 +71,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .slot-avail{background:rgba(22,163,74,.1);color:#15803d;border:1px solid rgba(22,163,74,.2)}
 .slot-avail:hover{background:rgba(22,163,74,.2);transform:scale(1.05)}
 .slot-avail.selected{background:#16a34a;color:white;border-color:#16a34a}
+.slot-today{outline:2px solid var(--purple);outline-offset:1px;}
 .slot-appt{background:rgba(124,58,237,.08);color:var(--purple);border:1px solid rgba(124,58,237,.2);cursor:pointer}
 .slot-appt:hover{background:rgba(124,58,237,.15);transform:scale(1.05)}
 .slot-appt.selected{background:var(--purple);color:white;border-color:var(--purple)}
@@ -277,204 +278,157 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 <div class="mobile-cta-bar"><a href="tel:+97165318887" class="mcta-call"><i class="fas fa-phone"></i> Call</a><a href="https://wa.me/971508821590" class="mcta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a></div>
 
 <script>
-/* ── Nav ── */
-const navToggle=document.getElementById("navToggle"),navDrawer=document.getElementById("navDrawer"),navIcon=document.getElementById("navIcon");
-function closeNav(){navDrawer.classList.remove("open");navIcon.className="fas fa-bars";navToggle.setAttribute("aria-expanded","false")}
-navToggle.addEventListener("click",()=>{const o=navDrawer.classList.toggle("open");navIcon.className=o?"fas fa-times":"fas fa-bars";navToggle.setAttribute("aria-expanded",o)});
-document.addEventListener("click",e=>{if(!e.target.closest("header"))closeNav()});
-window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",scrollY>50)},{passive:true});
+/* Nav */
+const navToggle=document.getElementById('navToggle'),navDrawer=document.getElementById('navDrawer'),navIcon=document.getElementById('navIcon');
+function closeNav(){navDrawer.classList.remove('open');navIcon.className='fas fa-bars';navToggle.setAttribute('aria-expanded','false')}
+navToggle.addEventListener('click',function(){var o=navDrawer.classList.toggle('open');navIcon.className=o?'fas fa-times':'fas fa-bars';navToggle.setAttribute('aria-expanded',o);});
+document.addEventListener('click',function(e){if(!e.target.closest('header'))closeNav();});
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',scrollY>50);},{passive:true});
 
-/* ── Doctor Availability Data ──
-   Schedule: for each time block (Morning/Afternoon/Evening) and each day (0=Mon…6=Sun)
-Values: 'avail' | 'appt' (by appointment only) | 'off'
-   type: 'gp' | 'dental'
-*/
-const SERVICES = {
-  gp: ["GP / Medical Consultation","Blood Test / Health Checkup","Vitamin D &amp; B12 Test","Chronic Disease Management","Other"],
-  dental: ["Dental Care &amp; Cleaning","Orthodontics / Braces","Root Canal Treatment","Teeth Whitening","Wisdom Tooth Extraction","Dental Implants"]
+/* Data */
+var SERVICES={
+  gp:['GP / Medical Consultation','Blood Test / Health Checkup','Vitamin D & B12 Test','Chronic Disease Management','Other'],
+  dental:['Dental Care & Cleaning','Orthodontics / Braces','Root Canal Treatment','Teeth Whitening','Wisdom Tooth Extraction','Dental Implants']
 };
-const DOCS = {
-  anwar: {
-    name: "Dr. Anwar MK",
-    spec: "General Practitioner · 15 Years Experience",
-    img: "https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg",
-type: "gp",
-    schedule: {
-      Morning:   ["avail","avail","avail","avail","off","avail","avail"],
-      Afternoon: ["avail","avail","avail","avail","off","avail","avail"],
-      Evening:   ["avail","avail","avail","avail","off","avail","avail"]
-    }
-  },
-  jeff: {
-    name: "Dr. Jeff Zacharia",
-    spec: "Oral & Maxillofacial Surgeon · BDS, MDS",
-    img: "/Doctor.jpeg",
-type: "dental",
-    schedule: {
-      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
-      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
-      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
-    }
-  },
-  dynamol: {
-    name: "Dr. Dynamol",
-spec: "Specialist Orthodontist · By Appointment Only",
-    img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/01/NH8A9682-copy-scaled.jpg",
-    type: "dental",
-    schedule: {
-      Morning:   ["appt","appt","appt","appt","appt","appt","appt"],
-      Afternoon: ["appt","appt","appt","appt","appt","appt","appt"],
-      Evening:   ["appt","appt","appt","appt","appt","appt","appt"]
-    }
-  },
-  jubila: {
-    name: "Dr. Jubila Fasly",
-    spec: "General Practitioner",
-    img: "https://saharamedicalcentre.ae/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg",
-type: "gp",
-    schedule: {
-      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
-      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
-      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
-    }
-  },
-  baisiya: {
-    name: "Dr. Baisiya Sharin",
-    spec: "General Dentist · BDS",
-    img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg",
-type: "dental",
-    schedule: {
-      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
-      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
-      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
-    }
-  },
-  aysha: {
-    name: "Dr. Aysha Suha",
-    spec: "General Dentist · BDS",
-    img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png",
-type: "dental",
-    schedule: {
-      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
-      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
-      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
-    }
-  }
+var DOCS={
+  anwar:{name:'Dr. Anwar MK',spec:'General Practitioner · 15 Years Experience',img:'https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg',type:'gp',schedule:{Morning:['avail','avail','avail','avail','off','avail','avail'],Afternoon:['avail','avail','avail','avail','off','avail','avail'],Evening:['avail','avail','avail','avail','off','avail','avail']}},
+  jeff:{name:'Dr. Jeff Zacharia',spec:'Oral & Maxillofacial Surgeon · BDS, MDS',img:'/Doctor.jpeg',type:'dental',schedule:{Morning:['avail','avail','avail','avail','avail','avail','avail'],Afternoon:['avail','avail','avail','avail','avail','avail','avail'],Evening:['avail','avail','avail','avail','avail','avail','avail']}},
+  dynamol:{name:'Dr. Dynamol',spec:'Specialist Orthodontist · By Appointment Only',img:'https://saharamedicalcentre.ae/wp-content/uploads/2026/01/NH8A9682-copy-scaled.jpg',type:'dental',schedule:{Morning:['appt','appt','appt','appt','appt','appt','appt'],Afternoon:['appt','appt','appt','appt','appt','appt','appt'],Evening:['appt','appt','appt','appt','appt','appt','appt']}},
+  jubila:{name:'Dr. Jubila Fasly',spec:'General Practitioner',img:'https://saharamedicalcentre.ae/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg',type:'gp',schedule:{Morning:['avail','avail','avail','avail','avail','avail','avail'],Afternoon:['avail','avail','avail','avail','avail','avail','avail'],Evening:['avail','avail','avail','avail','avail','avail','avail']}},
+  baisiya:{name:'Dr. Baisiya Sharin',spec:'General Dentist · BDS',img:'https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg',type:'dental',schedule:{Morning:['avail','avail','avail','avail','avail','avail','avail'],Afternoon:['avail','avail','avail','avail','avail','avail','avail'],Evening:['avail','avail','avail','avail','avail','avail','avail']}},
+  aysha:{name:'Dr. Aysha Suha',spec:'General Dentist · BDS',img:'https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png',type:'dental',schedule:{Morning:['avail','avail','avail','avail','avail','avail','avail'],Afternoon:['avail','avail','avail','avail','avail','avail','avail'],Evening:['avail','avail','avail','avail','avail','avail','avail']}}
 };
+var DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+var TIME_LABELS={Morning:'Morning 8AM-12PM',Afternoon:'Afternoon 12PM-5PM',Evening:'Evening 5PM-11PM'};
+var selectedSlot=null,activeDocKey=null;
 
-const DAYS = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
-const TIME_LABELS = {
-  Morning:   "Morning · 8AM–12PM",
-  Afternoon: "Afternoon · 12PM–5PM",
-  Evening:   "Evening · 5PM–11PM"
-};
-let selectedSlot = null;
-let activeDocKey = null;
-
+/* Today logic */
+function getTodayIdx(){return(new Date().getDay()+6)%7;}
 function getWeekDates(){
-  const today = new Date();
-  const dow = today.getDay(); // 0=Sun
-  const monday = new Date(today);
-  monday.setDate(today.getDate() - ((dow+6)%7));
-  return Array.from({length:7},(_,i)=>{
-    const d = new Date(monday);
-    d.setDate(monday.getDate()+i);
-    return d;
-  });
+  var today=new Date(),monday=new Date(today);
+  monday.setDate(today.getDate()-getTodayIdx());
+  return Array.from({length:7},function(_,i){var d=new Date(monday);d.setDate(monday.getDate()+i);return d;});
 }
+function fmtDate(d){return d.toLocaleDateString('en-GB',{day:'numeric',month:'short'});}
 
-function isTodayCol(dayIndex){
-  const today = new Date();
-  const dow = today.getDay();
-  const todayMonIndex = (dow+6)%7;
-  return dayIndex === todayMonIndex;
-}
-
+/* Calendar */
 function buildCalendar(docKey){
-  const doc = DOCS[docKey];
-  const dates = getWeekDates();
-  const headRow = document.getElementById("calHeadRow");
-  const body = document.getElementById("calBody");
-
-  // Build header
-  headRow.innerHTML = '<th style="text-align:left;min-width:130px">Time</th>';
-  dates.forEach((d,i)=>{
-    const isToday = isTodayCol(i);
-    const label = DAYS[i]+" "+d.getDate();
-    headRow.innerHTML += `<th class="${isToday?'today-col':''}" style="min-width:60px">${label}${isToday?' <span style="color:var(--purple);font-size:.6rem;display:block">Today</span>':''}</th>`;
+  var doc=DOCS[docKey],dates=getWeekDates(),todayIdx=getTodayIdx();
+  var midnight=new Date();midnight.setHours(0,0,0,0);
+  var headRow=document.getElementById('calHeadRow'),body=document.getElementById('calBody');
+  headRow.innerHTML='<th style="text-align:left;min-width:120px;padding-left:0">Time</th>';
+  dates.forEach(function(d,i){
+    var isToday=(i===todayIdx);
+    var th='<th class="'+(isToday?'today-col':'')+'" style="min-width:58px">'+DAYS[i]+'<span style="display:block;font-weight:400;font-size:.6rem;opacity:.7">'+fmtDate(d)+(isToday?' &#9733;':'')+' </span></th>';
+    headRow.innerHTML+=th;
   });
+  body.innerHTML='';
+  Object.entries(doc.schedule).forEach(function(entry){
+    var block=entry[0],slots=entry[1];
+    var tr=document.createElement('tr');
+    var html='<td style="padding-left:0;font-size:.78rem;font-weight:600;color:#475569;white-space:nowrap">'+TIME_LABELS[block]+'</td>';
+    slots.forEach(function(status,i){
+      var d=dates[i],dayLabel=DAYS[i],isToday=(i===todayIdx),isPast=(d<midnight);
+      var slotId='slot-'+block.toLowerCase()+'-'+i;
+      if(isPast){
+        html+='<td><div class="slot slot-off" style="opacity:.35">Past</div></td>';
+      } else if(status==='avail'){
+        html+='<td><div id="'+slotId+'" class="slot slot-avail'+(isToday?' slot-today':'')+'" data-block="'+block+'" data-day="'+dayLabel+'" data-date="'+fmtDate(d)+'">Open</div></td>';
+      } else if(status==='appt'){
+        html+='<td><div id="'+slotId+'" class="slot slot-appt" data-block="'+block+'" data-day="'+dayLabel+'" data-date="'+fmtDate(d)+'">Appt</div></td>';
+      } else {
+        html+='<td><div class="slot slot-off">Off</div></td>';
+      }
+    });
+    tr.innerHTML=html;
+    body.appendChild(tr);
+  });
+  /* Attach click events after inserting */
+  body.querySelectorAll('.slot-avail,.slot-appt').forEach(function(el){
+    el.addEventListener('click',function(){pickSlot(el.dataset.block,el.dataset.day,el,el.dataset.date);});
+  });
+  var avatar=document.getElementById('availAvatar');
+  avatar.src=doc.img;
+  avatar.onerror=function(){this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop';};
+  document.getElementById('availDocName').textContent=doc.name;
+  document.getElementById('availDocSpec').textContent=doc.spec;
+  document.getElementById('availWeekLabel').textContent='Week of '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+}
 
-  // Build rows
-  body.innerHTML = "";
-  Object.entries(doc.schedule).forEach(([block, slots])=>{
-    const tr = document.createElement("tr");
-    let html = `<td>${TIME_LABELS[block]}</td>`;
-    slots.forEach((status,i)=>{
-      const isToday = isTodayCol(i);
-      const dayLabel = DAYS[i];
-      if(status==="avail"){
-        html += `<td><div class="slot slot-avail" onclick="pickSlot('${block}','${dayLabel}',this)" title="${dayLabel} ${TIME_LABELS[block]}"><i class="fas fa-check" style="font-size:.6rem;margin-right:2px"></i>Open</div></td>`;
-} else if(status==="appt"){
-        html += `<td><div class="slot slot-appt" onclick="pickSlot('${block}','${dayLabel}',this)" title="${dayLabel} ${TIME_LABELS[block]}"><i class="fas fa-calendar-alt" style="font-size:.6rem;margin-right:2px"></i>Appt</div></td>`;
-function selectDoctor(key, el){
-  activeDocKey = key;
-  // Update active card
-  document.querySelectorAll(".dr-sel-card").forEach(c=>c.classList.remove("active"));
-  el.classList.add("active");
-  // Update form
-  document.getElementById("bDoctor").value = DOCS[key].name;
-// Filter services by specialty
+/* Service filter */
+function filterServices(type){
+  var sel=document.getElementById('bService'),current=sel.value;
+  sel.innerHTML='<option value="" disabled selected>Select Service</option>';
+  SERVICES[type].forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s;sel.appendChild(o);});
+  var opts=[].slice.call(sel.options);
+  if(opts.some(function(o){return o.value===current;})) sel.value=current;
+  else sel.selectedIndex=0;
+}
+
+/* Doctor select */
+function selectDoctor(key,el){
+  activeDocKey=key;
+  document.querySelectorAll('.dr-sel-card').forEach(function(c){c.classList.remove('active');});
+  el.classList.add('active');
+  document.getElementById('bDoctor').value=DOCS[key].name;
   filterServices(DOCS[key].type);
-  el.classList.add("selected");
-  selectedSlot = {block, day};
-  const pill = document.getElementById("selectedSlotPill");
-  document.getElementById("selectedSlotText").textContent = day+" · "+TIME_LABELS[block];
-  pill.classList.add("visible");
-  // Pre-select time in form
-  const timeSelect = document.getElementById("bTime");
-  if(block==="Morning") timeSelect.value="Morning (8AM – 12PM)";
-  else if(block==="Afternoon") timeSelect.value="Afternoon (12PM – 5PM)";
-  else if(block==="Evening") timeSelect.value="Evening (5PM – 11PM)";
-  // Scroll to form
-  setTimeout(()=>document.getElementById("bookSection").scrollIntoView({behavior:"smooth",block:"start"}),200);
+  clearSlot();
+  buildCalendar(key);
+  document.getElementById('availPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* Slot pick */
+function pickSlot(block,day,el,dateStr){
+  document.querySelectorAll('.slot-avail.selected,.slot-appt.selected').forEach(function(s){s.classList.remove('selected');});
+  el.classList.add('selected');
+  selectedSlot={block:block,day:day,dateStr:dateStr};
+  document.getElementById('selectedSlotText').textContent=dateStr+' ('+day+') - '+TIME_LABELS[block];
+  document.getElementById('selectedSlotPill').classList.add('visible');
+  var t=document.getElementById('bTime');
+  if(block==='Morning') t.value='Morning (8AM – 12PM)';
+  else if(block==='Afternoon') t.value='Afternoon (12PM – 5PM)';
+  else if(block==='Evening') t.value='Evening (5PM – 11PM)';
+  setTimeout(function(){document.getElementById('bookSection').scrollIntoView({behavior:'smooth',block:'start'});},200);
 }
 
 function clearSlot(){
-  selectedSlot = null;
-  document.querySelectorAll(".slot-avail.selected").forEach(s=>s.classList.remove("selected"));
-  document.getElementById("selectedSlotPill").classList.remove("visible");
+  selectedSlot=null;
+  document.querySelectorAll('.slot-avail.selected,.slot-appt.selected').forEach(function(s){s.classList.remove('selected');});
+  document.getElementById('selectedSlotPill').classList.remove('visible');
 }
 
-/* ── Pre-select doctor from URL param e.g. ?doctor=jeff ── */
+/* URL param pre-select */
 (function(){
-  const params = new URLSearchParams(location.search);
-  const docParam = params.get("doctor");
-  if(docParam && DOCS[docParam]){
-    const card = document.querySelector(`.dr-sel-card[data-doc="${docParam}"]`);
-    if(card) selectDoctor(docParam, card);
-  }
+  var p=new URLSearchParams(location.search),key=p.get('doctor');
+  if(key&&DOCS[key]){var card=document.querySelector('[data-doc="'+key+'"]');if(card)selectDoctor(key,card);}
 })();
 
-/* ── Form submit ── */
-document.getElementById("bookForm").addEventListener("submit",function(e){
+/* Form */
+document.getElementById('bookForm').addEventListener('submit',function(e){
   e.preventDefault();
-  const name=document.getElementById("bName").value.trim();
-  const service=document.getElementById("bService").value;
-  const doctor=document.getElementById("bDoctor").value;
-  const time=document.getElementById("bTime").value;
-  const slot=selectedSlot?`Day: ${selectedSlot.day}, Time: ${TIME_LABELS[selectedSlot.block]}.`:"";
+  var name=document.getElementById('bName').value.trim();
+  var service=document.getElementById('bService').value;
+  var doctor=document.getElementById('bDoctor').value;
+  var time=document.getElementById('bTime').value;
   if(!name||!service)return;
-  let msg=`Hi Sahara Medical Centre! My name is ${name}.`;
-  if(doctor && doctor!=="No doctor selected yet") msg+=` I'd like to see ${doctor}.`;
-  msg+=` Service: ${service}.`;
-  if(slot) msg+=` Preferred slot: ${slot}`;
-  else if(time) msg+=` Preferred time: ${time}.`;
-  msg+=` Please confirm my appointment. Thank you!`;
-  window.open(`https://wa.me/971508821590?text=${encodeURIComponent(msg)}`,"_blank");
+  var msg='Hi Sahara Medical Centre! My name is '+name+'.';
+  if(doctor&&doctor!=='No doctor selected yet') msg+=' I would like to see '+doctor+'.';
+  msg+=' Service: '+service+'.';
+  if(selectedSlot) msg+=' Preferred slot: '+selectedSlot.dateStr+' ('+selectedSlot.day+'), '+TIME_LABELS[selectedSlot.block]+'.';
+  else if(time) msg+=' Preferred time: '+time+'.';
+  msg+=' Please confirm my appointment. Thank you!';
+  window.open('https://wa.me/971508821590?text='+encodeURIComponent(msg),'_blank');
 });
 
-/* ── FAQ ── */
-document.querySelectorAll(".faq-item").forEach(item=>{item.querySelector(".faq-q").addEventListener("click",()=>{const w=item.classList.contains("open");document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));if(!w)item.classList.add("open")})});
+/* FAQ */
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.querySelector('.faq-q').addEventListener('click',function(){
+    var w=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!w)item.classList.add('open');
+  });
+});
+
 </script>
 </body>
 </html>

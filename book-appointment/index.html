@@ -71,6 +71,9 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .slot-avail{background:rgba(22,163,74,.1);color:#15803d;border:1px solid rgba(22,163,74,.2)}
 .slot-avail:hover{background:rgba(22,163,74,.2);transform:scale(1.05)}
 .slot-avail.selected{background:#16a34a;color:white;border-color:#16a34a}
+.slot-appt{background:rgba(124,58,237,.08);color:var(--purple);border:1px solid rgba(124,58,237,.2);cursor:pointer}
+.slot-appt:hover{background:rgba(124,58,237,.15);transform:scale(1.05)}
+.slot-appt.selected{background:var(--purple);color:white;border-color:var(--purple)}
 .slot-busy{background:rgba(0,0,0,.04);color:var(--text-3);border:1px solid transparent;cursor:default}
 .slot-off{background:transparent;color:var(--text-3);cursor:default;font-size:.68rem}
 .avail-legend{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
@@ -251,7 +254,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
         <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg" alt="Dr. Baisiya Sharin" onerror="this.src='https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=160&h=160&fit=crop&auto=format'"/>
         <div class="dr-sel-name">Dr. Baisiya Sharin</div>
         <div class="dr-sel-spec">General Dentist</div>
-        <div style="margin-top:6px"><span class="dr-avail-dot" style="background:#d97706"></span><span class="dr-avail-label" style="color:#b45309">Afternoon Only</span></div>
+        <div style="margin-top:6px"><span class="dr-avail-dot" style="background:var(--purple-l)"></span><span class="dr-avail-label" style="color:var(--purple)">By Appt Only</span></div>
       </div>
       <div class="dr-sel-card" data-doc="aysha" onclick="selectDoctor('aysha',this)">
         <img class="dr-sel-img" src="https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png" alt="Dr. Aysha Suha" onerror="this.src='https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=160&h=160&fit=crop&auto=format'"/>
@@ -285,7 +288,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 
       <div class="avail-legend">
         <div class="avail-leg-item"><div class="avail-leg-dot leg-green"></div> Available — click to select</div>
-        <div class="avail-leg-item"><div class="avail-leg-dot leg-grey"></div> Unavailable / Off</div>
+        <div class="avail-leg-item"><div class="avail-leg-dot" style="background:rgba(124,58,237,.3)"></div> By Appointment Only</div>
+        <div class="avail-leg-item"><div class="avail-leg-dot leg-grey"></div> Day Off</div>
       </div>
     </div>
   </div>
@@ -463,67 +467,79 @@ window.addEventListener("scroll",()=>{document.getElementById("nav").classList.t
 
 /* ── Doctor Availability Data ──
    Schedule: for each time block (Morning/Afternoon/Evening) and each day (0=Mon…6=Sun)
-   Values: 'avail' | 'busy' | 'off'
+   Values: 'avail' | 'appt' (by appointment only) | 'off'
+   type: 'gp' | 'dental'
 */
+const SERVICES = {
+  gp: ["GP / Medical Consultation","Blood Test / Health Checkup","Vitamin D &amp; B12 Test","Chronic Disease Management","Other"],
+  dental: ["Dental Care &amp; Cleaning","Orthodontics / Braces","Root Canal Treatment","Teeth Whitening","Wisdom Tooth Extraction","Dental Implants"]
+};
+
 const DOCS = {
   anwar: {
     name: "Dr. Anwar MK",
     spec: "General Practitioner · 15 Years Experience",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg",
+    type: "gp",
     schedule: {
-      Morning:   ["avail","avail","avail","avail","avail","avail","off"],
-      Afternoon: ["avail","avail","off","avail","avail","busy","off"],
-      Evening:   ["busy","avail","avail","avail","off","off","off"]
+      Morning:   ["avail","avail","avail","avail","off","avail","avail"],
+      Afternoon: ["avail","avail","avail","avail","off","avail","avail"],
+      Evening:   ["avail","avail","avail","avail","off","avail","avail"]
     }
   },
   jeff: {
     name: "Dr. Jeff Zacharia",
     spec: "Oral & Maxillofacial Surgeon · BDS, MDS",
     img: "/Doctor.jpeg",
+    type: "dental",
     schedule: {
-      Morning:   ["off","off","off","off","off","avail","off"],
-      Afternoon: ["avail","avail","avail","avail","avail","avail","off"],
-      Evening:   ["avail","avail","busy","avail","avail","off","off"]
+      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
+      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
+      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
     }
   },
   dynamol: {
     name: "Dr. Dynamol",
-    spec: "Specialist Orthodontist",
+    spec: "Specialist Orthodontist · By Appointment Only",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/01/NH8A9682-copy-scaled.jpg",
+    type: "dental",
     schedule: {
-      Morning:   ["avail","avail","avail","avail","avail","avail","off"],
-      Afternoon: ["avail","avail","avail","avail","busy","avail","off"],
-      Evening:   ["off","off","off","off","off","off","off"]
+      Morning:   ["appt","appt","appt","appt","appt","appt","appt"],
+      Afternoon: ["appt","appt","appt","appt","appt","appt","appt"],
+      Evening:   ["appt","appt","appt","appt","appt","appt","appt"]
     }
   },
   jubila: {
     name: "Dr. Jubila Fasly",
     spec: "General Practitioner",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg",
+    type: "gp",
     schedule: {
-      Morning:   ["off","off","off","off","off","off","off"],
-      Afternoon: ["avail","avail","avail","avail","avail","busy","avail"],
-      Evening:   ["avail","avail","avail","avail","avail","avail","busy"]
+      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
+      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
+      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
     }
   },
   baisiya: {
     name: "Dr. Baisiya Sharin",
     spec: "General Dentist · BDS",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg",
+    type: "dental",
     schedule: {
-      Morning:   ["off","off","off","off","off","off","off"],
-      Afternoon: ["avail","avail","avail","avail","avail","off","off"],
-      Evening:   ["avail","busy","avail","avail","avail","off","off"]
+      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
+      Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
+      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
     }
   },
   aysha: {
     name: "Dr. Aysha Suha",
     spec: "General Dentist · BDS",
     img: "https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png",
+    type: "dental",
     schedule: {
-      Morning:   ["avail","avail","off","avail","avail","avail","avail"],
+      Morning:   ["avail","avail","avail","avail","avail","avail","avail"],
       Afternoon: ["avail","avail","avail","avail","avail","avail","avail"],
-      Evening:   ["avail","avail","avail","busy","avail","avail","avail"]
+      Evening:   ["avail","avail","avail","avail","avail","avail","avail"]
     }
   }
 };
@@ -580,6 +596,8 @@ function buildCalendar(docKey){
       const dayLabel = DAYS[i];
       if(status==="avail"){
         html += `<td><div class="slot slot-avail" onclick="pickSlot('${block}','${dayLabel}',this)" title="${dayLabel} ${TIME_LABELS[block]}"><i class="fas fa-check" style="font-size:.6rem;margin-right:2px"></i>Open</div></td>`;
+      } else if(status==="appt"){
+        html += `<td><div class="slot slot-appt" onclick="pickSlot('${block}','${dayLabel}',this)" title="${dayLabel} ${TIME_LABELS[block]}"><i class="fas fa-calendar-alt" style="font-size:.6rem;margin-right:2px"></i>Appt</div></td>`;
       } else if(status==="busy"){
         html += `<td><div class="slot slot-busy">Busy</div></td>`;
       } else {
@@ -599,6 +617,20 @@ function buildCalendar(docKey){
   document.getElementById("availWeekLabel").textContent = "Week of "+today.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
 }
 
+function filterServices(type){
+  const sel = document.getElementById("bService");
+  const current = sel.value;
+  sel.innerHTML = '<option value="" disabled>Select Service</option>';
+  SERVICES[type].forEach(s=>{
+    const opt = document.createElement("option");
+    opt.value = s; opt.textContent = s.replace(/&amp;/g,"&");
+    sel.appendChild(opt);
+  });
+  // Restore selection if still valid
+  if([...sel.options].some(o=>o.value===current)) sel.value = current;
+  else sel.selectedIndex = 0;
+}
+
 function selectDoctor(key, el){
   activeDocKey = key;
   // Update active card
@@ -606,6 +638,8 @@ function selectDoctor(key, el){
   el.classList.add("active");
   // Update form
   document.getElementById("bDoctor").value = DOCS[key].name;
+  // Filter services by specialty
+  filterServices(DOCS[key].type);
   // Clear any selected slot
   clearSlot();
   // Build calendar
@@ -616,7 +650,7 @@ function selectDoctor(key, el){
 
 function pickSlot(block, day, el){
   // Deselect previously selected slot
-  document.querySelectorAll(".slot-avail.selected").forEach(s=>s.classList.remove("selected"));
+  document.querySelectorAll(".slot-avail.selected,.slot-appt.selected").forEach(s=>s.classList.remove("selected"));
   el.classList.add("selected");
   selectedSlot = {block, day};
   const pill = document.getElementById("selectedSlotPill");

@@ -13,8 +13,8 @@
   --green-dk:     #128C7E;
   --white:        #ffffff;
   --text:         #0F0A1E;
-  --text-2:       #4B5563;
-  --text-3:       #9CA3AF;
+  --text-2:       #334155;
+  --text-3:       #64748b;
   --border:       #E8E0F5;
   --radius:       20px;
   --radius-sm:    12px;
@@ -29,7 +29,7 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text);
   background: var(--white);
-  line-height: 1.6;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -124,7 +124,7 @@ img { display: block; max-width: 100%; }
 .btn--white-ghost:hover { background: rgba(255,255,255,.22); }
 
 .btn--full { width: 100%; justify-content: center; }
-.btn--lg   { padding: 15px 32px; font-size: 1rem; }
+.btn--lg   { padding: 15px 32px; font-size: 1.1rem; }
 
 /* ══════════════════════════════════════
    NAVBAR
@@ -163,7 +163,7 @@ img { display: block; max-width: 100%; }
 }
 .navbar__link {
   color: rgba(255,255,255,.85);
-  font-size: .9rem;
+  font-size: 1.1rem;
   font-weight: 600;
   padding: 8px 18px;
   border-radius: 50px;
@@ -311,7 +311,7 @@ img { display: block; max-width: 100%; }
 }
 
 .hero__spec {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: rgba(255,255,255,.8);
   font-weight: 500;
   margin-bottom: 8px;
@@ -407,7 +407,7 @@ img { display: block; max-width: 100%; }
 }
 .statsbar__item { text-align: center; }
 .statsbar__item strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--white); }
-.statsbar__item span  { font-size: .75rem; color: rgba(255,255,255,.65); font-weight: 500; }
+.statsbar__item span  { font-size:.9rem; color: rgba(255,255,255,.65); font-weight: 500; }
 .statsbar__div { width: 1px; height: 40px; background: rgba(255,255,255,.2); }
 
 /* Pulse dot */
@@ -467,7 +467,7 @@ img { display: block; max-width: 100%; }
 }
 .about-bio p {
   color: var(--text-2);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 16px;
 }
@@ -561,7 +561,7 @@ img { display: block; max-width: 100%; }
 .proc-card:hover::before { opacity: 1; }
 .proc-card__icon { font-size: 2rem; margin-bottom: 14px; }
 .proc-card h3 { font-size: .95rem; font-weight: 700; color: var(--purple-dark); margin-bottom: 8px; }
-.proc-card p  { font-size: .83rem; color: var(--text-2); line-height: 1.65; }
+.proc-card p  { font-size: .83rem; color: var(--text-2); line-height: 1.755; }
 
 /* ══════════════════════════════════════
    CTA
@@ -609,7 +609,7 @@ img { display: block; max-width: 100%; }
   margin-top: 14px;
   font-weight: 600;
   color: rgba(255,255,255,.9) !important;
-  font-size: .9rem !important;
+  font-size: 1.1rem !important;
 }
 .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
@@ -634,7 +634,7 @@ img { display: block; max-width: 100%; }
   object-fit: contain;
   margin-bottom: 16px;
 }
-.footer__brand p { font-size: .9rem; color: rgba(255,255,255,.55); line-height: 1.75; max-width: 320px; }
+.footer__brand p { font-size: 1.1rem; color: rgba(255,255,255,.55); line-height: 1.75; max-width: 320px; }
 .footer__col h4 {
   font-size: .78rem;
   font-weight: 700;
@@ -646,7 +646,7 @@ img { display: block; max-width: 100%; }
 .footer__col a,
 .footer__col p {
   display: block;
-  font-size: .9rem;
+  font-size: 1.1rem;
   color: rgba(255,255,255,.7);
   margin-bottom: 10px;
   transition: color .15s;

@@ -24,7 +24,7 @@ img{display:block;max-width:100%;height:auto}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),var(--bg)}
-.nav{position:fixed;top:10px;left:10px;right:10px;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:0;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 24px rgba(0,0,0,.1)}
 .nav-logo img{height:42px;width:auto;transition:height .3s}
 .nav.scrolled .nav-logo img{height:36px}
@@ -35,7 +35,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
 .nav-toggle{display:none;color:var(--text);font-size:20px;padding:8px;border-radius:8px;transition:background .2s}
 .nav-toggle:hover{background:rgba(0,0,0,.06)}
-.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:82px;left:10px;right:10px;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
+.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:62px;left:0;right:0;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:0;backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
 .nav-drawer.open{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
 .nav-drawer a{color:var(--text-2);font-weight:500;font-size:1.1rem;padding:13px 16px;border-radius:var(--radius-sm);transition:all .2s;display:flex;align-items:center;gap:10px}
 .nav-drawer a:hover{color:var(--text);background:rgba(0,0,0,.05)}
@@ -228,7 +228,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="section-inner">
       <div class="section-head"><span class="section-label">Treatment Journey</span><h2 class="section-title">Your Orthodontic Journey in 4 Steps</h2></div>
       <div class="steps">
-        <div class="step"><div class="step-num">01</div><div class="step-title">Consultation &ndash; AED 49</div><p class="step-desc">Meet our specialist orthodontist for an assessment of your teeth, jaw and X-rays. We discuss your goals and recommend the best treatment option and timeline.</p></div>
+        <div class="step"><div class="step-num">01</div><div class="step-title">Consultation &ndash; AED 49</div><p class="step-desc">Meet our specialist orthodontist for an assessment of your teeth, jaw and X-rays. We discuss your goals and recommend a suitable treatment option and timeline.</p></div>
         <div class="step"><div class="step-num">02</div><div class="step-title">Treatment Planning</div><p class="step-desc">A customised treatment plan is created. For aligners, digital scans produce your custom trays. For braces, brackets are bonded at the first appointment.</p></div>
         <div class="step"><div class="step-num">03</div><div class="step-title">Active Treatment</div><p class="step-desc">You attend regular check-up appointments every 4&ndash;8 weeks for wire adjustments or new aligner trays. We monitor progress and make adjustments as needed.</p></div>
         <div class="step"><div class="step-num">04</div><div class="step-title">Retention Phase</div><p class="step-desc">Once treatment is complete, retainers are provided to hold your teeth in their perfect new positions. A follow-up schedule ensures long-term stability.</p></div>
@@ -242,7 +242,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
       <div class="faq-list">
         <div class="faq-item open"><div class="faq-q">How long does orthodontic treatment take? <span class="faq-toggle">+</span></div><div class="faq-a">Treatment duration varies by complexity. Mild cases with aligners may take 6&ndash;12 months. Moderate cases with braces typically take 12&ndash;18 months. Severe misalignment or jaw issues can take 18&ndash;30 months. Your orthodontist will give you a personalised estimate at the consultation.</div></div>
         <div class="faq-item"><div class="faq-q">Is orthodontic treatment only for children and teenagers? <span class="faq-toggle">+</span></div><div class="faq-a">Absolutely not. Adults are one of the fastest growing groups seeking orthodontic treatment. There is no age limit for braces or aligners. Many adults prefer ceramic braces or invisible aligners for a more discreet treatment experience.</div></div>
-        <div class="faq-item"><div class="faq-q">Are invisible aligners as effective as traditional braces? <span class="faq-toggle">+</span></div><div class="faq-a">For mild-to-moderate cases, invisible aligners are equally effective as traditional braces. For complex cases involving significant jaw movement or severe rotation, metal or ceramic braces may be more effective. Our orthodontist will recommend the best option for your specific situation.</div></div>
+        <div class="faq-item"><div class="faq-q">Are invisible aligners as effective as traditional braces? <span class="faq-toggle">+</span></div><div class="faq-a">For mild-to-moderate cases, invisible aligners are equally effective as traditional braces. For complex cases involving significant jaw movement or severe rotation, metal or ceramic braces may be more effective. Our orthodontist will recommend the right option for your specific situation.</div></div>
         <div class="faq-item"><div class="faq-q">Will braces or aligners affect my speech or eating? <span class="faq-toggle">+</span></div><div class="faq-a">There is usually a short adjustment period of 1&ndash;2 weeks. With braces, some foods (hard, sticky or chewy items) should be avoided. Aligners are removed for eating, so there are no food restrictions. Speech is rarely affected significantly and adjusts quickly for both options.</div></div>
       </div>
     </div>

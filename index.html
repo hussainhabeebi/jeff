@@ -28,38 +28,37 @@
 
   <style>
 /* ═══════════════════════════════════════
-   DESIGN TOKENS — LIGHT THEME
+   DESIGN TOKENS — MEDICAL BLUE THEME
 ═══════════════════════════════════════ */
 :root {
   --bg:        #ffffff;
-  --bg-2:      #f8fafc;
+  --bg-2:      #F5F8FA;
   --bg-card:   #ffffff;
   --border:    rgba(0,0,0,0.08);
-  --border-h:  rgba(139,92,246,0.4);
+  --border-h:  rgba(27,79,168,0.35);
 
-  --purple:    #7c3aed;
-  --purple-l:  #8b5cf6;
-  --pink:      #db2777;
+  --blue:      #1B4FA8;
+  --blue-l:    #2563EB;
+  --blue-soft: #EEF4FF;
   --teal:      #0891b2;
   --green:     #16a34a;
   --amber:     #d97706;
   --red:       #dc2626;
 
-  --text:      #0f172a;
+  --text:      #17212B;
   --text-2:    #475569;
-  --text-3:    #94a3b8;
+  --text-3:    #6B7280;
 
   --wa:        #25d366;
   --radius-sm: 10px;
   --radius:    16px;
   --radius-lg: 24px;
 
-  --glow-p:    0 0 40px rgba(124,58,237,0.12);
-  --glow-t:    0 0 40px rgba(8,145,178,0.1);
+  --glow-b:    0 0 40px rgba(27,79,168,0.12);
   --shadow:    0 4px 24px rgba(0,0,0,0.08);
 
-  --grad:      linear-gradient(135deg,#7c3aed,#db2777);
-  --grad-text: linear-gradient(135deg,#7c3aed,#db2777);
+  --grad:      linear-gradient(135deg,#1B4FA8,#2563EB);
+  --grad-text: linear-gradient(135deg,#1B4FA8,#2563EB);
 }
 
 /* ── RESET ── */
@@ -68,7 +67,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:'Inter',system-ui,sans-serif;
   background:var(--bg);color:var(--text);
-  line-height:1.75;overflow-x:hidden;
+  line-height:1.6;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -79,14 +78,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:#f1f5f9}
-::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
 
 /* ── BACKGROUND MESH ── */
 body::before{
   content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 0%,rgba(27,79,168,.05) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(8,145,178,.04) 0%,transparent 60%),
     var(--bg);
 }
 
@@ -112,7 +111,7 @@ body::before{
 .nav.scrolled .nav-logo img{height:36px}
 .nav-links{display:flex;gap:4px;align-items:center}
 .nav-links a{
-  color:var(--text-2);font-size:1.05rem;font-weight:500;
+  color:var(--text-2);font-size:.875rem;font-weight:500;
   padding:8px 14px;border-radius:var(--radius-sm);
   transition:all .2s;white-space:nowrap;
 }
@@ -120,7 +119,7 @@ body::before{
 .nav-links .nav-cta{
   background:var(--grad);color:white;
   padding:9px 18px;font-weight:600;
-  box-shadow:0 0 20px rgba(139,92,246,.35);
+  box-shadow:0 0 20px rgba(27,79,168,.35);
 }
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
 .nav-toggle{
@@ -140,7 +139,7 @@ body::before{
 }
 .nav-drawer.open{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
 .nav-drawer a{
-  color:var(--text-2);font-weight:500;font-size:1.1rem;
+  color:var(--text-2);font-weight:500;font-size:.95rem;
   padding:13px 16px;border-radius:var(--radius-sm);
   transition:all .2s;display:flex;align-items:center;gap:10px;
 }
@@ -171,8 +170,8 @@ body::before{
 /* left */
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);
-  color:var(--purple);font-size:1rem;font-weight:600;
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);
+  color:var(--blue);font-size:.8rem;font-weight:600;
   padding:6px 14px;border-radius:50px;margin-bottom:24px;
   letter-spacing:.3px;
 }
@@ -187,7 +186,7 @@ body::before{
   background:var(--grad-text);-webkit-background-clip:text;
   background-clip:text;color:transparent;
 }
-.hero-sub{color:var(--text-2);font-size:1.05rem;margin-bottom:32px;max-width:480px;line-height:1.8}
+.hero-sub{color:var(--text-2);font-size:1.05rem;margin-bottom:32px;max-width:480px;line-height:1.7}
 
 /* rotator */
 .rotator{
@@ -196,8 +195,8 @@ body::before{
   color:var(--text);
 }
 .rotator-badge{
-  background:rgba(219,39,119,.08);border:1px solid rgba(219,39,119,.2);
-  color:var(--pink);padding:4px 12px;border-radius:50px;font-size:1rem;
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);
+  color:var(--blue);padding:4px 12px;border-radius:50px;font-size:.8rem;
   white-space:nowrap;flex-shrink:0;
 }
 .rotator-text{overflow:hidden;height:1.5em}
@@ -216,24 +215,24 @@ body::before{
 .btn-primary{
   display:inline-flex;align-items:center;gap:9px;
   background:var(--grad);color:white;
-  padding:14px 26px;border-radius:var(--radius-sm);font-weight:700;font-size:1.1rem;
-  box-shadow:0 0 30px rgba(139,92,246,.4);
+  padding:14px 26px;border-radius:var(--radius-sm);font-weight:700;font-size:.95rem;
+  box-shadow:0 0 30px rgba(27,79,168,.35);
   transition:all .25s;
 }
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(139,92,246,.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(27,79,168,.5)}
 .btn-ghost{
   display:inline-flex;align-items:center;gap:9px;
   border:1px solid rgba(0,0,0,.12);color:var(--text-2);
-  padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;font-size:1.1rem;
+  padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;
   transition:all .25s;
 }
-.btn-ghost:hover{border-color:var(--purple);color:var(--purple);background:rgba(124,58,237,.05)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);background:rgba(27,79,168,.05)}
 .btn-wa{background:var(--wa)!important;box-shadow:0 0 24px rgba(37,211,102,.35)!important}
 .btn-wa:hover{box-shadow:0 0 36px rgba(37,211,102,.5)!important}
 
 .hero-stats{display:flex;gap:24px;flex-wrap:wrap}
 .hero-stat strong{display:block;font-size:1.5rem;font-weight:800;color:var(--text)}
-.hero-stat span{font-size:1.1rem;color:var(--text-2);font-weight:500}
+.hero-stat span{font-size:.78rem;color:var(--text-2);font-weight:500}
 .hero-stat-div{width:1px;background:rgba(0,0,0,.1);align-self:stretch}
 
 /* right — booking card */
@@ -242,7 +241,7 @@ body::before{
   border:1px solid rgba(0,0,0,.09);
   border-radius:var(--radius-lg);
   padding:28px;
-  box-shadow:0 8px 40px rgba(124,58,237,.1),0 2px 12px rgba(0,0,0,.06);
+  box-shadow:0 8px 40px rgba(27,79,168,.1),0 2px 12px rgba(0,0,0,.06);
 }
 .book-card-top{
   display:flex;justify-content:space-between;align-items:center;
@@ -252,7 +251,7 @@ body::before{
 .live-badge{
   display:flex;align-items:center;gap:6px;
   background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);
-  color:var(--green);font-size:1.1rem;font-weight:600;
+  color:var(--green);font-size:.75rem;font-weight:600;
   padding:4px 10px;border-radius:50px;
 }
 .live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
@@ -260,15 +259,15 @@ body::before{
   width:100%;background:#f8fafc;
   border:1px solid rgba(0,0,0,.1);color:var(--text);
   padding:12px 15px;border-radius:var(--radius-sm);
-  font-family:inherit;font-size:1.1rem;margin-bottom:12px;
+  font-family:inherit;font-size:.9rem;margin-bottom:12px;
   transition:border-color .2s;appearance:none;
 }
-.book-field:focus{outline:none;border-color:var(--purple);background:#fff}
+.book-field:focus{outline:none;border-color:var(--blue);background:#fff}
 .book-field option{background:#fff;color:var(--text)}
 .book-submit{
   width:100%;background:var(--wa);color:white;
   padding:14px;border-radius:var(--radius-sm);
-  font-weight:700;font-size:1.1rem;
+  font-weight:700;font-size:.95rem;
   display:flex;align-items:center;justify-content:center;gap:9px;
   transition:all .25s;
   box-shadow:0 4px 20px rgba(37,211,102,.3);
@@ -282,90 +281,72 @@ body::before{
 .section-alt{background:var(--bg-2)}
 .section-inner{max-width:1200px;margin:0 auto}
 .section-label{
-  display:inline-block;font-size:1.1rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:1.5px;color:var(--purple-l);
+  display:inline-block;font-size:.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);
   margin-bottom:12px;
 }
 .section-title{
   font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;
   letter-spacing:-.025em;line-height:1.15;margin-bottom:14px;
 }
-.section-sub{color:var(--text-2);font-size:1rem;max-width:600px;line-height:1.8}
+.section-sub{color:var(--text-2);font-size:1rem;max-width:600px;line-height:1.7}
 .section-head{margin-bottom:56px}
 
 /* ══════════════════════════════════════
-   PACKAGES
+   DEPARTMENTS / SERVICES CARDS (no image)
 ══════════════════════════════════════ */
 .pkg-track{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
 .pkg-card{
-  background:#fff;border:1px solid rgba(0,0,0,.07);
-  border-radius:20px;overflow:hidden;
+  background:#fff;border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--radius);overflow:hidden;
   display:flex;flex-direction:column;
-  transition:transform .35s cubic-bezier(.22,.68,0,1.2),box-shadow .35s;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);
-  cursor:pointer;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 .pkg-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 24px 56px rgba(124,58,237,.15);
-}
-.pkg-img{
-  position:relative;height:220px;overflow:hidden;background:#0f0a1e;flex-shrink:0;
-}
-.pkg-img img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .6s ease,filter .6s ease;
-  filter:brightness(.82) saturate(1.1);
-}
-.pkg-card:hover .pkg-img img{transform:scale(1.08);filter:brightness(.7) saturate(1.2)}
-.pkg-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.15) 55%,transparent 100%);
-  z-index:1;
-}
-.pkg-img-title{
-  position:absolute;bottom:14px;left:16px;right:16px;z-index:2;
-  color:white;font-size:1.1rem;font-weight:800;letter-spacing:-.02em;
-  line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.4);
+  border-color:rgba(27,79,168,.3);transform:translateY(-6px);
+  box-shadow:0 12px 40px rgba(27,79,168,.12);
 }
 .pkg-chip{
-  position:absolute;top:12px;left:12px;z-index:3;
-  font-size:1rem;font-weight:800;padding:5px 11px;
-  border-radius:50px;letter-spacing:.3px;text-transform:uppercase;
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:inline-block;
+  font-size:.7rem;font-weight:700;padding:4px 10px;
+  border-radius:6px;margin-bottom:14px;width:fit-content;
 }
-.chip-teal{background:rgba(8,145,178,.85);color:white;border:1px solid rgba(255,255,255,.2)}
-.chip-amber{background:rgba(217,119,6,.9);color:white;border:1px solid rgba(255,255,255,.2)}
-.chip-dark{background:rgba(15,10,30,.75);color:white;border:1px solid rgba(255,255,255,.15)}
-.chip-green{background:rgba(22,163,74,.9);color:white;border:1px solid rgba(255,255,255,.2)}
-.pkg-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
-.pkg-desc{font-size:1rem;color:var(--text-2);flex:1;margin-bottom:14px;line-height:1.75}
-.pkg-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.pkg-feat{
-  font-size:1.05rem;color:var(--purple);font-weight:700;
-  display:inline-flex;align-items:center;gap:5px;
-  background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.15);
-  padding:4px 10px;border-radius:50px;
+.chip-teal{background:rgba(8,145,178,.1);border:1px solid rgba(8,145,178,.25);color:var(--teal)}
+.chip-amber{background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:var(--amber)}
+.chip-dark{background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.12);color:var(--text-2)}
+.pkg-body{padding:28px 24px;display:flex;flex-direction:column;flex:1}
+.pkg-icon{
+  font-size:2rem;width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;background:rgba(27,79,168,.08);
+  transition:transform .3s;
 }
-.pkg-feat i{font-size:1rem}
+.pkg-card:hover .pkg-icon{transform:scale(1.1)}
+.pkg-icon-teal{background:rgba(8,145,178,.1)}
+.pkg-icon-amber{background:rgba(217,119,6,.1)}
+.pkg-icon-dark{background:rgba(15,23,42,.06)}
+.pkg-title{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+.pkg-desc{font-size:.87rem;color:var(--text-2);flex:1;margin-bottom:18px;line-height:1.65}
+.pkg-features{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.pkg-feat{font-size:.78rem;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:6px}
+.pkg-feat i{font-size:.65rem;background:rgba(27,79,168,.1);padding:3px;border-radius:50%}
 .btn-pkg{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--grad);color:white;
-  padding:12px;border-radius:12px;
-  font-weight:700;font-size:1.05rem;transition:all .25s;
-  box-shadow:0 4px 16px rgba(124,58,237,.25);
-  border:none;
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);
+  color:var(--blue);padding:11px;border-radius:var(--radius-sm);
+  font-weight:600;font-size:.85rem;transition:all .25s;
 }
-.btn-pkg:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 28px rgba(124,58,237,.35)}
+.btn-pkg:hover{background:var(--blue);color:white;border-color:var(--blue);box-shadow:0 4px 16px rgba(27,79,168,.3)}
 .pkg-more summary{
-  font-size:1.1rem;color:var(--text-3);cursor:pointer;text-align:center;
-  margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);
-  transition:color .2s;list-style:none;
+  font-size:.78rem;color:var(--text-3);cursor:pointer;text-align:center;
+  margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);
+  transition:color .2s;
 }
-.pkg-more summary:hover{color:var(--purple-l)}
-.pkg-more p{font-size:1rem;color:var(--text-2);margin-top:10px;line-height:1.75}
+.pkg-more summary:hover{color:var(--blue-l)}
+.pkg-more p{font-size:.8rem;color:var(--text-2);margin-top:10px;line-height:1.6}
 
 /* ══════════════════════════════════════
    WHY CHOOSE
@@ -380,80 +361,74 @@ body::before{
   transition:border-color .3s,transform .3s,box-shadow .3s;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-.feat-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(124,58,237,.1)}
+.feat-card:hover{border-color:rgba(27,79,168,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(27,79,168,.1)}
 .feat-icon{
   font-size:1.6rem;width:52px;height:52px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;margin-bottom:18px;
   transition:transform .3s;
 }
 .feat-card:hover .feat-icon{transform:scale(1.1) rotate(5deg)}
-.fi-purple{background:rgba(139,92,246,.12);color:var(--purple-l)}
+.fi-purple{background:rgba(27,79,168,.1);color:var(--blue)}
 .fi-teal  {background:rgba(6,182,212,.1);color:var(--teal)}
-.fi-pink  {background:rgba(236,72,153,.1);color:var(--pink)}
+.fi-pink  {background:rgba(8,145,178,.1);color:var(--teal)}
 .fi-amber {background:rgba(245,158,11,.1);color:var(--amber)}
 .fi-green {background:rgba(34,197,94,.1);color:var(--green)}
-.fi-blue  {background:rgba(59,130,246,.1);color:#60a5fa}
+.fi-blue  {background:rgba(37,99,235,.1);color:var(--blue-l)}
 .feat-title{font-size:1rem;font-weight:700;margin-bottom:8px}
-.feat-desc{font-size:1.05rem;color:var(--text-2);line-height:1.75;flex:1;margin-bottom:14px}
+.feat-desc{font-size:.85rem;color:var(--text-2);line-height:1.65;flex:1;margin-bottom:14px}
 .feat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
 .feat-tag{
-  font-size:1.05rem;font-weight:600;
+  font-size:.7rem;font-weight:600;
   background:#f1f5f9;border:1px solid rgba(0,0,0,.07);
   color:var(--text-3);padding:3px 9px;border-radius:6px;
   transition:all .2s;
 }
-.feat-card:hover .feat-tag{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:var(--purple)}
+.feat-card:hover .feat-tag{background:rgba(27,79,168,.08);border-color:rgba(27,79,168,.2);color:var(--blue)}
 
 /* ══════════════════════════════════════
-   DOCTORS
+   DOCTORS — 2 × 3 GRID
 ══════════════════════════════════════ */
-.doctors-scroll{
-  display:flex;gap:18px;
-  overflow-x:auto;padding:8px 4px 20px;
-  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
+.doctors-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
-.doctors-scroll::-webkit-scrollbar{display:none}
 .doc-card{
-  flex:0 0 220px;scroll-snap-align:start;
   background:#fff;border:1px solid rgba(0,0,0,.08);
   border-radius:var(--radius);overflow:hidden;
   display:flex;flex-direction:column;
   transition:border-color .3s,transform .3s,box-shadow .3s;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-.doc-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,58,237,.1)}
-.doc-card.featured{border-color:rgba(124,58,237,.35);box-shadow:0 4px 20px rgba(124,58,237,.15)}
-.doc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#111}
+.doc-card:hover{border-color:rgba(27,79,168,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,79,168,.1)}
+.doc-card.featured{border-color:rgba(27,79,168,.35);box-shadow:0 4px 20px rgba(27,79,168,.15)}
+.doc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#e8eef6}
 .doc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
 .doc-badge{
   position:absolute;top:10px;left:10px;z-index:2;
-  font-size:1rem;font-weight:700;padding:3px 9px;border-radius:6px;
+  font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:6px;
 }
-.doc-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:3px}
-.doc-name{font-size:1.1rem;font-weight:800;color:var(--text)}
-.doc-name a{color:var(--purple);transition:color .2s}
-.doc-name a:hover{color:var(--pink)}
-.doc-spec{font-size:1.1rem;color:var(--purple);font-weight:600}
-.doc-qual{font-size:.9rem;color:var(--text-3)}
-.doc-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.doc-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:4px}
+.doc-name{font-size:.95rem;font-weight:800;color:var(--text)}
+.doc-name a{color:var(--blue);transition:color .2s}
+.doc-name a:hover{color:var(--blue-l)}
+.doc-spec{font-size:.78rem;color:var(--blue);font-weight:600}
+.doc-qual{font-size:.72rem;color:var(--text-3)}
+.doc-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
 .doc-call{
-  text-align:center;padding:8px;border-radius:8px;
-  font-weight:600;font-size:1.1rem;
+  text-align:center;padding:9px;border-radius:8px;
+  font-weight:600;font-size:.76rem;
   background:#f8fafc;border:1px solid rgba(0,0,0,.1);color:var(--text-2);
   transition:all .2s;
 }
 .doc-call:hover{background:#f1f5f9;color:var(--text)}
 .doc-book{
-  text-align:center;padding:8px;border-radius:8px;
-  font-weight:600;font-size:1.1rem;
-  background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);color:var(--purple);
+  text-align:center;padding:9px;border-radius:8px;
+  font-weight:600;font-size:.76rem;
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);color:var(--blue);
   transition:all .2s;
 }
-.doc-book:hover{background:var(--purple);color:white}
-.scroll-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
-.scroll-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;cursor:pointer;transition:all .25s}
-.scroll-dot.active{background:var(--purple);width:20px;border-radius:3px}
+.doc-book:hover{background:var(--blue);color:white}
 
 /* ══════════════════════════════════════
    SERVICES TABS
@@ -464,10 +439,10 @@ body::before{
   padding:4px;width:fit-content;margin:0 auto 40px;
 }
 .tab-btn{
-  padding:10px 24px;border-radius:8px;font-weight:600;font-size:1.05rem;
+  padding:10px 24px;border-radius:8px;font-weight:600;font-size:.875rem;
   color:var(--text-2);cursor:pointer;transition:all .25s;white-space:nowrap;
 }
-.tab-btn.active{background:var(--grad);color:white;box-shadow:0 0 20px rgba(139,92,246,.3)}
+.tab-btn.active{background:var(--grad);color:white;box-shadow:0 0 20px rgba(27,79,168,.3)}
 .tab-panel{display:none;animation:fadeIn .35s ease}
 .tab-panel.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -484,19 +459,19 @@ body::before{
   background:var(--grad);transform:scaleY(0);transform-origin:top;transition:.3s;
 }
 .srv-card:hover::after{transform:scaleY(1)}
-.srv-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,58,237,.1)}
+.srv-card:hover{border-color:rgba(27,79,168,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,79,168,.1)}
 .srv-icon{
   font-size:1.4rem;width:48px;height:48px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;margin-bottom:16px;
 }
-.srv-icon-med{background:rgba(139,92,246,.1);color:var(--purple-l)}
+.srv-icon-med{background:rgba(27,79,168,.1);color:var(--blue)}
 .srv-icon-den{background:rgba(6,182,212,.1);color:var(--teal)}
-.srv-title{font-size:1.1rem;font-weight:700;margin-bottom:8px}
-.srv-desc{font-size:1rem;color:var(--text-2);flex:1;line-height:1.75;margin-bottom:16px}
+.srv-title{font-size:.98rem;font-weight:700;margin-bottom:8px}
+.srv-desc{font-size:.83rem;color:var(--text-2);flex:1;line-height:1.6;margin-bottom:16px}
 .btn-srv{
   display:inline-flex;align-items:center;justify-content:center;gap:7px;
   background:var(--wa);color:white;padding:10px 16px;border-radius:8px;
-  font-weight:600;font-size:1rem;transition:all .25s;
+  font-weight:600;font-size:.82rem;transition:all .25s;
 }
 .btn-srv:hover{filter:brightness(1.1);transform:translateY(-1px)}
 
@@ -506,7 +481,7 @@ body::before{
 .faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .faq-img{
   border-radius:var(--radius-lg);overflow:hidden;
-  border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 32px rgba(124,58,237,.1);
+  border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 32px rgba(27,79,168,.08);
 }
 .faq-img img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 .faq-list{display:flex;flex-direction:column;gap:12px}
@@ -515,29 +490,29 @@ body::before{
   border-radius:var(--radius);overflow:hidden;transition:border-color .3s,box-shadow .3s;
   box-shadow:0 1px 4px rgba(0,0,0,.04);
 }
-.faq-item.open{border-color:rgba(124,58,237,.3);box-shadow:0 4px 16px rgba(124,58,237,.08)}
+.faq-item.open{border-color:rgba(27,79,168,.3);box-shadow:0 4px 16px rgba(27,79,168,.08)}
 .faq-q{
   display:flex;justify-content:space-between;align-items:center;
-  padding:18px 20px;cursor:pointer;font-weight:600;font-size:1.1rem;gap:12px;
+  padding:18px 20px;cursor:pointer;font-weight:600;font-size:.9rem;gap:12px;
   transition:color .2s;
 }
-.faq-item.open .faq-q{color:var(--purple)}
+.faq-item.open .faq-q{color:var(--blue)}
 .faq-toggle{
   flex-shrink:0;width:28px;height:28px;border-radius:8px;
-  background:rgba(124,58,237,.08);color:var(--purple);
+  background:rgba(27,79,168,.08);color:var(--blue);
   display:flex;align-items:center;justify-content:center;
   font-size:1.1rem;transition:all .3s;
 }
-.faq-item.open .faq-toggle{background:var(--purple);color:white;transform:rotate(45deg)}
+.faq-item.open .faq-toggle{background:var(--blue);color:white;transform:rotate(45deg)}
 .faq-a{
   max-height:0;overflow:hidden;transition:all .35s ease;
-  font-size:1.05rem;color:var(--text-2);line-height:1.8;
+  font-size:.85rem;color:var(--text-2);line-height:1.7;
   padding:0 20px;
 }
 .faq-item.open .faq-a{max-height:400px;padding:0 20px 20px}
 .faq-a ul{margin:8px 0 8px 16px}
 .faq-a li{margin-bottom:5px;list-style:none;position:relative}
-.faq-a li::before{content:'';position:absolute;left:-12px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--purple-l)}
+.faq-a li::before{content:'';position:absolute;left:-12px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--blue-l)}
 .faq-a strong{color:var(--text)}
 
 /* ══════════════════════════════════════
@@ -552,10 +527,10 @@ body::before{
 .ticker-inner:hover{animation-play-state:paused}
 .ticker-item{
   padding:0 28px;display:inline-flex;align-items:center;gap:8px;
-  color:var(--text-2);font-size:1rem;font-weight:500;
+  color:var(--text-2);font-size:.8rem;font-weight:500;
   transition:color .2s;
 }
-.ticker-item i{color:var(--purple)}
+.ticker-item i{color:var(--blue)}
 .ticker-item:hover{color:var(--text)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .footer-main{
@@ -566,36 +541,36 @@ body::before{
   font-size:1.3rem;font-weight:800;margin-bottom:14px;
   display:flex;align-items:center;gap:10px;
 }
-.ft-brand-name i{color:var(--purple-l)}
-.ft-desc{color:var(--text-2);font-size:1.05rem;margin-bottom:20px;line-height:1.8}
-.ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:1rem;color:var(--text-2)}
-.ft-contact i{color:var(--purple);margin-top:3px;flex-shrink:0}
+.ft-brand-name i{color:var(--blue-l)}
+.ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
+.ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.83rem;color:var(--text-2)}
+.ft-contact i{color:var(--blue);margin-top:3px;flex-shrink:0}
 .ft-contact a{color:var(--text);font-weight:600;transition:color .2s}
-.ft-contact a:hover{color:var(--purple-l)}
+.ft-contact a:hover{color:var(--blue-l)}
 .ft-socials{display:flex;gap:8px;margin-top:18px}
 .ft-social{
   width:34px;height:34px;border-radius:50%;
   background:#fff;border:1px solid rgba(0,0,0,.1);
   display:flex;align-items:center;justify-content:center;
-  color:var(--text-2);font-size:1rem;transition:all .25s;
+  color:var(--text-2);font-size:.8rem;transition:all .25s;
 }
-.ft-social:hover{background:var(--purple);border-color:var(--purple);color:white;transform:translateY(-2px)}
+.ft-social:hover{background:var(--blue);border-color:var(--blue);color:white;transform:translateY(-2px)}
 .ft-col h4{
-  font-size:1.1rem;font-weight:700;text-transform:uppercase;
+  font-size:.78rem;font-weight:700;text-transform:uppercase;
   letter-spacing:1px;color:var(--text-2);margin-bottom:16px;
   padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08);
 }
 .ft-links{list-style:none}
 .ft-links li{margin-bottom:8px}
-.ft-links a{color:var(--text-3);font-size:1rem;display:flex;align-items:center;gap:6px;transition:all .2s}
-.ft-links a i{font-size:1rem;color:var(--purple);opacity:.6}
+.ft-links a{color:var(--text-3);font-size:.83rem;display:flex;align-items:center;gap:6px;transition:all .2s}
+.ft-links a i{font-size:.6rem;color:var(--blue);opacity:.6}
 .ft-links a:hover{color:var(--text);transform:translateX(4px)}
 .footer-bottom{
   border-top:1px solid rgba(0,0,0,.07);
-  padding:20px;text-align:center;font-size:1rem;color:var(--text-3);
+  padding:20px;text-align:center;font-size:.8rem;color:var(--text-3);
 }
 .footer-bottom a{color:var(--text-3);transition:color .2s}
-.footer-bottom a:hover{color:var(--purple-l)}
+.footer-bottom a:hover{color:var(--blue-l)}
 .ft-sep{margin:0 10px;opacity:.4}
 
 /* ══════════════════════════════════════
@@ -612,100 +587,62 @@ body::before{
 .fab-wa:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.6)}
 
 /* ══════════════════════════════════════
-   TABLET — ≤ 1024px
-══════════════════════════════════════ */
-@media(max-width:1024px){
-  .pkg-track{grid-template-columns:repeat(2,1fr);gap:20px}
-  .feat-grid{grid-template-columns:repeat(2,1fr)}
-}
-
-/* ══════════════════════════════════════
    MOBILE — ≤ 768px
 ══════════════════════════════════════ */
 @media(max-width:768px){
-  /* Nav */
   .nav-links{display:none}
   .nav-toggle{display:flex;align-items:center;justify-content:center}
-  .nav{top:8px;left:8px;right:8px;height:56px;padding:0 16px}
-  .nav-drawer{top:74px;left:8px;right:8px}
-  .nav-logo img{height:36px}
 
-  /* Hero */
-  .hero{padding:80px 16px 100px}
-  .hero-grid{grid-template-columns:1fr;gap:24px}
+  .hero{padding:86px 16px 80px}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
   .book-card{order:2}
-  .hero h1{font-size:2.2rem;letter-spacing:-.04em}
-  .hero-sub{font-size:1.1rem;line-height:1.75}
-  .hero-stats{gap:12px;flex-wrap:wrap}
-  .hero-stat strong{font-size:1.15rem}
-  .hero-stat{flex:1;min-width:80px;text-align:center}
-  .hero-btns{flex-direction:column;gap:10px}
-  .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center;padding:14px 20px}
+  .hero h1{font-size:2.4rem}
+  .hero-sub{font-size:.95rem}
+  .hero-stats{gap:16px}
+  .hero-stat strong{font-size:1.2rem}
 
-  /* Sections */
-  .section{padding:56px 16px}
-  .section-head{margin-bottom:32px}
-  .section-title{font-size:1.7rem}
+  .section{padding:60px 16px}
+  .section-head{margin-bottom:36px}
 
-  /* Packages — 2 col on tablet-mobile, 1 col only on smallest */
-  .pkg-track{grid-template-columns:repeat(2,1fr);gap:14px}
-  .pkg-img{height:160px}
-  .pkg-img-title{font-size:1.1rem;bottom:10px;left:12px;right:12px}
-  .pkg-body{padding:14px 14px 16px}
-  .pkg-desc{font-size:1rem;margin-bottom:10px}
-  .pkg-features{gap:5px;margin-bottom:12px}
-  .pkg-feat{font-size:1rem;padding:3px 8px}
-  .btn-pkg{padding:10px;font-size:1rem}
-
-  /* Features */
-  .feat-grid{grid-template-columns:1fr;gap:12px}
-
-  /* Services */
+  .pkg-track{grid-template-columns:1fr;gap:16px}
+  .feat-grid{grid-template-columns:1fr;gap:14px}
   .srv-grid{grid-template-columns:1fr}
-  .tabs-row{width:100%;overflow-x:auto;padding-bottom:4px}
-  .tab-btn{flex-shrink:0}
-
-  /* FAQ */
   .faq-layout{grid-template-columns:1fr}
   .faq-img{display:none}
+  .footer-main{grid-template-columns:1fr;gap:28px}
+  .tabs-row{width:100%;justify-content:center}
+  .tab-btn{flex:1;text-align:center}
+  .doctors-grid{grid-template-columns:1fr 1fr;gap:14px}
 
-  /* Doctors scroll */
-  .doctors-scroll{gap:14px;padding-bottom:16px}
-  .doc-card{min-width:200px}
-
-  /* Footer */
-  .footer-main{grid-template-columns:1fr;gap:24px;padding:40px 16px}
-
-  /* Mobile sticky CTA bar */
+  /* Mobile sticky book bar */
   .mobile-cta-bar{
     position:fixed;bottom:0;left:0;right:0;z-index:890;
-    background:rgba(255,255,255,.97);
-    border-top:1px solid rgba(0,0,0,.09);
-    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-    display:flex;gap:10px;
-    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-    box-shadow:0 -4px 24px rgba(0,0,0,.08);
+    background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.1);
+    padding:12px 16px;display:flex;gap:10px;
+    backdrop-filter:blur(16px);
   }
   .mobile-cta-bar a{
     flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
-    padding:13px;border-radius:12px;font-weight:700;font-size:1.05rem;
+    padding:12px;border-radius:var(--radius-sm);font-weight:700;font-size:.85rem;
     transition:all .2s;
   }
   .mcta-call{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:var(--text)}
-  .mcta-wa{background:var(--wa);color:white;box-shadow:0 4px 16px rgba(37,211,102,.35)}
+  .mcta-wa{background:var(--wa);color:white;box-shadow:0 4px 16px rgba(37,211,102,.3)}
   .fab-wa{display:none}
+  .hero{padding-bottom:100px}
 }
 
+@media(min-width:769px) .mobile-cta-bar{display:none!important}
 .mobile-cta-bar{display:none}
 @media(max-width:768px){.mobile-cta-bar{display:flex}}
 
 @media(max-width:480px){
-  .hero h1{font-size:1.85rem}
-  .pkg-track{grid-template-columns:1fr;gap:14px}
-  .pkg-img{height:200px}
-  .pkg-img-title{font-size:1rem}
-  .footer-main{padding:32px 14px}
-  .section{padding:48px 14px}
+  .hero h1{font-size:2rem}
+  .rotator{flex-direction:column;align-items:flex-start;gap:6px}
+  .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center}
+  .pkg-track{padding:0}
+  .footer-main{padding:36px 16px}
+  .doctors-grid{grid-template-columns:1fr}
 }
   </style>
   <script src="maintenance.js"></script>
@@ -718,7 +655,7 @@ body::before{
 <header>
   <nav class="nav" id="nav">
     <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
-      <img src="/Uploads/logo%20(1).webp"
+      <img src="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp"
            alt="Sahara Medical Centre Al Nahda Sharjah" width="120" height="42" loading="eager" />
     </a>
     <div class="nav-links">
@@ -753,7 +690,7 @@ body::before{
 <main>
 <section class="hero" aria-label="Sahara Medical Centre – Book Appointment">
   <video class="hero-bg-video" muted loop playsinline autoplay>
-    <source src="/Uploads/SAHARA-short-video.mp4" type="video/mp4" />
+    <source src="https://saharamedicalcentre.ae/wp-content/uploads/2025/02/SAHARA-short-video.mp4" type="video/mp4" />
   </video>
 
   <div class="hero-grid">
@@ -762,7 +699,7 @@ body::before{
       <div class="hero-eyebrow">
         <span></span> Open Today · Al Nahda, Sharjah
       </div>
-      <h1</h1 is replaced below<span class="grad-text">Dental Care</span><br/>in Sharjah</h1>
+      <h1>Best Medical &amp;<br/><span class="grad-text">Dental Care</span><br/>in Sharjah</h1>
       <p class="hero-sub">Expert GP, orthodontist, dentist &amp; oral surgeon at Sahara Medical Centre, Al Nahda. Walk-ins welcome.</p>
 
       <div class="rotator" aria-hidden="true">
@@ -847,107 +784,81 @@ body::before{
     <div class="pkg-track">
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=90&w=700&auto=format&fit=crop" alt="Orthodontic Braces Consultation Sharjah" />
-          <div class="pkg-img-overlay"></div>
-          <span class="pkg-chip chip-amber">Popular Choice</span>
-          <div class="pkg-img-title">Orthodontic Special</div>
-        </div>
         <div class="pkg-body">
-          <p class="pkg-desc">Expert assessment for Metal, Ceramic &amp; Invisible Braces — your dream smile, crafted by a specialist.</p>
-          <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Consultation AED 49</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> X-Ray Review</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> 0% Installments</span>
-          </div>
+          <div class="pkg-icon"><i class="fas fa-smile" style="color:#1B4FA8;font-size:1.5rem"></i></div>
+          <span class="pkg-chip chip-amber">⭐ Best Seller</span>
+          <h3 class="pkg-title">Orthodontic Special</h3>
+          <p class="pkg-desc">Assessment for Metal, Ceramic &amp; Invisible Braces. Your dream smile starts here.</p>
+          <div class="pkg-features"><span class="pkg-feat"><i class="fas fa-check"></i> 0% Installments Available</span></div>
           <a href="https://wa.me/971508821590?text=I%20want%20to%20book%20Orthodontic%20Consultation" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
+          <details class="pkg-more"><summary>View Details</summary><p>Full assessment by Specialist Orthodontist, X-ray review, and personalised treatment planning.</p></details>
         </div>
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=90&w=700&auto=format&fit=crop" alt="Complete Blood Count Sharjah" />
-          <div class="pkg-img-overlay"></div>
-          <div class="pkg-img-title">Complete Blood Count</div>
-        </div>
         <div class="pkg-body">
-          <p class="pkg-desc">Comprehensive CBC panel to detect infections, anaemia &amp; immunity levels. Fast, accurate, affordable.</p>
+          <div class="pkg-icon pkg-icon-teal"><i class="fas fa-vials" style="color:#0891b2;font-size:1.5rem"></i></div>
+          <h3 class="pkg-title">Complete Blood Count</h3>
+          <p class="pkg-desc">Detect infections, anemia &amp; immunity levels. Full body health status report.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Infection Screen</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Hemoglobin Test</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Same-Day Results</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Infection Screen</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Hemoglobin Test</span>
           </div>
           <a href="https://wa.me/971508821590?text=I%20want%20to%20book%20Complete%20Blood%20Checkup" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=90&w=700&auto=format&fit=crop" alt="Dental Scaling Polishing Al Nahda Sharjah" />
-          <div class="pkg-img-overlay"></div>
-          <div class="pkg-img-title">Scaling &amp; Polishing</div>
-        </div>
         <div class="pkg-body">
-          <p class="pkg-desc">Deep professional clean for a brighter smile, healthier gums and lasting fresh breath.</p>
+          <div class="pkg-icon pkg-icon-teal"><i class="fas fa-tooth" style="color:#0891b2;font-size:1.5rem"></i></div>
+          <h3 class="pkg-title">Scaling &amp; Polishing</h3>
+          <p class="pkg-desc">Deep clean for stain removal and fresh breath at our Al Nahda dental clinic.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Stain Removal</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Gum Care</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Plaque Control</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Stain Removal</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Gum Care</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20Scaling%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=90&w=700&auto=format&fit=crop" alt="Vitamin D B12 Test Sharjah" />
-          <div class="pkg-img-overlay"></div>
-          <div class="pkg-img-title">Vitamin D &amp; B12</div>
-        </div>
         <div class="pkg-body">
-          <p class="pkg-desc">Find out why you feel tired. Check your essential vitamin levels and get back to full energy.</p>
+          <div class="pkg-icon pkg-icon-amber"><i class="fas fa-capsules" style="color:#d97706;font-size:1.5rem"></i></div>
+          <h3 class="pkg-title">Vitamin D &amp; B12</h3>
+          <p class="pkg-desc">Boost your energy. Check your essential vitamin levels today.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Fatigue Screen</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Energy Boost Plan</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Quick Turnaround</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Fatigue Check</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Energy Boost</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20Vitamin%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=90&w=700&auto=format&fit=crop" alt="GP Doctor Consultation Al Nahda Sharjah" />
-          <div class="pkg-img-overlay"></div>
-          <span class="pkg-chip chip-green"><i class="fas fa-user-md"></i> Walk-ins OK</span>
-          <div class="pkg-img-title">GP Consultation</div>
-        </div>
         <div class="pkg-body">
-          <p class="pkg-desc">Expert medical advice for flu, fever, chronic conditions and general health concerns — same day, every day.</p>
+          <div class="pkg-icon"><i class="fas fa-stethoscope" style="color:#1B4FA8;font-size:1.5rem"></i></div>
+          <h3 class="pkg-title">GP Consultation</h3>
+          <p class="pkg-desc">Expert medical advice for flu, fever and general health concerns. From AED 49.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Accurate Diagnosis</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Prescription</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Insurance Accepted</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Diagnosis</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Prescription</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20GP%20Consultation" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1582560475093-ba66accbc424?q=90&w=700&auto=format&fit=crop" alt="STD Screening Confidential Sharjah" />
-          <div class="pkg-img-overlay"></div>
-          <span class="pkg-chip chip-dark"><i class="fas fa-lock"></i> Confidential</span>
-          <div class="pkg-img-title">STD Screening</div>
-        </div>
         <div class="pkg-body">
-          <p class="pkg-desc">Discreet, accurate and fully confidential STD testing with fast results. Your privacy is fully protected.</p>
+          <div class="pkg-icon pkg-icon-dark"><i class="fas fa-shield-alt" style="color:#475569;font-size:1.5rem"></i></div>
+          <span class="pkg-chip chip-dark"><i class="fas fa-lock"></i> Confidential</span>
+          <h3 class="pkg-title">STD Screening</h3>
+          <p class="pkg-desc">Confidential, discreet, and accurate testing with fast results.</p>
           <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> 100% Private</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> Fast Results</span>
-            <span class="pkg-feat"><i class="fas fa-check-circle"></i> No Judgement</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Privacy Assured</span>
+            <span class="pkg-feat"><i class="fas fa-check"></i> Fast Results</span>
           </div>
-          <a href="https://wa.me/971508821590?text=I%20would%20like%20to%20inquire%20about%20the%20STD%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Inquire Privately</a>
+          <a href="https://wa.me/971508821590?text=I%20would%20like%20to%20inquire%20about%20the%20STD%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Inquire Now</a>
+          <details class="pkg-more"><summary>View Details</summary><p>Screening for common sexually transmitted diseases with full privacy guaranteed.</p></details>
         </div>
       </article>
 
@@ -1018,12 +929,12 @@ body::before{
       <p class="section-sub">Experienced doctors across GP, dentistry, orthodontics and oral surgery at Sahara Medical Centre.</p>
     </div>
 
-    <div class="doctors-scroll" id="docTrack">
+    <div class="doctors-grid" id="docTrack">
 
       <article class="doc-card">
         <div class="doc-img">
           <span class="doc-badge" style="background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:#b45309">⭐ Top Rated</span>
-          <img src="/Uploads/anwar.jpg" alt="Dr. Anwar MK – GP Al Nahda Sharjah" loading="lazy" />
+          <img src="https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg" alt="Dr. Anwar MK – GP Al Nahda Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Anwar MK</p>
@@ -1031,14 +942,14 @@ body::before{
           <p class="doc-qual">15 Years Experience</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
-            <a href="/book-appointment/?doctor=anwar" class="doc-book">Book</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
           </div>
         </div>
       </article>
 
       <article class="doc-card featured">
         <div class="doc-img">
-          <span class="doc-badge" style="background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);color:#7c3aed">Oral Surgeon</span>
+          <span class="doc-badge" style="background:rgba(27,79,168,.12);border:1px solid rgba(27,79,168,.3);color:#1B4FA8">Oral Surgeon</span>
           <img src="Doctor.jpeg" alt="Dr. Jeff Zacharia – Oral & Maxillofacial Surgeon Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
@@ -1062,7 +973,7 @@ body::before{
           <p class="doc-spec">Specialist Orthodontist</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
-            <a href="/book-appointment/?doctor=dynamol" class="doc-book">Book</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
           </div>
         </div>
       </article>
@@ -1076,7 +987,7 @@ body::before{
           <p class="doc-spec">General Practitioner</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
-            <a href="/book-appointment/?doctor=jubila" class="doc-book">Book</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
           </div>
         </div>
       </article>
@@ -1091,7 +1002,7 @@ body::before{
           <p class="doc-qual">BDS</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
-            <a href="/book-appointment/?doctor=baisiya" class="doc-book">Book</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
           </div>
         </div>
       </article>
@@ -1106,13 +1017,12 @@ body::before{
           <p class="doc-qual">BDS</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
-            <a href="/book-appointment/?doctor=aysha" class="doc-book">Book</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
           </div>
         </div>
       </article>
 
     </div>
-    <div class="scroll-dots" id="docDots"></div>
   </div>
 </section>
 
@@ -1217,7 +1127,7 @@ body::before{
 
     <div class="faq-layout">
       <div class="faq-img">
-        <img src="/Uploads/DSC06044-scaled.jpg"
+        <img src="https://saharamedicalcentre.ae/wp-content/uploads/2025/02/DSC06044-scaled.jpg"
              alt="Inside Sahara Medical Centre Al Nahda Sharjah" loading="lazy" />
       </div>
       <div class="faq-list">
@@ -1229,7 +1139,7 @@ body::before{
               <li>18+ years of medical expertise in Al Nahda, Sharjah</li>
               <li>Specialist doctors — GP, dentist, orthodontist, oral surgeon</li>
               <li>Transparent pricing with no hidden costs</li>
-              <li>High patient satisfaction</li>
+              <li>98% patient satisfaction rating</li>
               <li>Open every day 8AM–11PM, walk-ins welcome</li>
             </ul>
           </div>
@@ -1286,7 +1196,7 @@ body::before{
       <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i>Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
       <!-- duplicate for seamless scroll -->
       <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
@@ -1294,7 +1204,7 @@ body::before{
       <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i>Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
     </div>
   </div>
@@ -1328,7 +1238,7 @@ body::before{
     <div class="ft-col">
       <h4>Dental</h4>
       <ul class="ft-links">
-        <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i>Dental Clinic</a></li>
+        <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Best Dental Clinic</a></li>
         <li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li>
         <li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li>
         <li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Implants</a></li>
@@ -1344,7 +1254,6 @@ body::before{
         <li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
         <li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
         <li><a href="/dental-clinic-in-al-nahda/"><i class="fas fa-chevron-right"></i> Dentist Al Nahda</a></li>
-        <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
       </ul>
     </div>
   </div>
@@ -1354,7 +1263,7 @@ body::before{
     <span class="ft-sep">|</span>
     <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a>
     <span class="ft-sep">|</span>
-    <a href="https://leadvyne.com/" target="_blank" rel="noopener">AICRM by LeadVyne</a>
+    <a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a>
   </div>
 </footer>
 
@@ -1454,27 +1363,6 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   });
 });
 
-/* ── Doctors scroll dots ── */
-(()=>{
-  const track = document.getElementById('docTrack');
-  const dotsEl = document.getElementById('docDots');
-  const cards  = [...track.querySelectorAll('.doc-card')];
-  const dots   = cards.map((_,i)=>{
-    const d = document.createElement('div');
-    d.className = 'scroll-dot'+(i===0?' active':'');
-    d.onclick = ()=>track.scrollTo({left:cards[i].offsetLeft,behavior:'smooth'});
-    dotsEl.appendChild(d);
-    return d;
-  });
-  const update = ()=>{
-    let ci=0,md=Infinity;
-    cards.forEach((c,i)=>{ const d=Math.abs(c.offsetLeft-track.scrollLeft); if(d<md){md=d;ci=i;} });
-    dots.forEach((d,i)=>d.classList.toggle('active',i===ci));
-  };
-  track.addEventListener('scroll',update,{passive:true});
-  let ai=0;
-  setInterval(()=>{ ai=(ai+1)%cards.length; track.scrollTo({left:cards[ai].offsetLeft,behavior:'smooth'}); },4500);
-})();
 
 /* ── Srv card entrance ── */
 (()=>{
@@ -1487,7 +1375,7 @@ document.querySelectorAll('.faq-item').forEach(item=>{
       }
     });
   },{threshold:.08});
-  document.querySelectorAll('.srv-card,.feat-card,.pkg-card').forEach(c=>{
+  document.querySelectorAll('.srv-card,.feat-card,.pkg-card,.doc-card').forEach(c=>{
     c.style.opacity='0';c.style.transform='translateY(18px)';c.style.transition='opacity .45s ease,transform .45s ease';
     io.observe(c);
   });

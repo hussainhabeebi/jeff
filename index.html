@@ -93,10 +93,10 @@ body::before{
    NAV
 ══════════════════════════════════════ */
 .nav{
-  position:fixed;top:10px;left:10px;right:10px;z-index:999;
+  position:fixed;top:0;left:0;right:0;z-index:999;
   background:rgba(255,255,255,.85);
   border:1px solid rgba(0,0,0,.07);
-  border-radius:var(--radius);
+  border-radius:0;
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   padding:0 20px;height:62px;
   display:flex;align-items:center;justify-content:space-between;
@@ -130,9 +130,9 @@ body::before{
 .nav-toggle:hover{background:rgba(0,0,0,.06)}
 .nav-drawer{
   display:none;flex-direction:column;gap:4px;
-  position:fixed;top:82px;left:10px;right:10px;z-index:998;
+  position:fixed;top:62px;left:0;right:0;z-index:998;
   background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);
-  border-radius:var(--radius);backdrop-filter:blur(20px);
+  border-radius:0;backdrop-filter:blur(20px);
   padding:16px;
   transform:translateY(-16px);opacity:0;pointer-events:none;
   transition:all .25s ease;
@@ -699,7 +699,7 @@ body::before{
       <div class="hero-eyebrow">
         <span></span> Open Today · Al Nahda, Sharjah
       </div>
-      <h1>Best Medical &amp;<br/><span class="grad-text">Dental Care</span><br/>in Sharjah</h1>
+      <h1>Expert Medical &amp;<br/><span class="grad-text">Dental Care</span><br/>in Sharjah</h1>
       <p class="hero-sub">Expert GP, orthodontist, dentist &amp; oral surgeon at Sahara Medical Centre, Al Nahda. Walk-ins welcome.</p>
 
       <div class="rotator" aria-hidden="true">
@@ -786,7 +786,7 @@ body::before{
       <article class="pkg-card">
         <div class="pkg-body">
           <div class="pkg-icon"><i class="fas fa-smile" style="color:#1B4FA8;font-size:1.5rem"></i></div>
-          <span class="pkg-chip chip-amber">⭐ Best Seller</span>
+          <span class="pkg-chip chip-amber">⭐ Popular Choice</span>
           <h3 class="pkg-title">Orthodontic Special</h3>
           <p class="pkg-desc">Assessment for Metal, Ceramic &amp; Invisible Braces. Your dream smile starts here.</p>
           <div class="pkg-features"><span class="pkg-feat"><i class="fas fa-check"></i> 0% Installments Available</span></div>
@@ -933,12 +933,12 @@ body::before{
 
       <article class="doc-card">
         <div class="doc-img">
-          <span class="doc-badge" style="background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:#b45309">⭐ Top Rated</span>
+          <span class="doc-badge" style="background:rgba(27,79,168,.1);border:1px solid rgba(27,79,168,.25);color:#1B4FA8">Medical Director</span>
           <img src="/Uploads/anwar.jpg" alt="Dr. Anwar MK – GP Al Nahda Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Anwar MK</p>
-          <p class="doc-spec">General Practitioner</p>
+          <p class="doc-spec">GP · Medical Director</p>
           <p class="doc-qual">15 Years Experience</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
@@ -1196,7 +1196,7 @@ body::before{
       <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
       <!-- duplicate for seamless scroll -->
       <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
@@ -1204,7 +1204,7 @@ body::before{
       <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
     </div>
   </div>

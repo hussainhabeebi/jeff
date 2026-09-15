@@ -570,15 +570,15 @@ body::before{
 .ticker-item:hover{color:var(--text)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .footer-main{
-  max-width:1200px;margin:0 auto;padding:56px 20px;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
+  max-width:1200px;margin:0 auto;padding:24px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
 }
 .ft-brand-name{
   font-size:1.3rem;font-weight:800;margin-bottom:14px;
   display:flex;align-items:center;gap:10px;
 }
 .ft-brand-name i{color:var(--blue-l)}
-.ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
+.ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:12px;line-height:1.6}
 .ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.83rem;color:var(--text-2)}
 .ft-contact i{color:var(--blue);margin-top:3px;flex-shrink:0}
 .ft-contact a{color:var(--text);font-weight:600;transition:color .2s}
@@ -603,7 +603,7 @@ body::before{
 .ft-links a:hover{color:var(--text);transform:translateX(4px)}
 .footer-bottom{
   border-top:1px solid rgba(0,0,0,.07);
-  padding:20px;text-align:center;font-size:.8rem;color:var(--text-3);
+  padding:12px 20px;text-align:center;font-size:.8rem;color:var(--text-3);
 }
 .footer-bottom a{color:var(--text-3);transition:color .2s}
 .footer-bottom a:hover{color:var(--blue-l)}
@@ -650,7 +650,7 @@ body::before{
   .srv-grid{grid-template-columns:1fr}
   .faq-layout{grid-template-columns:1fr}
   .faq-img{display:none}
-  .footer-main{grid-template-columns:1fr;gap:28px}
+  .footer-main{flex-direction:column;gap:20px}
   .tabs-row{width:100%;justify-content:center}
   .tab-btn{flex:1;text-align:center}
   .doctors-grid{grid-template-columns:1fr 1fr;gap:14px}
@@ -683,7 +683,7 @@ body::before{
   .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center}
   .pkg-track{padding:0}
   .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer-main{padding:36px 16px}
+  .footer-main{padding:20px 16px}
   .doctors-grid{grid-template-columns:1fr}
 }
 
@@ -1261,17 +1261,7 @@ body::before{
   <div class="footer-main">
     <div class="ft-col">
       <div class="ft-brand-name"><i class="fas fa-hospital-alt"></i> Sahara Medical Centre</div>
-      <p class="ft-desc">Your trusted healthcare partner in Al Nahda, Sharjah UAE. Premium medical and dental care with compassionate experts.</p>
-      <div class="ft-contact"><i class="fas fa-map-marker-alt"></i><span>Ganda Tower, Al Nahda, Sharjah, UAE</span></div>
-      <div class="ft-contact"><i class="fas fa-phone-alt"></i><a href="tel:+971508821590">+971 50 882 1590</a></div>
-      <div class="ft-contact"><i class="fas fa-envelope"></i><a href="mailto:info@saharamedicalcentre.ae">info@saharamedicalcentre.ae</a></div>
-      <div class="ft-socials">
-        <a href="https://www.facebook.com/p/sahara-medical-centre-100095606677272/" class="ft-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/saharamedicalcentre.ae/" class="ft-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/971508821590" class="ft-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://in.linkedin.com/company/saharamedicalcentrellc" class="ft-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
-    </div>
 <div class="ft-col">
       <h4>Quick Links</h4>
       <ul class="ft-links">

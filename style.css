@@ -15,7 +15,9 @@
   --text:         #0F0A1E;
   --text-2:       #334155;
   --text-3:       #64748b;
-  --border:       #E8E0F5;
+  --border:       #E8DDD0;
+  --warm:         #9B7040;
+  --warm-soft:    #FBF5EC;
   --radius:       20px;
   --radius-sm:    12px;
   --shadow-sm:    0 2px 12px rgba(107,47,160,.08);
@@ -137,12 +139,12 @@ img { display: block; max-width: 100%; }
   position: fixed;
   top: 36px; left: 0; right: 0;
   z-index: 200;
-  background: #3C1E8C;
+  background: #614499;
   transition: background .3s, box-shadow .3s, padding .3s;
   padding: 6px 0;
 }
 .navbar.scrolled {
-  background: #3C1E8C;
+  background: #614499;
   backdrop-filter: blur(16px);
   box-shadow: 0 4px 24px rgba(0,0,0,.25);
   padding: 2px 0;

@@ -24,10 +24,12 @@ img{display:block;max-width:100%;height:auto}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),var(--bg)}
-.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:0;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;height:36px;background:linear-gradient(90deg,#059669,#0891b2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;gap:8px;letter-spacing:.3px}
+.top-bar strong{font-weight:800}
+.nav{position:fixed;top:46px;left:10px;right:10px;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 24px rgba(0,0,0,.1)}
-.nav-logo img{height:42px;width:auto;transition:height .3s}
-.nav.scrolled .nav-logo img{height:36px}
+.nav-logo img{height:60px;width:auto;transition:height .3s}
+.nav.scrolled .nav-logo img{height:48px}
 .nav-links{display:flex;gap:4px;align-items:center}
 .nav-links a{color:var(--text-2);font-size:1.05rem;font-weight:500;padding:8px 14px;border-radius:var(--radius-sm);transition:all .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--text);background:rgba(0,0,0,.05)}
@@ -35,12 +37,12 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
 .nav-toggle{display:none;color:var(--text);font-size:20px;padding:8px;border-radius:8px;transition:background .2s}
 .nav-toggle:hover{background:rgba(0,0,0,.06)}
-.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:62px;left:0;right:0;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:0;backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
+.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:118px;left:10px;right:10px;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
 .nav-drawer.open{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
 .nav-drawer a{color:var(--text-2);font-weight:500;font-size:1.1rem;padding:13px 16px;border-radius:var(--radius-sm);transition:all .2s;display:flex;align-items:center;gap:10px}
 .nav-drawer a:hover{color:var(--text);background:rgba(0,0,0,.05)}
 .nav-drawer .nav-drawer-cta{background:var(--grad);color:white;margin-top:4px;justify-content:center;font-weight:700}
-.page-hero{min-height:55vh;display:flex;align-items:center;padding:120px 20px 80px;position:relative;overflow:hidden}
+.page-hero{min-height:55vh;display:flex;align-items:center;padding:156px 20px 80px;position:relative;overflow:hidden}
 .page-hero-inner{max-width:800px;margin:0 auto;text-align:center}
 .page-label{display:inline-block;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:16px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);padding:5px 16px;border-radius:50px}
 .page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
@@ -154,6 +156,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <script src="../maintenance.js"></script>
 </head>
 <body>
+<div class="top-bar"><i class="fas fa-clock" style="font-size:.75rem;margin-right:4px"></i>Open <strong>8AM – 11PM</strong>&nbsp;·&nbsp; All Days &nbsp;·&nbsp; Walk-ins Welcome</div>
 <header>
   <nav class="nav" id="nav">
     <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
@@ -228,7 +231,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="section-inner">
       <div class="section-head"><span class="section-label">Treatment Journey</span><h2 class="section-title">Your Orthodontic Journey in 4 Steps</h2></div>
       <div class="steps">
-        <div class="step"><div class="step-num">01</div><div class="step-title">Consultation &ndash; AED 49</div><p class="step-desc">Meet our specialist orthodontist for an assessment of your teeth, jaw and X-rays. We discuss your goals and recommend a suitable treatment option and timeline.</p></div>
+        <div class="step"><div class="step-num">01</div><div class="step-title">Consultation &ndash; AED 49</div><p class="step-desc">Meet our specialist orthodontist for an assessment of your teeth, jaw and X-rays. We discuss your goals and recommend the best treatment option and timeline.</p></div>
         <div class="step"><div class="step-num">02</div><div class="step-title">Treatment Planning</div><p class="step-desc">A customised treatment plan is created. For aligners, digital scans produce your custom trays. For braces, brackets are bonded at the first appointment.</p></div>
         <div class="step"><div class="step-num">03</div><div class="step-title">Active Treatment</div><p class="step-desc">You attend regular check-up appointments every 4&ndash;8 weeks for wire adjustments or new aligner trays. We monitor progress and make adjustments as needed.</p></div>
         <div class="step"><div class="step-num">04</div><div class="step-title">Retention Phase</div><p class="step-desc">Once treatment is complete, retainers are provided to hold your teeth in their perfect new positions. A follow-up schedule ensures long-term stability.</p></div>
@@ -263,17 +266,17 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="ticker-bar" aria-hidden="true"><div class="ticker-inner">
     <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
     <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-    <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+    <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> General Practitioner Consultation AED 49</a>
     <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
     <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-    <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i>Orthodontist Sharjah</a>
+    <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
     <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff &#8211; Oral Surgeon</a>
     <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
     <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-    <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+    <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> General Practitioner Consultation AED 49</a>
     <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
     <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-    <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i>Orthodontist Sharjah</a>
+    <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
     <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff &#8211; Oral Surgeon</a>
   </div></div>
   <div class="footer-main">
@@ -292,7 +295,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     </div>
     <div class="ft-col"><h4>Medical</h4><ul class="ft-links">
       <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
-      <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li>
+      <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> General Practitioner</a></li>
       <li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li>
         <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
       <li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff &#8211; Oral Surgeon</a></li>
@@ -313,7 +316,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
         <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">&copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE <span class="ft-sep">|</span> <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a> <span class="ft-sep">|</span> <a href="https://leadvyne.com/" target="_blank" rel="noopener">AICRM by LeadVyne</a></div>
+  <div class="footer-bottom">&copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE</div>
 </footer>
 <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <div class="mobile-cta-bar">

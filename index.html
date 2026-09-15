@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-  <title>Trusted Medical Centre & Dental Clinic in Al Nahda Sharjah | Sahara Medical Centre</title>
-  <meta name="description" content="Sahara Medical Centre – Trusted medical centre and dental clinic in Al Nahda, Sharjah & Dubai. Expert GP, orthodontist, dentist, oral surgeon. Open 8AM–11PM. Walk-ins welcome. Book now!" />
-  <meta name="keywords" content="medical centre Al Nahda Sharjah, dental clinic Al Nahda, GP doctor Sharjah, orthodontist Sharjah, oral surgeon Sharjah, medical clinic Dubai, dental clinic near me, Sahara Medical Centre, teeth whitening Sharjah, braces Sharjah, root canal Sharjah" />
+  <title>Best Medical Centre & Dental Clinic in Al Nahda Sharjah | Sahara Medical Centre</title>
+  <meta name="description" content="Sahara Medical Centre – Best medical centre and dental clinic in Al Nahda, Sharjah & Dubai. Expert General Practitioner, orthodontist, dentist, oral surgeon. Open 8AM–11PM. Walk-ins welcome. Book now!" />
+  <meta name="keywords" content="medical centre Al Nahda Sharjah, dental clinic Al Nahda, best dentist Sharjah, General Practitioner Sharjah, orthodontist Sharjah, oral surgeon Sharjah, medical clinic Dubai, dental clinic near me, Sahara Medical Centre, teeth whitening Sharjah, braces Sharjah, root canal Sharjah" />
   <link rel="canonical" href="https://saharamedicalcentre.ae/" />
   <meta name="geo.region" content="AE-SH" />
   <meta name="geo.placename" content="Al Nahda, Sharjah, UAE" />
   <meta name="geo.position" content="25.3348;55.4197" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Trusted Medical Centre & Dental Clinic in Al Nahda Sharjah | Sahara Medical Centre" />
-  <meta property="og:description" content="Premium healthcare in Sharjah. Expert GP, dentist, orthodontist & oral surgeon. Open 8AM–11PM daily." />
-  <meta property="og:image" content="/Uploads/logo%20(1).webp" />
+  <meta property="og:title" content="Best Medical Centre & Dental Clinic in Al Nahda Sharjah | Sahara Medical Centre" />
+  <meta property="og:description" content="Premium healthcare in Sharjah. Expert General Practitioner, dentist, orthodontist & oral surgeon. Open 8AM–11PM daily." />
+  <meta property="og:image" content="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp" />
   <meta property="og:url" content="https://saharamedicalcentre.ae/" />
 
   <script type="application/ld+json">
@@ -92,8 +91,10 @@ body::before{
 /* ══════════════════════════════════════
    NAV
 ══════════════════════════════════════ */
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;height:36px;background:linear-gradient(90deg,#059669,#0891b2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;gap:8px;letter-spacing:.3px}
+.top-bar strong{font-weight:800}
 .nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
+  position:fixed;top:46px;left:10px;right:10px;z-index:999;
   background:rgba(255,255,255,.85);
   border:1px solid rgba(0,0,0,.07);
   border-radius:0;
@@ -107,8 +108,8 @@ body::before{
   background:rgba(255,255,255,.97);
   box-shadow:0 4px 24px rgba(0,0,0,.1);
 }
-.nav-logo img{height:42px;width:auto;transition:height .3s}
-.nav.scrolled .nav-logo img{height:36px}
+.nav-logo img{height:60px;width:auto;transition:height .3s}
+.nav.scrolled .nav-logo img{height:48px}
 .nav-links{display:flex;gap:4px;align-items:center}
 .nav-links a{
   color:var(--text-2);font-size:.875rem;font-weight:500;
@@ -130,7 +131,7 @@ body::before{
 .nav-toggle:hover{background:rgba(0,0,0,.06)}
 .nav-drawer{
   display:none;flex-direction:column;gap:4px;
-  position:fixed;top:62px;left:0;right:0;z-index:998;
+  position:fixed;top:118px;left:10px;right:10px;z-index:998;
   background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);
   border-radius:0;backdrop-filter:blur(20px);
   padding:16px;
@@ -154,12 +155,16 @@ body::before{
 ══════════════════════════════════════ */
 .hero{
   min-height:100svh;display:flex;align-items:center;
-  padding:100px 20px 60px;
+  padding:136px 20px 60px;
   position:relative;overflow:hidden;
 }
 .hero-bg-video{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;opacity:.08;z-index:0;
+}
+.hero-bg-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.12;z-index:0;
 }
 .hero-grid{
   position:relative;z-index:1;
@@ -386,7 +391,37 @@ body::before{
 .feat-card:hover .feat-tag{background:rgba(27,79,168,.08);border-color:rgba(27,79,168,.2);color:var(--blue)}
 
 /* ══════════════════════════════════════
-   DOCTORS — 2 × 3 GRID
+   INSURANCE PARTNERS
+══════════════════════════════════════ */
+.insurance-grid{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;
+}
+.insurance-card{
+  background:#fff;border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--radius);padding:16px;overflow:hidden;min-height:132px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.insurance-card img{
+  display:block;width:100%;height:100px;max-width:100%;object-fit:contain;
+}
+.insurance-footer{
+  margin-top:32px;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:22px 24px;background:#fff;
+  border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.insurance-note{color:var(--text-2);font-size:.85rem;line-height:1.65;max-width:760px}
+.insurance-verify{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  flex-shrink:0;background:var(--wa);color:#fff;padding:12px 18px;
+  border-radius:var(--radius-sm);font-weight:700;font-size:.85rem;
+  box-shadow:0 4px 18px rgba(37,211,102,.28);transition:all .25s;
+}
+.insurance-verify:hover{transform:translateY(-2px);box-shadow:0 7px 24px rgba(37,211,102,.4)}
+
+/* ══════════════════════════════════════
+   DOCTORS
 ══════════════════════════════════════ */
 .doctors-grid{
   display:grid;
@@ -606,6 +641,11 @@ body::before{
 
   .pkg-track{grid-template-columns:1fr;gap:16px}
   .feat-grid{grid-template-columns:1fr;gap:14px}
+  .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .insurance-card{min-height:112px;padding:12px}
+  .insurance-card img{height:86px}
+  .insurance-footer{flex-direction:column;align-items:flex-start;padding:18px}
+  .insurance-verify{width:100%}
   .srv-grid{grid-template-columns:1fr}
   .faq-layout{grid-template-columns:1fr}
   .faq-img{display:none}
@@ -641,8 +681,13 @@ body::before{
   .rotator{flex-direction:column;align-items:flex-start;gap:6px}
   .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center}
   .pkg-track{padding:0}
+  .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .footer-main{padding:36px 16px}
   .doctors-grid{grid-template-columns:1fr}
+}
+
+@media(min-width:769px) and (max-width:1024px){
+  .insurance-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
   </style>
   <script src="maintenance.js"></script>
@@ -652,6 +697,7 @@ body::before{
 <!-- ══════════════════════════════════════
      NAV
 ══════════════════════════════════════ -->
+<div class="top-bar"><i class="fas fa-clock" style="font-size:.75rem;margin-right:4px"></i>Open <strong>8AM – 11PM</strong>&nbsp;·&nbsp; All Days &nbsp;·&nbsp; Walk-ins Welcome</div>
 <header>
   <nav class="nav" id="nav">
     <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
@@ -689,6 +735,7 @@ body::before{
 ══════════════════════════════════════ -->
 <main>
 <section class="hero" aria-label="Sahara Medical Centre – Book Appointment">
+  <img class="hero-bg-img" src="Uploads/reception.jpg" alt="" aria-hidden="true" />
   <video class="hero-bg-video" muted loop playsinline autoplay>
     <source src="https://saharamedicalcentre.ae/wp-content/uploads/2025/02/SAHARA-short-video.mp4" type="video/mp4" />
   </video>
@@ -699,18 +746,18 @@ body::before{
       <div class="hero-eyebrow">
         <span></span> Open Today · Al Nahda, Sharjah
       </div>
-      <h1>Expert Medical &amp;<br/><span class="grad-text">Dental Care</span><br/>in Sharjah</h1>
-      <p class="hero-sub">Expert GP, orthodontist, dentist &amp; oral surgeon at Sahara Medical Centre, Al Nahda. Walk-ins welcome.</p>
+      <h1>Best Medical &amp;<br/><span class="grad-text">Dental Care</span><br/>in Sharjah</h1>
+      <p class="hero-sub">Expert General Practitioner, orthodontist, dentist &amp; oral surgeon at Sahara Medical Centre, Al Nahda. Walk-ins welcome.</p>
 
       <div class="rotator" aria-hidden="true">
         <span class="rotator-badge">Today</span>
         <div class="rotator-text">
           <div class="rotator-inner">
-            <span>GP Consultation from AED 49</span>
+            <span>General Practitioner Consultation from AED 49</span>
             <span>Specialist Orthodontist</span>
             <span>Expert Dental Care</span>
             <span>0% Installments on Braces</span>
-            <span>GP Consultation from AED 49</span>
+            <span>General Practitioner Consultation from AED 49</span>
           </div>
         </div>
       </div>
@@ -753,14 +800,12 @@ body::before{
         <input class="book-field" type="text" id="bName" placeholder="Your Name" required autocomplete="name" />
         <select class="book-field" id="bService" required>
           <option value="" disabled selected>What do you need?</option>
-          <option>GP / Medical Consultation</option>
+          <option>General Practitioner Consultation</option>
           <option>Dental Care &amp; Cleaning</option>
           <option>Orthodontics / Braces</option>
           <option>Root Canal Treatment</option>
           <option>Teeth Whitening</option>
           <option>Wisdom Tooth Extraction</option>
-          <option>Blood Test / Health Checkup</option>
-          <option>Vitamin D &amp; B12 Test</option>
         </select>
         <button type="submit" class="book-submit">
           <i class="fab fa-whatsapp"></i> Book via WhatsApp
@@ -796,19 +841,9 @@ body::before{
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-body">
-          <div class="pkg-icon pkg-icon-teal"><i class="fas fa-vials" style="color:#0891b2;font-size:1.5rem"></i></div>
-          <h3 class="pkg-title">Complete Blood Count</h3>
-          <p class="pkg-desc">Detect infections, anemia &amp; immunity levels. Full body health status report.</p>
-          <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Infection Screen</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Hemoglobin Test</span>
-          </div>
-          <a href="https://wa.me/971508821590?text=I%20want%20to%20book%20Complete%20Blood%20Checkup" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
+        <div class="pkg-img">
+          <img loading="lazy" src="https://saharamedicalcentre.ae/wp-content/uploads/2024/05/Untitled-design-19.png" onerror="this.src='https://images.unsplash.com/photo-1606811971618-4486d14f3f72?w=600'" alt="Dental Scaling Polishing Al Nahda Sharjah" />
         </div>
-      </article>
-
-      <article class="pkg-card">
         <div class="pkg-body">
           <div class="pkg-icon pkg-icon-teal"><i class="fas fa-tooth" style="color:#0891b2;font-size:1.5rem"></i></div>
           <h3 class="pkg-title">Scaling &amp; Polishing</h3>
@@ -822,43 +857,17 @@ body::before{
       </article>
 
       <article class="pkg-card">
-        <div class="pkg-body">
-          <div class="pkg-icon pkg-icon-amber"><i class="fas fa-capsules" style="color:#d97706;font-size:1.5rem"></i></div>
-          <h3 class="pkg-title">Vitamin D &amp; B12</h3>
-          <p class="pkg-desc">Boost your energy. Check your essential vitamin levels today.</p>
-          <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Fatigue Check</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Energy Boost</span>
-          </div>
-          <a href="https://wa.me/971508821590?text=Book%20Vitamin%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
+        <div class="pkg-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=600&auto=format&fit=crop" alt="General Practitioner Consultation Al Nahda Sharjah" />
         </div>
-      </article>
-
-      <article class="pkg-card">
         <div class="pkg-body">
-          <div class="pkg-icon"><i class="fas fa-stethoscope" style="color:#1B4FA8;font-size:1.5rem"></i></div>
-          <h3 class="pkg-title">GP Consultation</h3>
+          <h3 class="pkg-title">General Practitioner Consultation</h3>
           <p class="pkg-desc">Expert medical advice for flu, fever and general health concerns. From AED 49.</p>
           <div class="pkg-features">
             <span class="pkg-feat"><i class="fas fa-check"></i> Diagnosis</span>
             <span class="pkg-feat"><i class="fas fa-check"></i> Prescription</span>
           </div>
           <a href="https://wa.me/971508821590?text=Book%20GP%20Consultation" class="btn-pkg"><i class="fab fa-whatsapp"></i> Book Now</a>
-        </div>
-      </article>
-
-      <article class="pkg-card">
-        <div class="pkg-body">
-          <div class="pkg-icon pkg-icon-dark"><i class="fas fa-shield-alt" style="color:#475569;font-size:1.5rem"></i></div>
-          <span class="pkg-chip chip-dark"><i class="fas fa-lock"></i> Confidential</span>
-          <h3 class="pkg-title">STD Screening</h3>
-          <p class="pkg-desc">Confidential, discreet, and accurate testing with fast results.</p>
-          <div class="pkg-features">
-            <span class="pkg-feat"><i class="fas fa-check"></i> Privacy Assured</span>
-            <span class="pkg-feat"><i class="fas fa-check"></i> Fast Results</span>
-          </div>
-          <a href="https://wa.me/971508821590?text=I%20would%20like%20to%20inquire%20about%20the%20STD%20Package" class="btn-pkg"><i class="fab fa-whatsapp"></i> Inquire Now</a>
-          <details class="pkg-more"><summary>View Details</summary><p>Screening for common sexually transmitted diseases with full privacy guaranteed.</p></details>
         </div>
       </article>
 
@@ -892,9 +901,9 @@ body::before{
       </article>
       <article class="feat-card">
         <div class="feat-icon fi-pink">👨‍⚕️</div>
-        <h3 class="feat-title">General Practice (GP)</h3>
+        <h3 class="feat-title">General Practice</h3>
         <p class="feat-desc">Trusted family medical care. Accurate diagnostics, chronic disease management and health screenings from AED 49.</p>
-        <div class="feat-tags"><span class="feat-tag">Family Doctor</span><span class="feat-tag">Blood Tests</span><span class="feat-tag">Chronic Care</span></div>
+        <div class="feat-tags"><span class="feat-tag">Chronic Care</span></div>
       </article>
       <article class="feat-card">
         <div class="feat-icon fi-amber">⏱️</div>
@@ -906,7 +915,7 @@ body::before{
         <div class="feat-icon fi-green">💳</div>
         <h3 class="feat-title">Affordable &amp; Transparent</h3>
         <p class="feat-desc">Honest pricing with no hidden costs. 0% installment plans via Tabby &amp; Tamara. We accept most major UAE insurance cards.</p>
-        <div class="feat-tags"><span class="feat-tag">Tabby/Tamara</span><span class="feat-tag">Insurance</span><span class="feat-tag">AED 49 GP</span></div>
+        <div class="feat-tags"><span class="feat-tag">Tabby/Tamara</span><span class="feat-tag">Insurance</span><span class="feat-tag">Doctor AED 49</span></div>
       </article>
       <article class="feat-card">
         <div class="feat-icon fi-blue">🌍</div>
@@ -919,6 +928,50 @@ body::before{
 </section>
 
 <!-- ══════════════════════════════════════
+     INSURANCE PARTNERS
+══════════════════════════════════════ -->
+<section class="section" id="insurance" aria-labelledby="insurance-h">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Insurance Accepted</div>
+      <h2 class="section-title" id="insurance-h">Insurance <span class="grad-text">Partners</span></h2>
+      <p class="section-sub">We accept a wide range of major insurance providers.</p>
+    </div>
+
+    <div class="insurance-grid">
+      <div class="insurance-card"><img src="Uploads/insurance/logo-saico-health-damana.png" alt="SAICO Health Daman insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-ecare-international.png" alt="eCare International insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-al-madallah.png" alt="Al Madallah Healthcare Management insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-fmc-network-uae.png" alt="FMC Network UAE insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-ngi-insurance.png" alt="NGI Insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-mednet.png" alt="MedNet insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-msh-international.png" alt="MSH International insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nas.png" alt="NAS insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-dubai-insurance.png" alt="Dubai Insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-neuron.png" alt="Neuron insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-aspire.png" alt="Aspire insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-aafiya.png" alt="Aafiya insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-gig-gulf.png" alt="GIG Gulf insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-globemed.png" alt="GlobeMed insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nextcare.png" alt="Nextcare insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-life-line.png" alt="Life Line insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nas-neuron.png" alt="NAS Neuron Health Services insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-adnic.png" alt="ADNIC insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-inayah.png" alt="Inayah insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-whealth-international.png" alt="WHealth International insurance accepted" /></div>
+    </div>
+
+    <div class="insurance-footer">
+      <p class="insurance-note">Insurance coverage is subject to eligibility and insurer approval. Please contact us to confirm your coverage.</p>
+      <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20verify%20my%20insurance%20coverage"
+         class="insurance-verify" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Verify Insurance Coverage
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      DOCTORS
 ══════════════════════════════════════ -->
 <section class="section" id="doctors" aria-labelledby="doc-h">
@@ -926,15 +979,15 @@ body::before{
     <div class="section-head">
       <div class="section-label">Our Team</div>
       <h2 class="section-title" id="doc-h">Meet Our <span class="grad-text">Specialists</span></h2>
-      <p class="section-sub">Experienced doctors across GP, dentistry, orthodontics and oral surgery at Sahara Medical Centre.</p>
+      <p class="section-sub">Experienced doctors across General Practitioner, dentistry, orthodontics and oral surgery at Sahara Medical Centre.</p>
     </div>
 
     <div class="doctors-grid" id="docTrack">
 
       <article class="doc-card">
         <div class="doc-img">
-          <span class="doc-badge" style="background:rgba(27,79,168,.1);border:1px solid rgba(27,79,168,.25);color:#1B4FA8">Medical Director</span>
-          <img src="/Uploads/anwar.jpg" alt="Dr. Anwar MK – GP Al Nahda Sharjah" loading="lazy" />
+          <span class="doc-badge" style="background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:#b45309">⭐ Top Rated</span>
+          <img src="https://saharamedicalcentre.ae/wp-content/uploads/2025/07/anwar.jpg" alt="Dr. Anwar MK – General Practitioner Al Nahda Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Anwar MK</p>
@@ -980,7 +1033,7 @@ body::before{
 
       <article class="doc-card">
         <div class="doc-img">
-          <img src="/Uploads/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg" alt="Dr. Jubila Fasly – GP Sharjah" loading="lazy" />
+          <img src="https://saharamedicalcentre.ae/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg" alt="Dr. Jubila Fasly – General Practitioner Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Jubila Fasly</p>
@@ -1047,7 +1100,7 @@ body::before{
         <div class="srv-card">
           <div class="srv-icon srv-icon-med"><i class="fas fa-stethoscope"></i></div>
           <h3 class="srv-title">General Medicine</h3>
-          <p class="srv-desc">Expert GP care for all ages. Diagnosis, treatment and preventive care from AED 49.</p>
+          <p class="srv-desc">Expert General Practitioner care for all ages. Diagnosis, treatment and preventive care from AED 49.</p>
           <a href="https://wa.me/971508821590?text=I%20want%20to%20book%20GP%20Consultation" class="btn-srv"><i class="fab fa-whatsapp"></i> Book Now</a>
         </div>
         <div class="srv-card">
@@ -1137,7 +1190,7 @@ body::before{
           <div class="faq-a">
             <ul>
               <li>18+ years of medical expertise in Al Nahda, Sharjah</li>
-              <li>Specialist doctors — GP, dentist, orthodontist, oral surgeon</li>
+              <li>Specialist doctors — General Practitioner, dentist, orthodontist, oral surgeon</li>
               <li>Transparent pricing with no hidden costs</li>
               <li>98% patient satisfaction rating</li>
               <li>Open every day 8AM–11PM, walk-ins welcome</li>
@@ -1193,18 +1246,18 @@ body::before{
     <div class="ticker-inner">
       <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
       <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> General Practitioner Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
       <!-- duplicate for seamless scroll -->
       <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
       <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> General Practitioner Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff – Oral Surgeon</a>
     </div>
   </div>
@@ -1228,7 +1281,7 @@ body::before{
       <h4>Medical</h4>
       <ul class="ft-links">
         <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
-        <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li>
+        <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> General Practitioner</a></li>
         <li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li>
         <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
         <li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff – Oral Surgeon</a></li>
@@ -1260,10 +1313,6 @@ body::before{
 
   <div class="footer-bottom">
     &copy; 2026 Sahara Medical Centre LLC · Al Nahda, Sharjah, UAE
-    <span class="ft-sep">|</span>
-    <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a>
-    <span class="ft-sep">|</span>
-    <a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a>
   </div>
 </footer>
 

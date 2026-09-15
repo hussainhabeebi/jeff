@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-  <title>GP Doctor Near Me in Al Nahda Sharjah | Walk-In Consultations | Sahara Medical Centre</title>
-  <meta name="description" content="Find a GP doctor near you in Al Nahda, Sharjah. Walk-in family doctor consultations from AED 49 at Sahara Medical Centre. Open 8AM–11PM. Book via WhatsApp." />
+  <title>General Practitioner Near Me in Al Nahda Sharjah | Walk-In Consultations | Sahara Medical Centre</title>
+  <meta name="description" content="Find a General Practitioner near you in Al Nahda, Sharjah. Walk-in General Practitioner consultations from AED 49 at Sahara Medical Centre. Open 8AM–11PM. Book via WhatsApp." />
   <link rel="canonical" href="https://saharamedicalcentre.ae/general-physician-near-me/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="GP Doctor Near Me in Al Nahda Sharjah | Walk-In Consultations | Sahara Medical Centre" />
-  <meta property="og:description" content="Find a GP doctor near you in Al Nahda, Sharjah. Walk-in family doctor consultations from AED 49 at Sahara Medical Centre. Open 8AM–11PM. Book via WhatsApp." />
+  <meta property="og:title" content="General Practitioner Near Me in Al Nahda Sharjah | Walk-In Consultations | Sahara Medical Centre" />
+  <meta property="og:description" content="Find a General Practitioner near you in Al Nahda, Sharjah. Walk-in General Practitioner consultations from AED 49 at Sahara Medical Centre. Open 8AM–11PM. Book via WhatsApp." />
   <meta property="og:url" content="https://saharamedicalcentre.ae/general-physician-near-me/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,10 +24,12 @@ img{display:block;max-width:100%;height:auto}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),var(--bg)}
-.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:0;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;height:36px;background:linear-gradient(90deg,#059669,#0891b2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;gap:8px;letter-spacing:.3px}
+.top-bar strong{font-weight:800}
+.nav{position:fixed;top:46px;left:10px;right:10px;z-index:999;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 24px rgba(0,0,0,.1)}
-.nav-logo img{height:42px;width:auto;transition:height .3s}
-.nav.scrolled .nav-logo img{height:36px}
+.nav-logo img{height:60px;width:auto;transition:height .3s}
+.nav.scrolled .nav-logo img{height:48px}
 .nav-links{display:flex;gap:4px;align-items:center}
 .nav-links a{color:var(--text-2);font-size:1.05rem;font-weight:500;padding:8px 14px;border-radius:var(--radius-sm);transition:all .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--text);background:rgba(0,0,0,.05)}
@@ -36,12 +37,12 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
 .nav-toggle{display:none;color:var(--text);font-size:20px;padding:8px;border-radius:8px;transition:background .2s}
 .nav-toggle:hover{background:rgba(0,0,0,.06)}
-.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:62px;left:0;right:0;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:0;backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
+.nav-drawer{display:none;flex-direction:column;gap:4px;position:fixed;top:118px;left:10px;right:10px;z-index:998;background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);backdrop-filter:blur(20px);padding:16px;transform:translateY(-16px);opacity:0;pointer-events:none;transition:all .25s ease}
 .nav-drawer.open{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
 .nav-drawer a{color:var(--text-2);font-weight:500;font-size:1.1rem;padding:13px 16px;border-radius:var(--radius-sm);transition:all .2s;display:flex;align-items:center;gap:10px}
 .nav-drawer a:hover{color:var(--text);background:rgba(0,0,0,.05)}
 .nav-drawer .nav-drawer-cta{background:var(--grad);color:white;margin-top:4px;justify-content:center;font-weight:700}
-.page-hero{min-height:55vh;display:flex;align-items:center;padding:120px 20px 80px;position:relative;overflow:hidden}
+.page-hero{min-height:55vh;display:flex;align-items:center;padding:156px 20px 80px;position:relative;overflow:hidden}
 .page-hero-inner{max-width:800px;margin:0 auto;text-align:center}
 .page-label{display:inline-block;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);margin-bottom:16px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);padding:5px 16px;border-radius:50px}
 .page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
@@ -142,6 +143,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <script src="../maintenance.js"></script>
 </head>
 <body>
+<div class="top-bar"><i class="fas fa-clock" style="font-size:.75rem;margin-right:4px"></i>Open <strong>8AM – 11PM</strong>&nbsp;·&nbsp; All Days &nbsp;·&nbsp; Walk-ins Welcome</div>
 <header>
   <nav class="nav" id="nav">
     <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
@@ -172,9 +174,9 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 <main>
   <section class="page-hero">
     <div class="page-hero-inner">
-      <span class="page-label">GP Doctor Near You</span>
-      <h1 class="page-title">GP Doctor Near You in Al Nahda</h1>
-      <p class="page-sub">Walk-in family doctor consultations from AED 49 &middot; No appointment needed &middot; Open 8AM&ndash;11PM</p>
+      <span class="page-label">General Practitioner Near You</span>
+      <h1 class="page-title">General Practitioner Near You in Al Nahda</h1>
+      <p class="page-sub">Walk-in General Practitioner consultations from AED 49 &middot; No appointment needed &middot; Open 8AM&ndash;11PM</p>
       <div class="hero-btns">
         <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20see%20a%20GP%20doctor" class="btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
         <a href="tel:+97165318887" class="btn-ghost"><i class="fas fa-phone"></i> Call Us</a>
@@ -184,8 +186,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <section class="section section-alt">
     <div class="section-inner">
       <div class="section-head">
-        <span class="section-label">GP Services</span>
-        <h2 class="section-title">What Our GP Can Help You With</h2>
+        <span class="section-label">General Practitioner Services</span>
+        <h2 class="section-title">What Our General Practitioner Can Help You With</h2>
       </div>
       <div class="feat-grid">
         <div class="feat-card">
@@ -224,13 +226,13 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="section-inner">
       <div class="section-head">
         <span class="section-label">Why Choose Us</span>
-        <h2 class="section-title">Why Patients Trust Our GP Team</h2>
+        <h2 class="section-title">Why Patients Trust Our General Practitioner Team</h2>
       </div>
       <div class="feat-grid">
         <div class="feat-card">
           <div class="feat-icon fi-purple">🏅</div>
           <div class="feat-title">Experienced Doctors</div>
-          <p class="feat-desc">Our GPs have 15+ years of experience managing a wide range of conditions across all age groups.</p>
+          <p class="feat-desc">Our General Practitioners have 15+ years of experience managing a wide range of conditions across all age groups.</p>
         </div>
         <div class="feat-card">
           <div class="feat-icon fi-teal">🕗</div>
@@ -252,20 +254,20 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
       </div>
       <div class="faq-list">
         <div class="faq-item open">
-          <div class="faq-q">What is the cost of a GP consultation near Al Nahda, Sharjah? <span class="faq-toggle">+</span></div>
-          <div class="faq-a">GP consultations at Sahara Medical Centre start from AED 49. The cost may vary for more complex cases or if additional tests are required.</div>
+          <div class="faq-q">What is the cost of a General Practitioner consultation near Al Nahda, Sharjah? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">General Practitioner consultations at Sahara Medical Centre start from AED 49. The cost may vary for more complex cases or if additional tests are required.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Can I see a GP without an appointment? <span class="faq-toggle">+</span></div>
+          <div class="faq-q">Can I see a General Practitioner without an appointment? <span class="faq-toggle">+</span></div>
           <div class="faq-a">Yes. We welcome walk-ins at all times during our operating hours (8AM–11PM daily). No appointment is necessary.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Do your GPs speak Arabic or other languages? <span class="faq-toggle">+</span></div>
+          <div class="faq-q">Do your General Practitioners speak Arabic or other languages? <span class="faq-toggle">+</span></div>
           <div class="faq-a">Yes. Our team speaks Arabic, English, Hindi, Urdu and Malayalam &mdash; ensuring clear communication for every patient.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Can your GP manage long-term conditions? <span class="faq-toggle">+</span></div>
-          <div class="faq-a">Absolutely. Our GPs are experienced in managing diabetes, hypertension, asthma, thyroid disorders, high cholesterol and other chronic conditions with personalised care plans.</div>
+          <div class="faq-q">Can your General Practitioner manage long-term conditions? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">Absolutely. Our General Practitioners are experienced in managing diabetes, hypertension, asthma, thyroid disorders, high cholesterol and other chronic conditions with personalised care plans.</div>
         </div>
       </div>
     </div>
@@ -274,7 +276,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="section-inner">
       <div class="cta-banner">
         <h2>See a Doctor Today</h2>
-        <p>Walk in or book now &mdash; GP consultations from AED 49 at Ganda Tower, Al Nahda, Sharjah.</p>
+        <p>Walk in or book now &mdash; General Practitioner consultations from AED 49 at Ganda Tower, Al Nahda, Sharjah.</p>
         <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20see%20a%20GP%20doctor" class="btn-white" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
         <a href="tel:+97165318887" class="btn-outline-white"><i class="fas fa-phone"></i> Call 06 531 8887</a>
       </div>
@@ -286,17 +288,17 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="ticker-inner">
       <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
       <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> General Practitioner Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i>Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff &#8211; Oral Surgeon</a>
       <a href="/book-appointment/" class="ticker-item"><i class="fas fa-calendar-check"></i> Book Appointment</a>
       <a href="/best-dental-clinic-sahara-medical-centre/" class="ticker-item"><i class="fas fa-tooth"></i> Expert Dental Care Sharjah</a>
-      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> GP Consultation AED 49</a>
+      <a href="/general-medicine/" class="ticker-item"><i class="fas fa-user-md"></i> General Practitioner Consultation AED 49</a>
       <a href="/root-canal/" class="ticker-item"><i class="fas fa-notes-medical"></i> Root Canal Treatment</a>
       <a href="/teeth-whitening-sharjah/" class="ticker-item"><i class="fas fa-star"></i> Professional Teeth Whitening</a>
-      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i>Orthodontist Sharjah</a>
+      <a href="/orthodontic-doctor-in-sharjah/" class="ticker-item"><i class="fas fa-smile"></i> Best Orthodontist Sharjah</a>
       <a href="/malayali-doctor-near-dubai/" class="ticker-item"><i class="fas fa-language"></i> Malayali Doctor Near Dubai</a><a href="/jeff/" class="ticker-item"><i class="fas fa-tooth"></i> Dr. Jeff &#8211; Oral Surgeon</a>
     </div>
   </div>
@@ -318,7 +320,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
       <h4>Medical</h4>
       <ul class="ft-links">
         <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
-        <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> GP / Family Doctor</a></li>
+        <li><a href="/general-physician-near-me/"><i class="fas fa-chevron-right"></i> General Practitioner</a></li>
         <li><a href="/chronic-condition-management/"><i class="fas fa-chevron-right"></i> Chronic Management</a></li>
         <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
         <li><a href="/jeff/"><i class="fas fa-chevron-right"></i> Dr. Jeff &#8211; Oral Surgeon</a></li>
@@ -348,10 +350,6 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   </div>
   <div class="footer-bottom">
     &copy; 2026 Sahara Medical Centre LLC &middot; Al Nahda, Sharjah, UAE
-    <span class="ft-sep">|</span>
-    <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a>
-    <span class="ft-sep">|</span>
-    <a href="https://leadvyne.com/" target="_blank" rel="noopener">AICRM by LeadVyne</a>
   </div>
 </footer>
 <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>

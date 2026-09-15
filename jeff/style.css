@@ -129,9 +129,13 @@ img { display: block; max-width: 100%; }
 /* ══════════════════════════════════════
    NAVBAR
 ══════════════════════════════════════ */
+/* ── Top Bar ── */
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:36px;background:linear-gradient(90deg,#059669,#0891b2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;gap:8px;letter-spacing:.3px}
+.top-bar strong{font-weight:800}
+
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 36px; left: 0; right: 0;
   z-index: 200;
   background: transparent;
   transition: background .3s, box-shadow .3s, padding .3s;
@@ -152,7 +156,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
 }
 .navbar__logo-img {
-  height: 44px;
+  height: 64px;
   width: auto;
   object-fit: contain;
 }

@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://saharamedicalcentre.ae/" />
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":["MedicalClinic","Dentist","LocalBusiness"],"@id":"https://saharamedicalcentre.ae/#clinic","name":"Sahara Medical Centre","description":"Best medical centre and dental clinic in Al Nahda, Sharjah UAE.","url":"https://saharamedicalcentre.ae/","telephone":"+971508821590","email":"info@saharamedicalcentre.ae","priceRange":"AED 49 – AED 500","address":{"@type":"PostalAddress","streetAddress":"Ganda Tower, Al Nahda","addressLocality":"Sharjah","addressCountry":"AE"},"geo":{"@type":"GeoCoordinates","latitude":25.3348,"longitude":55.4197},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"23:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"200","bestRating":"5"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why choose Sahara Medical Centre?","acceptedAnswer":{"@type":"Answer","text":"18+ years of expertise, specialist doctors, transparent pricing, 98% patient satisfaction, open 8AM–11PM every day."}},{"@type":"Question","name":"What are your operating hours?","acceptedAnswer":{"@type":"Answer","text":"Open every day 8:00 AM to 11:00 PM. Walk-ins welcome."}},{"@type":"Question","name":"How do I book an appointment?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp +971 50 882 1590, call 06 531 8887, or walk in."}}]}]}
+  {"@context":"https://schema.org","@graph":[{"@type":["MedicalClinic","Dentist","LocalBusiness"],"@id":"https://saharamedicalcentre.ae/#clinic","name":"Sahara Medical Centre","description":"Trusted medical centre and dental clinic in Al Nahda, Sharjah UAE.","url":"https://saharamedicalcentre.ae/","telephone":"+971508821590","email":"info@saharamedicalcentre.ae","priceRange":"AED 49 – AED 500","address":{"@type":"PostalAddress","streetAddress":"Ganda Tower, Al Nahda","addressLocality":"Sharjah","addressCountry":"AE"},"geo":{"@type":"GeoCoordinates","latitude":25.3348,"longitude":55.4197},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"23:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"200","bestRating":"5"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why choose Sahara Medical Centre?","acceptedAnswer":{"@type":"Answer","text":"18+ years of expertise, specialist doctors, transparent pricing, high patient satisfaction, open 8AM–11PM every day."}},{"@type":"Question","name":"What are your operating hours?","acceptedAnswer":{"@type":"Answer","text":"Open every day 8:00 AM to 11:00 PM. Walk-ins welcome."}},{"@type":"Question","name":"How do I book an appointment?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp +971 50 882 1590, call 06 531 8887, or walk in."}}]}]}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,38 +27,37 @@
 
   <style>
 /* ═══════════════════════════════════════
-   DESIGN TOKENS — LIGHT THEME
+   DESIGN TOKENS — MEDICAL BLUE THEME
 ═══════════════════════════════════════ */
 :root {
   --bg:        #ffffff;
-  --bg-2:      #f8fafc;
+  --bg-2:      #F5F8FA;
   --bg-card:   #ffffff;
   --border:    rgba(0,0,0,0.08);
-  --border-h:  rgba(139,92,246,0.4);
+  --border-h:  rgba(27,79,168,0.35);
 
-  --purple:    #7c3aed;
-  --purple-l:  #8b5cf6;
-  --pink:      #db2777;
+  --blue:      #1B4FA8;
+  --blue-l:    #2563EB;
+  --blue-soft: #EEF4FF;
   --teal:      #0891b2;
   --green:     #16a34a;
   --amber:     #d97706;
   --red:       #dc2626;
 
-  --text:      #0f172a;
+  --text:      #17212B;
   --text-2:    #475569;
-  --text-3:    #94a3b8;
+  --text-3:    #6B7280;
 
   --wa:        #25d366;
   --radius-sm: 10px;
   --radius:    16px;
   --radius-lg: 24px;
 
-  --glow-p:    0 0 40px rgba(124,58,237,0.12);
-  --glow-t:    0 0 40px rgba(8,145,178,0.1);
+  --glow-b:    0 0 40px rgba(27,79,168,0.12);
   --shadow:    0 4px 24px rgba(0,0,0,0.08);
 
-  --grad:      linear-gradient(135deg,#7c3aed,#db2777);
-  --grad-text: linear-gradient(135deg,#7c3aed,#db2777);
+  --grad:      linear-gradient(135deg,#1B4FA8,#2563EB);
+  --grad-text: linear-gradient(135deg,#1B4FA8,#2563EB);
 }
 
 /* ── RESET ── */
@@ -78,14 +77,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:#f1f5f9}
-::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
 
 /* ── BACKGROUND MESH ── */
 body::before{
   content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(ellipse 60% 50% at 10% 0%,rgba(124,58,237,.06) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(219,39,119,.04) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 0%,rgba(27,79,168,.05) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 100%,rgba(8,145,178,.04) 0%,transparent 60%),
     var(--bg);
 }
 
@@ -98,7 +97,7 @@ body::before{
   position:fixed;top:46px;left:10px;right:10px;z-index:999;
   background:rgba(255,255,255,.85);
   border:1px solid rgba(0,0,0,.07);
-  border-radius:var(--radius);
+  border-radius:0;
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   padding:0 20px;height:62px;
   display:flex;align-items:center;justify-content:space-between;
@@ -121,7 +120,7 @@ body::before{
 .nav-links .nav-cta{
   background:var(--grad);color:white;
   padding:9px 18px;font-weight:600;
-  box-shadow:0 0 20px rgba(139,92,246,.35);
+  box-shadow:0 0 20px rgba(27,79,168,.35);
 }
 .nav-links .nav-cta:hover{opacity:.9;transform:translateY(-1px)}
 .nav-toggle{
@@ -134,7 +133,7 @@ body::before{
   display:none;flex-direction:column;gap:4px;
   position:fixed;top:118px;left:10px;right:10px;z-index:998;
   background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);
-  border-radius:var(--radius);backdrop-filter:blur(20px);
+  border-radius:0;backdrop-filter:blur(20px);
   padding:16px;
   transform:translateY(-16px);opacity:0;pointer-events:none;
   transition:all .25s ease;
@@ -176,8 +175,8 @@ body::before{
 /* left */
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);
-  color:var(--purple);font-size:.8rem;font-weight:600;
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);
+  color:var(--blue);font-size:.8rem;font-weight:600;
   padding:6px 14px;border-radius:50px;margin-bottom:24px;
   letter-spacing:.3px;
 }
@@ -201,8 +200,8 @@ body::before{
   color:var(--text);
 }
 .rotator-badge{
-  background:rgba(219,39,119,.08);border:1px solid rgba(219,39,119,.2);
-  color:var(--pink);padding:4px 12px;border-radius:50px;font-size:.8rem;
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);
+  color:var(--blue);padding:4px 12px;border-radius:50px;font-size:.8rem;
   white-space:nowrap;flex-shrink:0;
 }
 .rotator-text{overflow:hidden;height:1.5em}
@@ -222,17 +221,17 @@ body::before{
   display:inline-flex;align-items:center;gap:9px;
   background:var(--grad);color:white;
   padding:14px 26px;border-radius:var(--radius-sm);font-weight:700;font-size:.95rem;
-  box-shadow:0 0 30px rgba(139,92,246,.4);
+  box-shadow:0 0 30px rgba(27,79,168,.35);
   transition:all .25s;
 }
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(139,92,246,.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(27,79,168,.5)}
 .btn-ghost{
   display:inline-flex;align-items:center;gap:9px;
   border:1px solid rgba(0,0,0,.12);color:var(--text-2);
   padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;
   transition:all .25s;
 }
-.btn-ghost:hover{border-color:var(--purple);color:var(--purple);background:rgba(124,58,237,.05)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);background:rgba(27,79,168,.05)}
 .btn-wa{background:var(--wa)!important;box-shadow:0 0 24px rgba(37,211,102,.35)!important}
 .btn-wa:hover{box-shadow:0 0 36px rgba(37,211,102,.5)!important}
 
@@ -247,7 +246,7 @@ body::before{
   border:1px solid rgba(0,0,0,.09);
   border-radius:var(--radius-lg);
   padding:28px;
-  box-shadow:0 8px 40px rgba(124,58,237,.1),0 2px 12px rgba(0,0,0,.06);
+  box-shadow:0 8px 40px rgba(27,79,168,.1),0 2px 12px rgba(0,0,0,.06);
 }
 .book-card-top{
   display:flex;justify-content:space-between;align-items:center;
@@ -268,7 +267,7 @@ body::before{
   font-family:inherit;font-size:.9rem;margin-bottom:12px;
   transition:border-color .2s;appearance:none;
 }
-.book-field:focus{outline:none;border-color:var(--purple);background:#fff}
+.book-field:focus{outline:none;border-color:var(--blue);background:#fff}
 .book-field option{background:#fff;color:var(--text)}
 .book-submit{
   width:100%;background:var(--wa);color:white;
@@ -288,7 +287,7 @@ body::before{
 .section-inner{max-width:1200px;margin:0 auto}
 .section-label{
   display:inline-block;font-size:.75rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:1.5px;color:var(--purple-l);
+  text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);
   margin-bottom:12px;
 }
 .section-title{
@@ -299,7 +298,7 @@ body::before{
 .section-head{margin-bottom:56px}
 
 /* ══════════════════════════════════════
-   PACKAGES
+   DEPARTMENTS / SERVICES CARDS (no image)
 ══════════════════════════════════════ */
 .pkg-track{
   display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
@@ -312,41 +311,46 @@ body::before{
   box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 .pkg-card:hover{
-  border-color:rgba(124,58,237,.3);transform:translateY(-6px);
-  box-shadow:0 12px 40px rgba(124,58,237,.12);
+  border-color:rgba(27,79,168,.3);transform:translateY(-6px);
+  box-shadow:0 12px 40px rgba(27,79,168,.12);
 }
-.pkg-img{
-  position:relative;aspect-ratio:16/9;overflow:hidden;background:#111;
-}
-.pkg-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.pkg-card:hover .pkg-img img{transform:scale(1.05)}
 .pkg-chip{
-  position:absolute;top:12px;left:12px;z-index:2;
+  display:inline-block;
   font-size:.7rem;font-weight:700;padding:4px 10px;
-  border-radius:6px;
+  border-radius:6px;margin-bottom:14px;width:fit-content;
 }
 .chip-teal{background:rgba(8,145,178,.1);border:1px solid rgba(8,145,178,.25);color:var(--teal)}
 .chip-amber{background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:var(--amber)}
 .chip-dark{background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.12);color:var(--text-2)}
-.pkg-body{padding:20px;display:flex;flex-direction:column;flex:1}
-.pkg-title{font-size:1.05rem;font-weight:700;margin-bottom:6px}
-.pkg-desc{font-size:.85rem;color:var(--text-2);flex:1;margin-bottom:16px;line-height:1.6}
-.pkg-features{display:flex;flex-direction:column;gap:5px;margin-bottom:18px}
-.pkg-feat{font-size:.78rem;color:var(--purple);font-weight:600;display:flex;align-items:center;gap:6px}
-.pkg-feat i{font-size:.65rem;background:rgba(124,58,237,.1);padding:3px;border-radius:50%}
+.pkg-body{padding:28px 24px;display:flex;flex-direction:column;flex:1}
+.pkg-icon{
+  font-size:2rem;width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;background:rgba(27,79,168,.08);
+  transition:transform .3s;
+}
+.pkg-card:hover .pkg-icon{transform:scale(1.1)}
+.pkg-icon-teal{background:rgba(8,145,178,.1)}
+.pkg-icon-amber{background:rgba(217,119,6,.1)}
+.pkg-icon-dark{background:rgba(15,23,42,.06)}
+.pkg-title{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+.pkg-desc{font-size:.87rem;color:var(--text-2);flex:1;margin-bottom:18px;line-height:1.65}
+.pkg-features{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.pkg-feat{font-size:.78rem;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:6px}
+.pkg-feat i{font-size:.65rem;background:rgba(27,79,168,.1);padding:3px;border-radius:50%}
 .btn-pkg{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);
-  color:var(--purple);padding:11px;border-radius:var(--radius-sm);
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);
+  color:var(--blue);padding:11px;border-radius:var(--radius-sm);
   font-weight:600;font-size:.85rem;transition:all .25s;
 }
-.btn-pkg:hover{background:var(--purple);color:white;border-color:var(--purple);box-shadow:0 4px 16px rgba(124,58,237,.3)}
+.btn-pkg:hover{background:var(--blue);color:white;border-color:var(--blue);box-shadow:0 4px 16px rgba(27,79,168,.3)}
 .pkg-more summary{
   font-size:.78rem;color:var(--text-3);cursor:pointer;text-align:center;
   margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);
   transition:color .2s;
 }
-.pkg-more summary:hover{color:var(--purple-l)}
+.pkg-more summary:hover{color:var(--blue-l)}
 .pkg-more p{font-size:.8rem;color:var(--text-2);margin-top:10px;line-height:1.6}
 
 /* ══════════════════════════════════════
@@ -362,19 +366,19 @@ body::before{
   transition:border-color .3s,transform .3s,box-shadow .3s;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-.feat-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(124,58,237,.1)}
+.feat-card:hover{border-color:rgba(27,79,168,.3);transform:translateY(-5px);box-shadow:0 12px 32px rgba(27,79,168,.1)}
 .feat-icon{
   font-size:1.6rem;width:52px;height:52px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;margin-bottom:18px;
   transition:transform .3s;
 }
 .feat-card:hover .feat-icon{transform:scale(1.1) rotate(5deg)}
-.fi-purple{background:rgba(139,92,246,.12);color:var(--purple-l)}
+.fi-purple{background:rgba(27,79,168,.1);color:var(--blue)}
 .fi-teal  {background:rgba(6,182,212,.1);color:var(--teal)}
-.fi-pink  {background:rgba(236,72,153,.1);color:var(--pink)}
+.fi-pink  {background:rgba(8,145,178,.1);color:var(--teal)}
 .fi-amber {background:rgba(245,158,11,.1);color:var(--amber)}
 .fi-green {background:rgba(34,197,94,.1);color:var(--green)}
-.fi-blue  {background:rgba(59,130,246,.1);color:#60a5fa}
+.fi-blue  {background:rgba(37,99,235,.1);color:var(--blue-l)}
 .feat-title{font-size:1rem;font-weight:700;margin-bottom:8px}
 .feat-desc{font-size:.85rem;color:var(--text-2);line-height:1.65;flex:1;margin-bottom:14px}
 .feat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
@@ -384,7 +388,7 @@ body::before{
   color:var(--text-3);padding:3px 9px;border-radius:6px;
   transition:all .2s;
 }
-.feat-card:hover .feat-tag{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:var(--purple)}
+.feat-card:hover .feat-tag{background:rgba(27,79,168,.08);border-color:rgba(27,79,168,.2);color:var(--blue)}
 
 /* ══════════════════════════════════════
    INSURANCE PARTNERS
@@ -419,53 +423,47 @@ body::before{
 /* ══════════════════════════════════════
    DOCTORS
 ══════════════════════════════════════ */
-.doctors-scroll{
-  display:flex;gap:18px;
-  overflow-x:auto;padding:8px 4px 20px;
-  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
+.doctors-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
-.doctors-scroll::-webkit-scrollbar{display:none}
 .doc-card{
-  flex:0 0 220px;scroll-snap-align:start;
   background:#fff;border:1px solid rgba(0,0,0,.08);
   border-radius:var(--radius);overflow:hidden;
   display:flex;flex-direction:column;
   transition:border-color .3s,transform .3s,box-shadow .3s;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-.doc-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,58,237,.1)}
-.doc-card.featured{border-color:rgba(124,58,237,.35);box-shadow:0 4px 20px rgba(124,58,237,.15)}
-.doc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#111}
+.doc-card:hover{border-color:rgba(27,79,168,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,79,168,.1)}
+.doc-card.featured{border-color:rgba(27,79,168,.35);box-shadow:0 4px 20px rgba(27,79,168,.15)}
+.doc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#e8eef6}
 .doc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
 .doc-badge{
   position:absolute;top:10px;left:10px;z-index:2;
   font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:6px;
 }
-.doc-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:3px}
-.doc-name{font-size:.92rem;font-weight:800;color:var(--text)}
-.doc-name a{color:var(--purple);transition:color .2s}
-.doc-name a:hover{color:var(--pink)}
-.doc-spec{font-size:.76rem;color:var(--purple);font-weight:600}
+.doc-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:4px}
+.doc-name{font-size:.95rem;font-weight:800;color:var(--text)}
+.doc-name a{color:var(--blue);transition:color .2s}
+.doc-name a:hover{color:var(--blue-l)}
+.doc-spec{font-size:.78rem;color:var(--blue);font-weight:600}
 .doc-qual{font-size:.72rem;color:var(--text-3)}
-.doc-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.doc-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
 .doc-call{
-  text-align:center;padding:8px;border-radius:8px;
+  text-align:center;padding:9px;border-radius:8px;
   font-weight:600;font-size:.76rem;
   background:#f8fafc;border:1px solid rgba(0,0,0,.1);color:var(--text-2);
   transition:all .2s;
 }
 .doc-call:hover{background:#f1f5f9;color:var(--text)}
 .doc-book{
-  text-align:center;padding:8px;border-radius:8px;
+  text-align:center;padding:9px;border-radius:8px;
   font-weight:600;font-size:.76rem;
-  background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);color:var(--purple);
+  background:rgba(27,79,168,.08);border:1px solid rgba(27,79,168,.2);color:var(--blue);
   transition:all .2s;
 }
-.doc-book:hover{background:var(--purple);color:white}
-.scroll-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
-.scroll-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;cursor:pointer;transition:all .25s}
-.scroll-dot.active{background:var(--purple);width:20px;border-radius:3px}
+.doc-book:hover{background:var(--blue);color:white}
 
 /* ══════════════════════════════════════
    SERVICES TABS
@@ -479,7 +477,7 @@ body::before{
   padding:10px 24px;border-radius:8px;font-weight:600;font-size:.875rem;
   color:var(--text-2);cursor:pointer;transition:all .25s;white-space:nowrap;
 }
-.tab-btn.active{background:var(--grad);color:white;box-shadow:0 0 20px rgba(139,92,246,.3)}
+.tab-btn.active{background:var(--grad);color:white;box-shadow:0 0 20px rgba(27,79,168,.3)}
 .tab-panel{display:none;animation:fadeIn .35s ease}
 .tab-panel.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -496,12 +494,12 @@ body::before{
   background:var(--grad);transform:scaleY(0);transform-origin:top;transition:.3s;
 }
 .srv-card:hover::after{transform:scaleY(1)}
-.srv-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,58,237,.1)}
+.srv-card:hover{border-color:rgba(27,79,168,.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,79,168,.1)}
 .srv-icon{
   font-size:1.4rem;width:48px;height:48px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;margin-bottom:16px;
 }
-.srv-icon-med{background:rgba(139,92,246,.1);color:var(--purple-l)}
+.srv-icon-med{background:rgba(27,79,168,.1);color:var(--blue)}
 .srv-icon-den{background:rgba(6,182,212,.1);color:var(--teal)}
 .srv-title{font-size:.98rem;font-weight:700;margin-bottom:8px}
 .srv-desc{font-size:.83rem;color:var(--text-2);flex:1;line-height:1.6;margin-bottom:16px}
@@ -518,7 +516,7 @@ body::before{
 .faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .faq-img{
   border-radius:var(--radius-lg);overflow:hidden;
-  border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 32px rgba(124,58,237,.1);
+  border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 32px rgba(27,79,168,.08);
 }
 .faq-img img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 .faq-list{display:flex;flex-direction:column;gap:12px}
@@ -527,20 +525,20 @@ body::before{
   border-radius:var(--radius);overflow:hidden;transition:border-color .3s,box-shadow .3s;
   box-shadow:0 1px 4px rgba(0,0,0,.04);
 }
-.faq-item.open{border-color:rgba(124,58,237,.3);box-shadow:0 4px 16px rgba(124,58,237,.08)}
+.faq-item.open{border-color:rgba(27,79,168,.3);box-shadow:0 4px 16px rgba(27,79,168,.08)}
 .faq-q{
   display:flex;justify-content:space-between;align-items:center;
   padding:18px 20px;cursor:pointer;font-weight:600;font-size:.9rem;gap:12px;
   transition:color .2s;
 }
-.faq-item.open .faq-q{color:var(--purple)}
+.faq-item.open .faq-q{color:var(--blue)}
 .faq-toggle{
   flex-shrink:0;width:28px;height:28px;border-radius:8px;
-  background:rgba(124,58,237,.08);color:var(--purple);
+  background:rgba(27,79,168,.08);color:var(--blue);
   display:flex;align-items:center;justify-content:center;
   font-size:1.1rem;transition:all .3s;
 }
-.faq-item.open .faq-toggle{background:var(--purple);color:white;transform:rotate(45deg)}
+.faq-item.open .faq-toggle{background:var(--blue);color:white;transform:rotate(45deg)}
 .faq-a{
   max-height:0;overflow:hidden;transition:all .35s ease;
   font-size:.85rem;color:var(--text-2);line-height:1.7;
@@ -549,7 +547,7 @@ body::before{
 .faq-item.open .faq-a{max-height:400px;padding:0 20px 20px}
 .faq-a ul{margin:8px 0 8px 16px}
 .faq-a li{margin-bottom:5px;list-style:none;position:relative}
-.faq-a li::before{content:'';position:absolute;left:-12px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--purple-l)}
+.faq-a li::before{content:'';position:absolute;left:-12px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--blue-l)}
 .faq-a strong{color:var(--text)}
 
 /* ══════════════════════════════════════
@@ -567,7 +565,7 @@ body::before{
   color:var(--text-2);font-size:.8rem;font-weight:500;
   transition:color .2s;
 }
-.ticker-item i{color:var(--purple)}
+.ticker-item i{color:var(--blue)}
 .ticker-item:hover{color:var(--text)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .footer-main{
@@ -578,12 +576,12 @@ body::before{
   font-size:1.3rem;font-weight:800;margin-bottom:14px;
   display:flex;align-items:center;gap:10px;
 }
-.ft-brand-name i{color:var(--purple-l)}
+.ft-brand-name i{color:var(--blue-l)}
 .ft-desc{color:var(--text-2);font-size:.85rem;margin-bottom:20px;line-height:1.7}
 .ft-contact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.83rem;color:var(--text-2)}
-.ft-contact i{color:var(--purple);margin-top:3px;flex-shrink:0}
+.ft-contact i{color:var(--blue);margin-top:3px;flex-shrink:0}
 .ft-contact a{color:var(--text);font-weight:600;transition:color .2s}
-.ft-contact a:hover{color:var(--purple-l)}
+.ft-contact a:hover{color:var(--blue-l)}
 .ft-socials{display:flex;gap:8px;margin-top:18px}
 .ft-social{
   width:34px;height:34px;border-radius:50%;
@@ -591,7 +589,7 @@ body::before{
   display:flex;align-items:center;justify-content:center;
   color:var(--text-2);font-size:.8rem;transition:all .25s;
 }
-.ft-social:hover{background:var(--purple);border-color:var(--purple);color:white;transform:translateY(-2px)}
+.ft-social:hover{background:var(--blue);border-color:var(--blue);color:white;transform:translateY(-2px)}
 .ft-col h4{
   font-size:.78rem;font-weight:700;text-transform:uppercase;
   letter-spacing:1px;color:var(--text-2);margin-bottom:16px;
@@ -600,14 +598,14 @@ body::before{
 .ft-links{list-style:none}
 .ft-links li{margin-bottom:8px}
 .ft-links a{color:var(--text-3);font-size:.83rem;display:flex;align-items:center;gap:6px;transition:all .2s}
-.ft-links a i{font-size:.6rem;color:var(--purple);opacity:.6}
+.ft-links a i{font-size:.6rem;color:var(--blue);opacity:.6}
 .ft-links a:hover{color:var(--text);transform:translateX(4px)}
 .footer-bottom{
   border-top:1px solid rgba(0,0,0,.07);
   padding:20px;text-align:center;font-size:.8rem;color:var(--text-3);
 }
 .footer-bottom a{color:var(--text-3);transition:color .2s}
-.footer-bottom a:hover{color:var(--purple-l)}
+.footer-bottom a:hover{color:var(--blue-l)}
 .ft-sep{margin:0 10px;opacity:.4}
 
 /* ══════════════════════════════════════
@@ -654,6 +652,7 @@ body::before{
   .footer-main{grid-template-columns:1fr;gap:28px}
   .tabs-row{width:100%;justify-content:center}
   .tab-btn{flex:1;text-align:center}
+  .doctors-grid{grid-template-columns:1fr 1fr;gap:14px}
 
   /* Mobile sticky book bar */
   .mobile-cta-bar{
@@ -684,12 +683,14 @@ body::before{
   .pkg-track{padding:0}
   .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .footer-main{padding:36px 16px}
+  .doctors-grid{grid-template-columns:1fr}
 }
 
 @media(min-width:769px) and (max-width:1024px){
   .insurance-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
   </style>
+  <script src="maintenance.js"></script>
 </head>
 <body>
 
@@ -700,7 +701,7 @@ body::before{
 <header>
   <nav class="nav" id="nav">
     <a class="nav-logo" href="/" aria-label="Sahara Medical Centre">
-      <img src="https://saharamedicalcentre.ae/wp-content/uploads/2023/12/logo.webp"
+      <img src="/Uploads/logo%20(1).webp"
            alt="Sahara Medical Centre Al Nahda Sharjah" width="120" height="42" loading="eager" />
     </a>
     <div class="nav-links">
@@ -828,11 +829,9 @@ body::before{
     <div class="pkg-track">
 
       <article class="pkg-card">
-        <div class="pkg-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600&auto=format&fit=crop" alt="Orthodontic Braces Consultation Sharjah" />
-          <span class="pkg-chip chip-amber">⭐ Best Seller</span>
-        </div>
         <div class="pkg-body">
+          <div class="pkg-icon"><i class="fas fa-smile" style="color:#1B4FA8;font-size:1.5rem"></i></div>
+          <span class="pkg-chip chip-amber">⭐ Popular Choice</span>
           <h3 class="pkg-title">Orthodontic Special</h3>
           <p class="pkg-desc">Assessment for Metal, Ceramic &amp; Invisible Braces. Your dream smile starts here.</p>
           <div class="pkg-features"><span class="pkg-feat"><i class="fas fa-check"></i> 0% Installments Available</span></div>
@@ -846,6 +845,7 @@ body::before{
           <img loading="lazy" src="https://saharamedicalcentre.ae/wp-content/uploads/2024/05/Untitled-design-19.png" onerror="this.src='https://images.unsplash.com/photo-1606811971618-4486d14f3f72?w=600'" alt="Dental Scaling Polishing Al Nahda Sharjah" />
         </div>
         <div class="pkg-body">
+          <div class="pkg-icon pkg-icon-teal"><i class="fas fa-tooth" style="color:#0891b2;font-size:1.5rem"></i></div>
           <h3 class="pkg-title">Scaling &amp; Polishing</h3>
           <p class="pkg-desc">Deep clean for stain removal and fresh breath at our Al Nahda dental clinic.</p>
           <div class="pkg-features">
@@ -982,7 +982,7 @@ body::before{
       <p class="section-sub">Experienced doctors across General Practitioner, dentistry, orthodontics and oral surgery at Sahara Medical Centre.</p>
     </div>
 
-    <div class="doctors-scroll" id="docTrack">
+    <div class="doctors-grid" id="docTrack">
 
       <article class="doc-card">
         <div class="doc-img">
@@ -991,7 +991,7 @@ body::before{
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Anwar MK</p>
-          <p class="doc-spec">General Practitioner</p>
+          <p class="doc-spec">GP · Medical Director</p>
           <p class="doc-qual">15 Years Experience</p>
           <div class="doc-btns">
             <a href="tel:+971508821590" class="doc-call">Call</a>
@@ -1002,7 +1002,7 @@ body::before{
 
       <article class="doc-card featured">
         <div class="doc-img">
-          <span class="doc-badge" style="background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);color:#7c3aed">Oral Surgeon</span>
+          <span class="doc-badge" style="background:rgba(27,79,168,.12);border:1px solid rgba(27,79,168,.3);color:#1B4FA8">Oral Surgeon</span>
           <img src="Doctor.jpeg" alt="Dr. Jeff Zacharia – Oral & Maxillofacial Surgeon Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
@@ -1019,7 +1019,7 @@ body::before{
       <article class="doc-card">
         <div class="doc-img">
           <span class="doc-badge" style="background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.2);color:#dc2626">Specialist</span>
-          <img src="https://saharamedicalcentre.ae/wp-content/uploads/2026/01/NH8A9682-copy-scaled.jpg" alt="Dr. Dynamol – Orthodontist Sharjah" loading="lazy" />
+          <img src="/Uploads/NH8A9682-copy-scaled.jpg" alt="Dr. Dynamol – Orthodontist Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Dynamol</p>
@@ -1047,7 +1047,7 @@ body::before{
 
       <article class="doc-card">
         <div class="doc-img">
-          <img src="https://saharamedicalcentre.ae/wp-content/uploads/2026/05/9R1A4979-select-copy.jpg-scaled.jpeg" alt="Dr. Baisiya Sharin – Dentist Sharjah" loading="lazy" />
+          <img src="/Uploads/9R1A4979-select-copy.jpg-scaled.jpeg" alt="Dr. Baisiya Sharin – Dentist Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Baisiya Sharin</p>
@@ -1062,7 +1062,7 @@ body::before{
 
       <article class="doc-card">
         <div class="doc-img">
-          <img src="https://saharamedicalcentre.ae/wp-content/uploads/2026/05/Photo-Aysha.png" alt="Dr. Aysha Suha – Dentist Sharjah" loading="lazy" />
+          <img src="/Uploads/Photo-Aysha.png" alt="Dr. Aysha Suha – Dentist Sharjah" loading="lazy" />
         </div>
         <div class="doc-body">
           <p class="doc-name">Dr. Aysha Suha</p>
@@ -1076,7 +1076,6 @@ body::before{
       </article>
 
     </div>
-    <div class="scroll-dots" id="docDots"></div>
   </div>
 </section>
 
@@ -1181,7 +1180,7 @@ body::before{
 
     <div class="faq-layout">
       <div class="faq-img">
-        <img src="https://saharamedicalcentre.ae/wp-content/uploads/2025/02/DSC06044-scaled.jpg"
+        <img src="/Uploads/DSC06044-scaled.jpg"
              alt="Inside Sahara Medical Centre Al Nahda Sharjah" loading="lazy" />
       </div>
       <div class="faq-list">
@@ -1413,27 +1412,6 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   });
 });
 
-/* ── Doctors scroll dots ── */
-(()=>{
-  const track = document.getElementById('docTrack');
-  const dotsEl = document.getElementById('docDots');
-  const cards  = [...track.querySelectorAll('.doc-card')];
-  const dots   = cards.map((_,i)=>{
-    const d = document.createElement('div');
-    d.className = 'scroll-dot'+(i===0?' active':'');
-    d.onclick = ()=>track.scrollTo({left:cards[i].offsetLeft,behavior:'smooth'});
-    dotsEl.appendChild(d);
-    return d;
-  });
-  const update = ()=>{
-    let ci=0,md=Infinity;
-    cards.forEach((c,i)=>{ const d=Math.abs(c.offsetLeft-track.scrollLeft); if(d<md){md=d;ci=i;} });
-    dots.forEach((d,i)=>d.classList.toggle('active',i===ci));
-  };
-  track.addEventListener('scroll',update,{passive:true});
-  let ai=0;
-  setInterval(()=>{ ai=(ai+1)%cards.length; track.scrollTo({left:cards[ai].offsetLeft,behavior:'smooth'}); },4500);
-})();
 
 /* ── Srv card entrance ── */
 (()=>{
@@ -1446,7 +1424,7 @@ document.querySelectorAll('.faq-item').forEach(item=>{
       }
     });
   },{threshold:.08});
-  document.querySelectorAll('.srv-card,.feat-card,.pkg-card').forEach(c=>{
+  document.querySelectorAll('.srv-card,.feat-card,.pkg-card,.doc-card').forEach(c=>{
     c.style.opacity='0';c.style.transform='translateY(18px)';c.style.transition='opacity .45s ease,transform .45s ease';
     io.observe(c);
   });

@@ -15,7 +15,9 @@
   --text:         #0F0A1E;
   --text-2:       #334155;
   --text-3:       #64748b;
-  --border:       #E8E0F5;
+  --border:       #E8DDD0;
+  --warm:         #9B7040;
+  --warm-soft:    #FBF5EC;
   --radius:       20px;
   --radius-sm:    12px;
   --shadow-sm:    0 2px 12px rgba(107,47,160,.08);

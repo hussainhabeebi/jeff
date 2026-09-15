@@ -384,16 +384,16 @@ body::before{
    INSURANCE PARTNERS
 ══════════════════════════════════════ */
 .insurance-grid{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;
 }
 .insurance-card{
   background:#fff;border:1px solid rgba(0,0,0,.08);
-  border-radius:var(--radius);padding:10px;overflow:hidden;
+  border-radius:var(--radius);padding:16px;overflow:hidden;min-height:132px;
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
 .insurance-card img{
-  display:block;width:100%;height:auto;max-width:100%;
+  display:block;width:100%;height:100px;max-width:100%;object-fit:contain;
 }
 .insurance-footer{
   margin-top:32px;display:flex;align-items:center;justify-content:space-between;
@@ -638,6 +638,8 @@ body::before{
   .pkg-track{grid-template-columns:1fr;gap:16px}
   .feat-grid{grid-template-columns:1fr;gap:14px}
   .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .insurance-card{min-height:112px;padding:12px}
+  .insurance-card img{height:86px}
   .insurance-footer{flex-direction:column;align-items:flex-start;padding:18px}
   .insurance-verify{width:100%}
   .srv-grid{grid-template-columns:1fr}
@@ -679,7 +681,7 @@ body::before{
 }
 
 @media(min-width:769px) and (max-width:1024px){
-  .insurance-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .insurance-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
   </style>
 </head>
@@ -978,26 +980,26 @@ body::before{
     </div>
 
     <div class="insurance-grid">
-      <div class="insurance-card"><img src="Uploads/insurance/Whats.jpeg" alt="SAICO Health Daman insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsAp.jpeg" alt="eCare International insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp I.jpeg" alt="Al Madallah Healthcare Management insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Im.jpeg" alt="FMC Network UAE insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Ima.jpeg" alt="NGI Insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Imag.jpeg" alt="MedNet insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2.jpeg" alt="MSH International insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 20.jpeg" alt="NAS insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 202.jpeg" alt="Dubai Insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2024.jpeg" alt="Neuron insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1..jpeg" alt="Aspire insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.0.jpeg" alt="Aafiya insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.05.00 PM.jpeg" alt="GIG Gulf insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.05.0.jpeg" alt="GlobeMed insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.05.02 PM.jpeg" alt="Nextcare insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.05.04 P.jpeg" alt="Life Line insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.05.06.jpeg" alt="NAS Neuron Health Services insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15 at 1.06.21 PM6.jpeg" alt="ADNIC insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image 2026-09-15.jpeg" alt="Inayah insurance accepted" loading="lazy" /></div>
-      <div class="insurance-card"><img src="Uploads/insurance/WhatsApp Image.jpeg" alt="WHealth International insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-saico-health-damana.png" alt="SAICO Health Daman insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-ecare-international.png" alt="eCare International insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-al-madallah.png" alt="Al Madallah Healthcare Management insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-fmc-network-uae.png" alt="FMC Network UAE insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-ngi-insurance.png" alt="NGI Insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-mednet.png" alt="MedNet insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-msh-international.png" alt="MSH International insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nas.png" alt="NAS insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-dubai-insurance.png" alt="Dubai Insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-neuron.png" alt="Neuron insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-aspire.png" alt="Aspire insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-aafiya.png" alt="Aafiya insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-gig-gulf.png" alt="GIG Gulf insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-globemed.png" alt="GlobeMed insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nextcare.png" alt="Nextcare insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-life-line.png" alt="Life Line insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nas-neuron.png" alt="NAS Neuron Health Services insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-adnic.png" alt="ADNIC insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-inayah.png" alt="Inayah insurance accepted" loading="lazy" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-whealth-international.png" alt="WHealth International insurance accepted" loading="lazy" /></div>
     </div>
 
     <div class="insurance-footer">

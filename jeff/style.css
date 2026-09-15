@@ -160,6 +160,7 @@ img { display: block; max-width: 100%; }
   width: auto;
   object-fit: contain;
 }
+@media(max-width:767px){.navbar__logo-img{height:44px!important}}
 .navbar__links {
   display: flex;
   align-items: center;

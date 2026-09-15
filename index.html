@@ -381,6 +381,36 @@ body::before{
 .feat-card:hover .feat-tag{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:var(--purple)}
 
 /* ══════════════════════════════════════
+   INSURANCE PARTNERS
+══════════════════════════════════════ */
+.insurance-grid{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;
+}
+.insurance-card{
+  background:#fff;border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--radius);padding:16px;overflow:hidden;min-height:132px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.insurance-card img{
+  display:block;width:100%;height:100px;max-width:100%;object-fit:contain;
+}
+.insurance-footer{
+  margin-top:32px;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:22px 24px;background:#fff;
+  border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.insurance-note{color:var(--text-2);font-size:.85rem;line-height:1.65;max-width:760px}
+.insurance-verify{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  flex-shrink:0;background:var(--wa);color:#fff;padding:12px 18px;
+  border-radius:var(--radius-sm);font-weight:700;font-size:.85rem;
+  box-shadow:0 4px 18px rgba(37,211,102,.28);transition:all .25s;
+}
+.insurance-verify:hover{transform:translateY(-2px);box-shadow:0 7px 24px rgba(37,211,102,.4)}
+
+/* ══════════════════════════════════════
    DOCTORS
 ══════════════════════════════════════ */
 .doctors-scroll{
@@ -607,6 +637,11 @@ body::before{
 
   .pkg-track{grid-template-columns:1fr;gap:16px}
   .feat-grid{grid-template-columns:1fr;gap:14px}
+  .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .insurance-card{min-height:112px;padding:12px}
+  .insurance-card img{height:86px}
+  .insurance-footer{flex-direction:column;align-items:flex-start;padding:18px}
+  .insurance-verify{width:100%}
   .srv-grid{grid-template-columns:1fr}
   .faq-layout{grid-template-columns:1fr}
   .faq-img{display:none}
@@ -641,7 +676,12 @@ body::before{
   .rotator{flex-direction:column;align-items:flex-start;gap:6px}
   .hero-btns .btn-primary,.hero-btns .btn-ghost{width:100%;justify-content:center}
   .pkg-track{padding:0}
+  .insurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .footer-main{padding:36px 16px}
+}
+
+@media(min-width:769px) and (max-width:1024px){
+  .insurance-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
   </style>
 </head>
@@ -924,6 +964,50 @@ body::before{
         <p class="feat-desc">Our team speaks English, Arabic, Hindi, Urdu, Malayalam and Kannada — so every patient feels at home.</p>
         <div class="feat-tags"><span class="feat-tag">Arabic</span><span class="feat-tag">Hindi / Urdu</span><span class="feat-tag">Malayalam</span></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     INSURANCE PARTNERS
+══════════════════════════════════════ -->
+<section class="section" id="insurance" aria-labelledby="insurance-h">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Insurance Accepted</div>
+      <h2 class="section-title" id="insurance-h">Insurance <span class="grad-text">Partners</span></h2>
+      <p class="section-sub">We accept a wide range of major insurance providers.</p>
+    </div>
+
+    <div class="insurance-grid">
+      <div class="insurance-card"><img src="Uploads/insurance/logo-saico-health-damana.png" alt="SAICO Health Daman insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-ecare-international.png" alt="eCare International insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-al-madallah.png" alt="Al Madallah Healthcare Management insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-fmc-network-uae.png" alt="FMC Network UAE insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-ngi-insurance.png" alt="NGI Insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-mednet.png" alt="MedNet insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-msh-international.png" alt="MSH International insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nas.png" alt="NAS insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-dubai-insurance.png" alt="Dubai Insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-neuron.png" alt="Neuron insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-aspire.png" alt="Aspire insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-aafiya.png" alt="Aafiya insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-gig-gulf.png" alt="GIG Gulf insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-globemed.png" alt="GlobeMed insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nextcare.png" alt="Nextcare insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-life-line.png" alt="Life Line insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-nas-neuron.png" alt="NAS Neuron Health Services insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-adnic.png" alt="ADNIC insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-inayah.png" alt="Inayah insurance accepted" /></div>
+      <div class="insurance-card"><img src="Uploads/insurance/logo-whealth-international.png" alt="WHealth International insurance accepted" /></div>
+    </div>
+
+    <div class="insurance-footer">
+      <p class="insurance-note">Insurance coverage is subject to eligibility and insurer approval. Please contact us to confirm your coverage.</p>
+      <a href="https://wa.me/971508821590?text=Hi%20Sahara%20Medical%20Centre%2C%20I%20would%20like%20to%20verify%20my%20insurance%20coverage"
+         class="insurance-verify" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Verify Insurance Coverage
+      </a>
     </div>
   </div>
 </section>
@@ -1271,10 +1355,6 @@ body::before{
 
   <div class="footer-bottom">
     &copy; 2026 Sahara Medical Centre LLC · Al Nahda, Sharjah, UAE
-    <span class="ft-sep">|</span>
-    <a href="https://aiingo.com/" target="_blank" rel="noopener">AI Automations</a>
-    <span class="ft-sep">|</span>
-    <a href="https://aseoagency.com/" target="_blank" rel="noopener">AI SEO UAE</a>
   </div>
 </footer>
 

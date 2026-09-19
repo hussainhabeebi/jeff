@@ -141,6 +141,28 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   .fab-wa{display:none}
 }
 @media(min-width:769px){.mobile-cta-bar{display:none}}
+
+/* ── Doctor cards ── */
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.doc-card{background:#fff;border:1px solid rgba(155,112,64,.12);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s,box-shadow .3s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.doc-card:hover{border-color:rgba(155,112,64,.32);transform:translateY(-4px);box-shadow:0 8px 24px rgba(155,112,64,.1)}
+.doc-card.featured{border-color:rgba(155,112,64,.35);box-shadow:0 4px 20px rgba(155,112,64,.15)}
+.doc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#e8eef6}
+.doc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.doc-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:6px}
+.doc-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:4px}
+.doc-name{font-size:.95rem;font-weight:800;color:var(--text)}
+.doc-name a{color:#1B4FA8;transition:color .2s}
+.doc-name a:hover{color:#2563EB}
+.doc-spec{font-size:.78rem;color:#1B4FA8;font-weight:600}
+.doc-qual{font-size:.72rem;color:var(--text-3)}
+.doc-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+.doc-call{text-align:center;padding:9px;border-radius:8px;font-weight:600;font-size:.76rem;background:#f8fafc;border:1px solid rgba(0,0,0,.1);color:var(--text-2);transition:all .2s}
+.doc-call:hover{background:#f1f5f9;color:var(--text)}
+.doc-book{text-align:center;padding:9px;border-radius:8px;font-weight:600;font-size:.76rem;background:rgba(155,112,64,.08);border:1px solid rgba(155,112,64,.22);color:#9B7040;transition:all .2s}
+.doc-book:hover{background:#9B7040;color:white}
+@media(max-width:768px){.doctors-grid{grid-template-columns:1fr 1fr;gap:14px}}
+@media(max-width:480px){.doctors-grid{grid-template-columns:1fr}}
 </style>
   </head>
 <body>
@@ -268,6 +290,105 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
       </div>
     </div>
   </section>
+
+<!-- ══════════════════════════════════════
+     MEET OUR DOCTORS
+══════════════════════════════════════ -->
+<section class="section section-alt" id="doctors" aria-labelledby="doc-h">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-title" id="doc-h">Meet Our <span class="grad-text">Specialists</span></h2>
+      <p class="section-sub">Experienced doctors across General Practice, dentistry, orthodontics and oral surgery at Sahara Medical Centre.</p>
+    </div>
+    <div class="doctors-grid">
+      <article class="doc-card">
+        <div class="doc-img">
+          <img src="/Uploads/anwar.jpg" alt="Dr. Anwar MK – General Practitioner Al Nahda Sharjah" loading="lazy" />
+        </div>
+        <div class="doc-body">
+          <p class="doc-name">Dr. Anwar MK</p>
+          <p class="doc-spec">GP · Medical Director</p>
+          <p class="doc-qual">15 Years Experience</p>
+          <div class="doc-btns">
+            <a href="tel:+971508821590" class="doc-call">Call</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
+          </div>
+        </div>
+      </article>
+      <article class="doc-card featured">
+        <div class="doc-img">
+          <span class="doc-badge" style="background:rgba(27,79,168,.12);border:1px solid rgba(27,79,168,.3);color:#1B4FA8">Oral Surgeon</span>
+          <img src="/Doctor.jpeg" alt="Dr. Jeff Zacharia – Oral &amp; Maxillofacial Surgeon Sharjah" loading="lazy" />
+        </div>
+        <div class="doc-body">
+          <p class="doc-name"><a href="/jeff/">Dr. Jeff Zacharia &#x2197;</a></p>
+          <p class="doc-spec">Oral &amp; Maxillofacial Surgeon</p>
+          <p class="doc-qual">BDS, MDS · 5+ Years</p>
+          <div class="doc-btns">
+            <a href="tel:+971508821590" class="doc-call">Call</a>
+            <a href="/jeff/" class="doc-book">Profile</a>
+          </div>
+        </div>
+      </article>
+      <article class="doc-card">
+        <div class="doc-img">
+          <span class="doc-badge" style="background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.2);color:#dc2626">Specialist</span>
+          <img src="/Uploads/NH8A9682-copy-scaled.jpg" alt="Dr. Dynamol – Orthodontist Sharjah" loading="lazy" />
+        </div>
+        <div class="doc-body">
+          <p class="doc-name">Dr. Dynamol</p>
+          <p class="doc-spec">Specialist Orthodontist</p>
+          <div class="doc-btns">
+            <a href="tel:+971508821590" class="doc-call">Call</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
+          </div>
+        </div>
+      </article>
+      <article class="doc-card">
+        <div class="doc-img">
+          <img src="/Uploads/WhatsApp-Image-2025-12-02-at-10.22.46-PM.jpeg" alt="Dr. Jubila Fasly – General Practitioner Sharjah" loading="lazy" />
+        </div>
+        <div class="doc-body">
+          <p class="doc-name">Dr. Jubila Fasly</p>
+          <p class="doc-spec">General Practitioner</p>
+          <div class="doc-btns">
+            <a href="tel:+971508821590" class="doc-call">Call</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
+          </div>
+        </div>
+      </article>
+      <article class="doc-card">
+        <div class="doc-img">
+          <img src="/Uploads/9R1A4979-select-copy.jpg-scaled.jpeg" alt="Dr. Baisiya Sharin – Dentist Sharjah" loading="lazy" />
+        </div>
+        <div class="doc-body">
+          <p class="doc-name">Dr. Baisiya Sharin</p>
+          <p class="doc-spec">General Dentist</p>
+          <p class="doc-qual">BDS</p>
+          <div class="doc-btns">
+            <a href="tel:+971508821590" class="doc-call">Call</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
+          </div>
+        </div>
+      </article>
+      <article class="doc-card">
+        <div class="doc-img">
+          <img src="/Uploads/Photo-Aysha.png" alt="Dr. Aysha Suha – Dentist Sharjah" loading="lazy" />
+        </div>
+        <div class="doc-body">
+          <p class="doc-name">Dr. Aysha Suha</p>
+          <p class="doc-spec">General Dentist</p>
+          <p class="doc-qual">BDS</p>
+          <div class="doc-btns">
+            <a href="tel:+971508821590" class="doc-call">Call</a>
+            <a href="https://wa.me/971508821590" target="_blank" rel="noopener" class="doc-book">Book</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="footer">
   <div class="ticker-bar" aria-hidden="true">
@@ -291,7 +412,11 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="footer-main">
     <div class="ft-col">
       <div class="ft-brand-name"><i class="fas fa-hospital-alt"></i> Sahara Medical Centre</div>
-      </div>
+      <p style="color:var(--text-3);font-size:.95rem;line-height:1.7;margin-top:10px">Ganda Tower, Al Nahda,<br/>Sharjah, UAE</p>
+      <p style="color:var(--text-3);font-size:.95rem;margin-top:8px"><i class="fas fa-phone" style="margin-right:6px"></i> <a href="tel:+97165318887" style="color:var(--text-3)">06 531 8887</a></p>
+      <p style="color:var(--text-3);font-size:.95rem;margin-top:4px"><i class="fab fa-whatsapp" style="margin-right:6px;color:#25d366"></i> <a href="https://wa.me/971508821590" style="color:var(--text-3)">+971 50 882 1590</a></p>
+      <p style="color:var(--text-3);font-size:.95rem;margin-top:4px"><i class="fas fa-clock" style="margin-right:6px"></i> Open daily 8:00 AM &#8211; 11:00 PM</p>
+    </div>
 <div class="ft-col">
       <h4>Quick Links</h4>
       <ul class="ft-links">
@@ -300,6 +425,16 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
         <li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
         <li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
         <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Our Services</h4>
+      <ul class="ft-links">
+        <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
+        <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Dental Clinic</a></li>
+        <li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Orthodontics</a></li>
+        <li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li>
+        <li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li>
       </ul>
     </div>
   </div>

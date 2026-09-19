@@ -157,6 +157,28 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .doc-call-p{background:#f1f5f9;border:1px solid rgba(0,0,0,.1);color:#0f172a}
 .doc-book-p{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);color:var(--purple)}
 .doc-book-p:hover{background:var(--purple);color:white}
+
+/* ── Doctor cards ── */
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.doc-card{background:#fff;border:1px solid rgba(155,112,64,.12);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s,box-shadow .3s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.doc-card:hover{border-color:rgba(155,112,64,.32);transform:translateY(-4px);box-shadow:0 8px 24px rgba(155,112,64,.1)}
+.doc-card.featured{border-color:rgba(155,112,64,.35);box-shadow:0 4px 20px rgba(155,112,64,.15)}
+.doc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#e8eef6}
+.doc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.doc-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:6px}
+.doc-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:4px}
+.doc-name{font-size:.95rem;font-weight:800;color:var(--text)}
+.doc-name a{color:#1B4FA8;transition:color .2s}
+.doc-name a:hover{color:#2563EB}
+.doc-spec{font-size:.78rem;color:#1B4FA8;font-weight:600}
+.doc-qual{font-size:.72rem;color:var(--text-3)}
+.doc-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+.doc-call{text-align:center;padding:9px;border-radius:8px;font-weight:600;font-size:.76rem;background:#f8fafc;border:1px solid rgba(0,0,0,.1);color:var(--text-2);transition:all .2s}
+.doc-call:hover{background:#f1f5f9;color:var(--text)}
+.doc-book{text-align:center;padding:9px;border-radius:8px;font-weight:600;font-size:.76rem;background:rgba(155,112,64,.08);border:1px solid rgba(155,112,64,.22);color:#9B7040;transition:all .2s}
+.doc-book:hover{background:#9B7040;color:white}
+@media(max-width:768px){.doctors-grid{grid-template-columns:1fr 1fr;gap:14px}}
+@media(max-width:480px){.doctors-grid{grid-template-columns:1fr}}
 </style>
   </head>
 <body>
@@ -337,7 +359,11 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="footer-main">
     <div class="ft-col">
       <div class="ft-brand-name"><i class="fas fa-hospital-alt"></i> Sahara Medical Centre</div>
-      </div>
+      <p style="color:var(--text-3);font-size:.95rem;line-height:1.7;margin-top:10px">Ganda Tower, Al Nahda,<br/>Sharjah, UAE</p>
+      <p style="color:var(--text-3);font-size:.95rem;margin-top:8px"><i class="fas fa-phone" style="margin-right:6px"></i> <a href="tel:+97165318887" style="color:var(--text-3)">06 531 8887</a></p>
+      <p style="color:var(--text-3);font-size:.95rem;margin-top:4px"><i class="fab fa-whatsapp" style="margin-right:6px;color:#25d366"></i> <a href="https://wa.me/971508821590" style="color:var(--text-3)">+971 50 882 1590</a></p>
+      <p style="color:var(--text-3);font-size:.95rem;margin-top:4px"><i class="fas fa-clock" style="margin-right:6px"></i> Open daily 8:00 AM &#8211; 11:00 PM</p>
+    </div>
 <div class="ft-col">
       <h4>Quick Links</h4>
       <ul class="ft-links">
@@ -346,6 +372,16 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
         <li><a href="/book-appointment/"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
         <li><a href="/contact-us/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
         <li><a href="/malayali-doctor-near-dubai/"><i class="fas fa-chevron-right"></i> Malayali Doctor Near Dubai</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Our Services</h4>
+      <ul class="ft-links">
+        <li><a href="/general-medicine/"><i class="fas fa-chevron-right"></i> General Medicine</a></li>
+        <li><a href="/best-dental-clinic-sahara-medical-centre/"><i class="fas fa-chevron-right"></i> Dental Clinic</a></li>
+        <li><a href="/braces-implants/"><i class="fas fa-chevron-right"></i> Braces &amp; Orthodontics</a></li>
+        <li><a href="/root-canal/"><i class="fas fa-chevron-right"></i> Root Canal</a></li>
+        <li><a href="/teeth-whitening-sharjah/"><i class="fas fa-chevron-right"></i> Teeth Whitening</a></li>
       </ul>
     </div>
   </div>

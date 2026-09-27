@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /jeff.html
+
+Sitemap: https://saharamedicalcentre.ae/sitemap.xml
